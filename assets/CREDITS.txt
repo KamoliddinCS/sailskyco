@@ -1,0 +1,23 @@
+SailSky & Co concept website image credits
+
+Original hero artwork
+- Generated for this project with OpenAI image generation.
+- Brief: an unbranded wide-body passenger aircraft and luxury cruise ship at a refined blue-hour sunset, composed as a panoramic website hero.
+
+Social preview artwork
+- Generated for this project with OpenAI image generation using the final hero as its visual reference.
+- Exact copy: “SailSky & Co” and “Premium travel, personally handled.”
+
+Supporting photography (Unsplash License)
+- Aircraft window at sunset — Thom Milkovic
+  https://unsplash.com/photos/airplane-window-Kp3B7GnvFD0
+- Santorini — Heidi Kaden
+  https://unsplash.com/photos/santorini-greece-kYxgm42SQso
+- Cruise ship in a Norwegian fjord — Tiziano Compagnoni
+  https://unsplash.com/photos/a-cruise-ship-sails-through-a-norwegian-fjord-EqmLvGBXGNo
+- Overwater bungalows in the Maldives — Mohamed Hassaan
+  https://unsplash.com/photos/overwater-bungalows-on-a-tropical-beach-HecXqNKlbtk
+- Glacier Bay — Alexander Marinescu
+  https://unsplash.com/photos/glacier-bay-alaska-tYALcHvTdg0
+- Cruise ship at dusk — Peter Hansen
+  https://unsplash.com/photos/cruise-ship-MeGmdPNe36w

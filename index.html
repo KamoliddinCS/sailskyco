@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SailSky &amp; Co — Business Class Flights &amp; Luxury Cruises</title>
+<meta name="description" content="A personal travel concierge for thoughtfully planned business and first class flights, luxury cruises, and seamless fly-cruise journeys.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#051b2f">
+<link rel="canonical" href="https://birsayt.uz/demos/travel/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SailSky &amp; Co — Personal Travel Concierge">
+<meta property="og:description" content="Premium cabin flights and luxury cruises, planned around you by one dedicated advisor.">
+<meta property="og:url" content="https://birsayt.uz/demos/travel/">
+<meta property="og:image" content="https://birsayt.uz/demos/travel/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A passenger aircraft and luxury cruise ship at sunset">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SailSky &amp; Co — Personal Travel Concierge">
+<meta name="twitter:description" content="Premium cabin flights and luxury cruises, planned around you.">
+<meta name="twitter:image" content="https://birsayt.uz/demos/travel/assets/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23051b2f'/%3E%3Ctext x='7.2' y='23' font-family='Georgia,serif' font-size='21' font-style='italic' fill='%23e7b95f'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --navy:#051b2f;--navy-2:#082640;--navy-3:#103751;--gold:#d8a94f;--gold-2:#f0cb7a;
+  --ivory:#f8f5ef;--paper:#fffdf9;--ink:#11283c;--muted:#5e6a73;--line:#ddd7cd;
+  --serif:Georgia,"Times New Roman",serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --shadow:0 24px 70px rgba(3,22,39,.13);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.menu-open{overflow:hidden}
+img{display:block;width:100%}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;text-wrap:balance}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid var(--gold-2);outline-offset:3px}
+::selection{background:var(--gold);color:var(--navy)}
+.wrap{width:min(1200px,calc(100% - 48px));margin-inline:auto}
+.section{padding:clamp(78px,10vw,132px) 0}
+.eyebrow{display:block;color:#b27b20;font-size:.7rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
+.eyebrow.light{color:var(--gold-2)}
+.h2{font-size:clamp(2.2rem,4.7vw,4rem);letter-spacing:-.025em}
+.lead{color:var(--muted);font-size:clamp(1rem,1.6vw,1.15rem);max-width:58ch;line-height:1.8}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 25px;border:1px solid var(--gold);background:var(--gold);color:#171106;font-size:.86rem;font-weight:800;letter-spacing:.02em;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.btn:hover{background:var(--gold-2);border-color:var(--gold-2);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn-outline:hover{background:#fff;color:var(--navy);border-color:#fff}
+.btn-dark{background:var(--navy);border-color:var(--navy);color:#fff}
+.btn-dark:hover{background:var(--navy-3);border-color:var(--navy-3)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+.demo-tag{position:fixed;right:16px;bottom:16px;z-index:90;background:rgba(5,27,47,.92);color:#fff;border:1px solid rgba(216,169,79,.45);padding:8px 13px;font-size:.7rem;font-weight:700;letter-spacing:.05em;backdrop-filter:blur(8px);box-shadow:0 8px 30px rgba(0,0,0,.18)}
+.demo-tag b{color:var(--gold-2)}
+
+.header{position:absolute;inset:0 0 auto;z-index:50;color:#fff;border-bottom:1px solid rgba(255,255,255,.16);transition:background .25s,transform .25s,box-shadow .25s}
+.header.stuck{position:fixed;background:rgba(5,27,47,.96);box-shadow:0 10px 30px rgba(0,0,0,.15);backdrop-filter:blur(14px)}
+.nav{height:76px;display:flex;align-items:center;gap:30px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;min-width:max-content}
+.brand-mark{position:relative;width:45px;height:45px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.7rem;font-style:italic;color:#fff}
+.brand-mark::after{content:"";position:absolute;width:24px;height:9px;border-bottom:2px solid var(--gold);border-radius:50%;right:-8px;bottom:5px;transform:rotate(-22deg)}
+.brand-name{font-family:var(--serif);font-size:1.25rem;letter-spacing:.01em}
+.brand-name b{font-weight:400;color:var(--gold-2)}
+.brand-name small{display:block;font-family:var(--sans);font-size:.52rem;text-transform:uppercase;letter-spacing:.18em;color:var(--gold-2);margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:26px;margin-left:auto}
+.nav-links a{font-size:.79rem;color:#edf2f6;transition:color .15s}
+.nav-links a:hover{color:var(--gold-2)}
+.nav .btn{min-height:42px;padding-inline:19px;font-size:.75rem}
+.menu-btn{display:none;margin-left:auto;width:43px;height:43px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer;position:relative}
+.menu-btn span,.menu-btn::before,.menu-btn::after{content:"";position:absolute;width:19px;height:1.5px;background:currentColor;left:11px;transition:.2s}
+.menu-btn::before{top:13px}.menu-btn span{top:20px}.menu-btn::after{top:27px}
+.menu-btn.on span{opacity:0}.menu-btn.on::before{top:20px;transform:rotate(45deg)}.menu-btn.on::after{top:20px;transform:rotate(-45deg)}
+.mobile-panel{display:none}
+
+.hero{position:relative;min-height:820px;color:#fff;background:var(--navy);isolation:isolate;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-3;background:url("assets/hero-concierge.jpg") center 60%/cover no-repeat;transform:scale(1.01)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(3,22,39,.94) 0%,rgba(3,22,39,.8) 42%,rgba(3,22,39,.52) 72%,rgba(3,22,39,.7) 100%),linear-gradient(0deg,rgba(3,22,39,.8),transparent 50%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 36% 43%,rgba(216,169,79,.11),transparent 32%)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(370px,.8fr);gap:clamp(50px,6vw,88px);align-items:center;padding:150px 0 88px;min-height:760px}
+.hero-copy{max-width:680px;padding-top:24px}
+.hero-copy .overline{font-size:.7rem;text-transform:uppercase;letter-spacing:.33em;font-weight:700;color:#e8edf1}
+.hero h1{font-size:clamp(3rem,6vw,5.7rem);letter-spacing:-.04em;margin:17px 0 25px;max-width:12ch;text-shadow:0 2px 20px rgba(0,0,0,.2)}
+.hero h1 em{font-weight:400;color:var(--gold-2)}
+.hero-copy>p{max-width:57ch;color:#e0e7ec;font-size:clamp(1rem,1.5vw,1.14rem);line-height:1.78}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.hero-note{display:flex;align-items:center;gap:11px;margin-top:23px;color:#c6d0d8;font-size:.76rem}
+.hero-note::before{content:"";width:32px;height:1px;background:var(--gold)}
+.quote-card{background:rgba(5,27,47,.93);border:1px solid rgba(216,169,79,.78);box-shadow:0 28px 70px rgba(0,0,0,.3);padding:27px 25px 23px;backdrop-filter:blur(9px)}
+.quote-card h2{text-align:center;font-size:1.45rem;color:#fff;margin-bottom:18px}
+.trip-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:14px}
+.trip-tab{border:1px solid rgba(255,255,255,.19);background:rgba(255,255,255,.05);color:#dce5eb;font-size:.62rem;padding:8px 4px;cursor:pointer;min-height:35px}
+.trip-tab.active{color:var(--navy);background:var(--gold);border-color:var(--gold);font-weight:800}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.field{display:grid;gap:5px}.field.full{grid-column:1/-1}.field.return.hidden{display:none}
+.field label{font-size:.6rem;color:#cbd5dc;font-weight:700}
+.field input,.field select,.field textarea{width:100%;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);color:#fff;border-radius:2px;padding:10px 11px;min-height:42px;font-size:.74rem;outline:none;color-scheme:dark}
+.field input::placeholder,.field textarea::placeholder{color:#9faeb9}.field textarea{min-height:68px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(216,169,79,.14)}
+.quote-card .btn{width:100%;margin-top:12px;min-height:45px}
+.form-fine{text-align:center;font-size:.61rem;color:#aebbc5;line-height:1.55;margin-top:9px}
+
+.trust-strip{background:var(--navy);color:#fff;border-top:1px solid rgba(255,255,255,.08)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);padding:22px 0}
+.trust-item{padding:5px 24px;display:flex;align-items:center;gap:14px;border-right:1px solid rgba(255,255,255,.12)}
+.trust-item:last-child{border:0}.trust-num{font-family:var(--serif);font-size:1.55rem;color:var(--gold-2);font-style:italic}
+.trust-item b{display:block;font-family:var(--serif);font-size:.95rem;font-weight:500}.trust-item span:last-child{font-size:.66rem;color:#adbbc5}
+
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(54px,8vw,104px);align-items:center}
+.about-copy .h2{margin-bottom:25px}.about-copy .lead+.lead{margin-top:18px}
+.about-sign{font-family:var(--serif);font-size:1.25rem;font-style:italic;color:#8b651f;margin-top:25px}
+.about-visual{position:relative;padding:0 0 38px 42px}
+.about-visual img{height:480px;object-fit:cover;object-position:center;border-radius:2px;box-shadow:var(--shadow)}
+.about-caption{position:absolute;left:0;bottom:0;background:var(--navy);color:#fff;width:min(310px,80%);padding:25px 27px;border-top:3px solid var(--gold)}
+.about-caption b{display:block;font-family:var(--serif);font-size:1.13rem;font-weight:500}.about-caption span{font-size:.72rem;color:#bdc9d1}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);margin-top:80px;border:1px solid var(--line);background:rgba(255,255,255,.48)}
+.pillar{padding:31px 25px;border-right:1px solid var(--line)}.pillar:last-child{border:0}
+.pillar .n{font-family:var(--serif);color:#b27b20;font-style:italic;font-size:1.15rem}.pillar h3{font-size:1.12rem;margin:13px 0 9px}.pillar p{font-size:.78rem;color:var(--muted);line-height:1.65}
+
+.flights{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.flights::before{content:"";position:absolute;width:500px;height:500px;border:1px solid rgba(216,169,79,.1);border-radius:50%;right:-200px;top:-280px}
+.section-head{text-align:center;max-width:760px;margin:0 auto 48px}.section-head .h2{margin-bottom:16px}.section-head p{color:#b8c5ce;margin:auto}
+.flight-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.flight-card{position:relative;min-height:330px;overflow:hidden;border:1px solid rgba(216,169,79,.65);isolation:isolate;display:flex;align-items:flex-end;padding:22px 20px;transition:transform .25s,border-color .25s}
+.flight-card:hover{transform:translateY(-5px);border-color:var(--gold-2)}
+.flight-card img{position:absolute;inset:0;height:100%;object-fit:cover;z-index:-2;transition:transform .5s}.flight-card:hover img{transform:scale(1.04)}
+.flight-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,22,39,.97),rgba(3,22,39,.05) 75%);z-index:-1}
+.flight-card h3{font-size:1.45rem}.flight-card p{font-size:.72rem;color:#d9e0e5;margin-top:7px}.flight-card .from{color:var(--gold-2);font-weight:800;font-size:.74rem;margin-top:10px}
+.fare-note{text-align:center;font-size:.67rem;color:#92a3b0;font-style:italic;margin-top:14px}
+.airline-line{text-align:center;margin-top:45px;padding-top:27px;border-top:1px solid rgba(255,255,255,.12)}
+.airline-line>span{display:block;font-family:var(--serif);font-style:italic;color:#aebbc5;font-size:.84rem;margin-bottom:15px}
+.airline-chips{display:flex;justify-content:center;gap:10px 24px;flex-wrap:wrap;color:#f5f7f8;font-family:var(--serif);font-size:1rem}.airline-chips b{font-weight:500}
+
+.cruise-head{display:flex;align-items:end;justify-content:space-between;gap:36px;margin-bottom:44px}.cruise-head .lead{max-width:47ch}
+.cruise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cruise-card{background:var(--paper);border:1px solid var(--line);box-shadow:0 14px 35px rgba(17,40,60,.06);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.cruise-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.cruise-card img{height:220px;object-fit:cover}.cruise-card:nth-child(3) img{object-position:center 43%}
+.cruise-body{padding:20px 20px 22px}.cruise-body h3{font-size:1.2rem}.cruise-meta{font-size:.72rem;color:var(--muted);margin-top:8px}.cruise-price{font-size:.76rem;font-weight:800;color:#8b651f;margin-top:11px}
+.fly-cruise{margin-top:26px;border:1px solid var(--gold);display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:22px 27px;background:#fffaf0}
+.fly-cruise-mark{font-family:var(--serif);font-size:2rem;color:#b27b20;font-style:italic}.fly-cruise h3{font-size:1.06rem}.fly-cruise p{font-size:.73rem;color:var(--muted);margin-top:3px}
+
+.experience{background:linear-gradient(120deg,var(--navy),#0a304e);color:#fff}
+.experience-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(50px,8vw,110px);align-items:center}
+.experience-copy .h2{margin-bottom:22px}.experience-copy p{color:#c1ccd4;line-height:1.8}
+.experience-list{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.14)}
+.experience-card{padding:36px 25px;border-right:1px solid rgba(255,255,255,.14)}.experience-card:last-child{border:0}
+.experience-card .n{color:var(--gold-2);font-family:var(--serif);font-style:italic;font-size:1.2rem}.experience-card h3{font-size:1.16rem;margin:30px 0 12px}.experience-card p{font-size:.76rem;color:#b9c5cd;line-height:1.7}
+
+.process{padding-bottom:0;background:var(--paper)}
+.process-grid{display:grid;grid-template-columns:1fr .92fr;gap:0;align-items:stretch}
+.process-copy{padding:clamp(60px,8vw,110px) clamp(36px,8vw,110px) clamp(60px,8vw,110px) max(24px,calc((100vw - 1200px)/2));background:var(--paper)}
+.process-copy .h2{font-size:clamp(2.2rem,4vw,3.6rem);margin-bottom:42px}
+.steps{display:grid;gap:29px;max-width:620px}
+.step{display:grid;grid-template-columns:47px 1fr;gap:18px;align-items:start}
+.step-n{width:41px;height:41px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);color:#8b651f;font-size:1.02rem}
+.step h3{font-size:1.16rem;margin-bottom:7px}.step p{font-size:.8rem;color:var(--muted);line-height:1.7}
+.process-img{min-height:650px}.process-img img{height:100%;object-fit:cover}
+
+.bottom{background:var(--ivory)}
+.bottom-grid{display:grid;grid-template-columns:.78fr 1.05fr 1fr;gap:0;border:1px solid var(--line);background:var(--paper)}
+.bottom-col{padding:clamp(32px,4vw,50px);border-right:1px solid var(--line)}.bottom-col:last-child{border:0}
+.bottom-col .eyebrow{font-size:.6rem}.bottom-col h2{font-size:1.55rem;margin-bottom:18px}.bottom-col>p{font-size:.78rem;color:var(--muted);line-height:1.75}
+.promise-list{display:grid;gap:14px;margin-top:23px}.promise-list span{font-size:.75rem;padding-left:20px;position:relative}.promise-list span::before{content:"✓";position:absolute;left:0;color:#a96f0f;font-weight:800}
+.faq{display:grid;gap:9px}.faq details{border:1px solid var(--line);background:#fff}.faq summary{list-style:none;cursor:pointer;padding:13px 40px 13px 14px;font-size:.74rem;font-weight:700;position:relative}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";position:absolute;right:14px;font-size:1.1rem;font-weight:400;top:8px;color:#9b6b18}.faq details[open] summary::after{content:"−"}.faq details p{padding:0 14px 14px;font-size:.72rem;color:var(--muted);line-height:1.65}
+.contact-mini{display:grid;gap:10px;margin-top:19px}.contact-mini .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.contact-mini input,.contact-mini select,.contact-mini textarea{width:100%;border:1px solid var(--line);background:#fff;padding:11px 12px;font-size:.72rem;min-height:43px;color:var(--ink)}.contact-mini textarea{min-height:83px;resize:vertical}.contact-mini .btn{width:100%;min-height:45px}.success{display:none;color:#5b531d;background:#fff7cf;border:1px solid #dec86e;padding:10px 12px;font-size:.72rem}.success.show{display:block}
+
+.footer{background:#031522;color:#96a7b3;padding:58px 0 26px}.footer-top{display:flex;align-items:center;justify-content:space-between;gap:30px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer .brand-name{color:#fff}.footer-links{display:flex;gap:25px;flex-wrap:wrap}.footer-links a{font-size:.75rem}.footer-links a:hover{color:var(--gold-2)}
+.footer-bottom{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:24px;font-size:.68rem}.footer-bottom a{color:var(--gold-2)}
+
+@media(max-width:1040px){
+  .nav-links{display:none}.menu-btn{display:block}.nav>.btn{display:none}
+  .mobile-panel{display:grid;position:fixed;inset:76px 0 auto;background:rgba(5,27,47,.985);padding:12px 24px 24px;transform:translateY(-130%);transition:transform .25s;z-index:-1;border-bottom:1px solid rgba(216,169,79,.35)}
+  .mobile-panel.open{transform:translateY(0)}.mobile-panel a{padding:14px 5px;color:#fff;border-bottom:1px solid rgba(255,255,255,.1);font-family:var(--serif);font-size:1.1rem}.mobile-panel .btn{margin-top:15px;color:var(--navy);font-family:var(--sans)}
+  .hero-grid{grid-template-columns:1fr;gap:40px;padding-top:140px}.hero-copy{max-width:760px}.quote-card{max-width:720px;width:100%}.hero{min-height:auto}
+  .trust-grid{grid-template-columns:1fr 1fr}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
+  .pillars,.flight-grid,.cruise-grid{grid-template-columns:1fr 1fr}.pillar:nth-child(2){border-right:0}.pillar:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .experience-grid{grid-template-columns:1fr}.experience-copy{max-width:700px}
+  .bottom-grid{grid-template-columns:1fr 1fr}.bottom-col:nth-child(2){border-right:0}.bottom-col:last-child{grid-column:1/-1;border-top:1px solid var(--line)}
+}
+@media(max-width:780px){
+  .wrap{width:min(100% - 36px,1200px)}.section{padding:70px 0}
+  .hero-grid{padding:125px 0 60px}.hero h1{font-size:clamp(2.85rem,12vw,4.6rem)}.hero-bg{background-position:60% 65%}
+  .about-grid,.process-grid{grid-template-columns:1fr}.about-visual{padding-left:23px}.about-visual img{height:400px}.pillars{margin-top:55px}
+  .cruise-head{display:block}.cruise-head .lead{margin-top:20px}.fly-cruise{grid-template-columns:auto 1fr}.fly-cruise .btn{grid-column:1/-1}
+  .process-copy{padding-inline:24px}.process-img{min-height:420px}.process-img img{height:420px}
+  .footer-top{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:560px){
+  .wrap{width:min(100% - 28px,1200px)}.brand-mark{width:41px;height:41px}.brand-name{font-size:1.08rem}.nav{height:70px}.mobile-panel{inset:70px 0 auto}
+  .hero-grid{padding-top:110px}.hero-copy .overline{letter-spacing:.22em}.hero h1{font-size:2.8rem}.hero-actions{display:grid}.hero-actions .btn{width:100%}
+  .quote-card{padding:23px 16px}.trip-tabs{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+  .trust-grid,.pillars,.flight-grid,.cruise-grid,.experience-list,.bottom-grid{grid-template-columns:1fr}.trust-item,.trust-item:nth-child(2){border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.trust-item:last-child{border-bottom:0}
+  .pillar,.pillar:nth-child(2){border-right:0;border-bottom:1px solid var(--line)}.pillar:last-child{border-bottom:0}
+  .flight-card{min-height:290px}.cruise-card img{height:240px}
+  .fly-cruise{grid-template-columns:1fr;gap:10px}.fly-cruise .btn{grid-column:auto}.experience-card{border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}.experience-card:last-child{border:0}
+  .bottom-col,.bottom-col:nth-child(2){border-right:0;border-bottom:1px solid var(--line)}.bottom-col:last-child{grid-column:auto;border-top:0;border-bottom:0}.contact-mini .row{grid-template-columns:1fr}
+  .footer-links{display:grid;grid-template-columns:1fr 1fr}.demo-tag{right:10px;bottom:10px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.flight-card img{transition:none}.btn,.flight-card,.cruise-card{transition:none}}
+</style>
+</head>
+<body>
+<a class="demo-tag" href="../../#demos" title="Return to Bir Sayt portfolio">Concept website · <b>Bir Sayt</b></a>
+
+<header class="header" id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="SailSky and Co home">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span class="brand-name">SailSky <b>&amp; Co</b><small>Personal travel concierge</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#about">About</a><a href="#flights">Flights</a><a href="#cruises">Cruises</a><a href="#process">How it works</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#quote">Plan my journey</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </div>
+  <nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
+    <a href="#about">About</a><a href="#flights">Flights</a><a href="#cruises">Cruises</a><a href="#process">How it works</a><a href="#contact">Contact</a><a class="btn" href="#quote">Plan my journey</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <span class="overline">Personal travel advisor</span>
+        <h1>Premium travel, <em>personally handled.</em></h1>
+        <p>Business and first class flights, exceptional cruises, and seamless combinations—planned by one dedicated advisor who knows every detail of your journey.</p>
+        <div class="hero-actions"><a class="btn" href="#quote">Request a complimentary plan <span aria-hidden="true">→</span></a><a class="btn btn-outline" href="#cruises">Explore journeys</a></div>
+        <div class="hero-note">One point of contact from first idea to final arrival</div>
+      </div>
+
+      <form class="quote-card reveal" id="quote" data-demo-form>
+        <h2>Tell me where you would like to go</h2>
+        <div class="trip-tabs" role="group" aria-label="Trip type">
+          <button class="trip-tab active" type="button" data-trip="Round trip">Round trip</button><button class="trip-tab" type="button" data-trip="One way">One way</button><button class="trip-tab" type="button" data-trip="Multi-city">Multi-city</button><button class="trip-tab" type="button" data-trip="Cruise">Cruise</button>
+        </div>
+        <input type="hidden" name="tripType" value="Round trip">
+        <div class="form-grid">
+          <div class="field"><label for="from">From</label><input id="from" name="from" autocomplete="address-level2" placeholder="London or airport" required></div>
+          <div class="field"><label for="to">To</label><input id="to" name="to" placeholder="Where would you like to go?" required></div>
+          <div class="field"><label for="depart">Departure</label><input id="depart" name="depart" type="date" required></div>
+          <div class="field return"><label for="return">Return</label><input id="return" name="return" type="date"></div>
+          <div class="field"><label for="travellers">Travellers</label><select id="travellers" name="travellers"><option>1 traveller</option><option>2 travellers</option><option>3 travellers</option><option>4+ travellers</option></select></div>
+          <div class="field"><label for="cabin">Cabin / journey</label><select id="cabin" name="cabin"><option>Business class</option><option>First class</option><option>Luxury cruise</option><option>Fly-cruise</option></select></div>
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Full name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        </div>
+        <button class="btn" type="submit">Request my travel plan</button>
+        <p class="form-fine">No booking obligation. This concept form demonstrates the enquiry experience.</p>
+        <div class="success" role="status">Thank you—your demo enquiry has been captured.</div>
+      </form>
+    </div>
+  </section>
+
+  <div class="trust-strip"><div class="wrap trust-grid">
+    <div class="trust-item"><span class="trust-num">01</span><span><b>One advisor</b><span>Your journey never changes hands</span></span></div>
+    <div class="trust-item"><span class="trust-num">02</span><span><b>Premium cabins</b><span>Business and first class options</span></span></div>
+    <div class="trust-item"><span class="trust-num">03</span><span><b>Flights + cruises</b><span>One thoughtful itinerary</span></span></div>
+    <div class="trust-item"><span class="trust-num">04</span><span><b>Human service</b><span>Clear advice, without call centres</span></span></div>
+  </div></div>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <span class="eyebrow">A more personal way to travel</span>
+          <h2 class="h2">Your journey deserves more than a search box.</h2>
+          <p class="lead">The right premium trip is not simply the cheapest result. It is the right seat, the sensible connection, the ship that suits your pace, and a plan that still works when something changes.</p>
+          <p class="lead">I bring those decisions together for a small circle of travellers—listening first, comparing carefully, and staying close to every booking from departure to homecoming.</p>
+          <p class="about-sign">Consider it handled.</p>
+        </div>
+        <figure class="about-visual reveal">
+          <img src="assets/window.jpg" alt="Golden sunset seen through an aircraft window" loading="lazy">
+          <figcaption class="about-caption"><b>Details shape the whole journey.</b><span>Cabin, connection, timing, transfer, suite and shore.</span></figcaption>
+        </figure>
+      </div>
+      <div class="pillars reveal">
+        <article class="pillar"><span class="n">01</span><h3>Advice before options</h3><p>Your priorities shape the search, not the other way around.</p></article>
+        <article class="pillar"><span class="n">02</span><h3>Joined-up planning</h3><p>Flights, cruise, transfers and timing considered as one journey.</p></article>
+        <article class="pillar"><span class="n">03</span><h3>Clear recommendations</h3><p>Shortlists explain the trade-offs so your decision feels easy.</p></article>
+        <article class="pillar"><span class="n">04</span><h3>Personal continuity</h3><p>The same advisor remains your point of contact throughout.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section flights" id="flights">
+    <div class="wrap">
+      <div class="section-head reveal"><span class="eyebrow light">Business &amp; first class</span><h2 class="h2">Long-haul, made effortless.</h2><p class="lead">Thoughtful routes, cabin choices and schedules for work trips, celebrations and the journeys worth doing properly.</p></div>
+      <div class="flight-grid reveal">
+        <article class="flight-card"><img src="assets/santorini.jpg" alt="Santorini at sunset" loading="lazy"><div><h3>Europe</h3><p>London to Athens, Rome, Lisbon and beyond</p><div class="from">Illustrative return from £1,950*</div></div></article>
+        <article class="flight-card"><img src="assets/fjord.jpg" alt="A cruise through a Norwegian fjord" loading="lazy"><div><h3>Nordics</h3><p>Scenic gateways across Norway and Iceland</p><div class="from">Illustrative return from £2,250*</div></div></article>
+        <article class="flight-card"><img src="assets/maldives.jpg" alt="Overwater villas in the Maldives" loading="lazy"><div><h3>Indian Ocean</h3><p>Maldives, Mauritius and the Seychelles</p><div class="from">Illustrative return from £2,850*</div></div></article>
+        <article class="flight-card"><img src="assets/alaska.jpg" alt="Glacial landscape in Alaska" loading="lazy"><div><h3>North America</h3><p>New York, California, Canada and Alaska</p><div class="from">Illustrative return from £2,400*</div></div></article>
+      </div>
+      <p class="fare-note">*Concept pricing only. Actual fares vary by origin, date, cabin, airline and availability.</p>
+      <div class="airline-line reveal"><span>Planning across leading global airline networks</span><div class="airline-chips"><b>Thoughtful schedules</b><b>Quality cabins</b><b>Lounge access</b><b>Sensible connections</b><b>Flexible options</b></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="cruises">
+    <div class="wrap">
+      <div class="cruise-head reveal"><div><span class="eyebrow">Luxury cruises</span><h2 class="h2">The right ship. The right pace.</h2></div><p class="lead">From intimate yacht-style voyages to refined ocean journeys, your cruise is matched to how you actually like to travel.</p></div>
+      <div class="cruise-grid reveal">
+        <article class="cruise-card"><img src="assets/santorini.jpg" alt="White villages on Santorini" loading="lazy"><div class="cruise-body"><h3>Mediterranean</h3><p class="cruise-meta">7–10 nights · culture, coast and late dinners</p><p class="cruise-price">Illustrative from £2,895 per person*</p></div></article>
+        <article class="cruise-card"><img src="assets/fjord.jpg" alt="Norwegian fjord landscape" loading="lazy"><div class="cruise-body"><h3>Norwegian Fjords</h3><p class="cruise-meta">7–12 nights · still water and dramatic landscapes</p><p class="cruise-price">Illustrative from £3,450 per person*</p></div></article>
+        <article class="cruise-card"><img src="assets/maldives.jpg" alt="Tropical island resort over turquoise water" loading="lazy"><div class="cruise-body"><h3>Indian Ocean</h3><p class="cruise-meta">10–14 nights · warm water and unhurried days</p><p class="cruise-price">Illustrative from £4,250 per person*</p></div></article>
+        <article class="cruise-card"><img src="assets/alaska.jpg" alt="Ice and mountains in Alaska" loading="lazy"><div class="cruise-body"><h3>Alaska</h3><p class="cruise-meta">7–11 nights · wildlife, glaciers and wide horizons</p><p class="cruise-price">Illustrative from £3,195 per person*</p></div></article>
+      </div>
+      <div class="fly-cruise reveal"><span class="fly-cruise-mark" aria-hidden="true">S+C</span><div><h3>Fly-cruise, planned as one complete journey</h3><p>Premium cabin flights, sensible arrival time, hotel nights, transfers and your cruise—carefully connected.</p></div><a class="btn btn-dark" href="#contact">Design my trip</a></div>
+    </div>
+  </section>
+
+  <section class="section experience">
+    <div class="wrap experience-grid">
+      <div class="experience-copy reveal"><span class="eyebrow light">The concierge difference</span><h2 class="h2">Less searching. Better decisions. A calmer journey.</h2><p>Premium travel should feel considered from the first conversation—not complicated by endless tabs, vague comparisons or a new person every time you call.</p></div>
+      <div class="experience-list reveal">
+        <article class="experience-card"><span class="n">01</span><h3>Clarity</h3><p>A concise, explained shortlist with the meaningful differences made clear.</p></article>
+        <article class="experience-card"><span class="n">02</span><h3>Continuity</h3><p>One advisor who knows the itinerary, the reason for the trip and what matters to you.</p></article>
+        <article class="experience-card"><span class="n">03</span><h3>Care</h3><p>The little details are considered early, when they can make the greatest difference.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="process-grid">
+      <div class="process-copy reveal"><span class="eyebrow">How it works</span><h2 class="h2">Simple. Personal. Professional.</h2><div class="steps">
+        <article class="step"><span class="step-n">1</span><div><h3>Share the shape of your trip</h3><p>Tell me where, when, who is travelling, and what would make the journey feel right.</p></div></article>
+        <article class="step"><span class="step-n">2</span><div><h3>Receive a considered shortlist</h3><p>I compare the meaningful options and return with a clear recommendation, usually within one business day.</p></div></article>
+        <article class="step"><span class="step-n">3</span><div><h3>Confirm and travel</h3><p>Once you are happy, every chosen element is brought together and your itinerary is set out clearly.</p></div></article>
+      </div></div>
+      <div class="process-img"><img src="assets/cruise.jpg" alt="Luxury cruise ship sailing at dusk" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="section bottom" id="contact">
+    <div class="wrap bottom-grid reveal">
+      <div class="bottom-col"><span class="eyebrow">A clear promise</span><h2>Your journey, thoughtfully managed.</h2><p>This concept is built around straightforward advice and a single accountable relationship.</p><div class="promise-list"><span>Options explained in plain language</span><span>Illustrative pricing clearly labelled</span><span>No manufactured reviews or credentials</span><span>One itinerary, one point of contact</span></div></div>
+      <div class="bottom-col"><span class="eyebrow">Questions</span><h2>Frequently asked</h2><div class="faq">
+        <details><summary>Can you arrange both flights and cruises?</summary><p>Yes. Flights, hotel nights, transfers and the cruise can be considered together so timings and comfort work as one journey.</p></details>
+        <details><summary>Do you only plan luxury travel?</summary><p>The focus is business and first class air travel, premium cruises and special journeys where personal planning adds meaningful value.</p></details>
+        <details><summary>How quickly will I hear back?</summary><p>A first response would normally arrive within one business day. Complex multi-stop itineraries may need a little longer to research properly.</p></details>
+        <details><summary>Are the prices on this page live fares?</summary><p>No. They are illustrative concept prices only. A real quote depends on origin, dates, cabin, route and live availability.</p></details>
+      </div></div>
+      <div class="bottom-col"><span class="eyebrow">Start a conversation</span><h2>Where shall we take you?</h2><p>Share the idea—even if the dates and details are not yet final.</p><form class="contact-mini" data-demo-form>
+        <div class="row"><input name="name" aria-label="Full name" placeholder="Full name" required><input name="phone" aria-label="Phone number" placeholder="Phone number"></div>
+        <input name="email" type="email" aria-label="Email address" placeholder="Email address" required>
+        <select name="interest" aria-label="Journey type"><option value="">I am interested in…</option><option>Business class flights</option><option>First class flights</option><option>Luxury cruise</option><option>Fly-cruise journey</option></select>
+        <textarea name="message" aria-label="Journey details" placeholder="Tell me a little about your trip…"></textarea>
+        <button class="btn" type="submit">Send my enquiry</button><div class="success" role="status">Thank you—your demo enquiry has been captured.</div>
+      </form></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="wrap">
+  <div class="footer-top"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">SailSky <b>&amp; Co</b><small>Personal travel concierge</small></span></a><nav class="footer-links" aria-label="Footer navigation"><a href="#about">About</a><a href="#flights">Flights</a><a href="#cruises">Cruises</a><a href="#process">How it works</a><a href="#contact">Contact</a></nav></div>
+  <div class="footer-bottom"><span>Concept travel concierge website. All prices are illustrative.</span><span>Website concept by <a href="../../">Bir Sayt</a></span></div>
+</div></footer>
+
+<script>
+const header=document.getElementById('header');
+const menuBtn=document.getElementById('menuBtn');
+const mobilePanel=document.getElementById('mobilePanel');
+function closeMenu(){menuBtn.classList.remove('on');mobilePanel.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}
+menuBtn.addEventListener('click',()=>{const open=!mobilePanel.classList.contains('open');menuBtn.classList.toggle('on',open);mobilePanel.classList.toggle('open',open);menuBtn.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});
+mobilePanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+window.addEventListener('scroll',()=>header.classList.toggle('stuck',scrollY>50),{passive:true});
+
+const today=new Date();today.setDate(today.getDate()+1);const minDate=today.toISOString().split('T')[0];
+document.querySelectorAll('input[type="date"]').forEach(input=>input.min=minDate);
+document.querySelectorAll('.trip-tab').forEach(tab=>tab.addEventListener('click',()=>{
+  const form=tab.closest('form');form.querySelectorAll('.trip-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');form.elements.tripType.value=tab.dataset.trip;
+  form.querySelector('.field.return').classList.toggle('hidden',tab.dataset.trip==='One way'||tab.dataset.trip==='Cruise');
+  if(tab.dataset.trip==='Cruise')form.elements.cabin.value='Luxury cruise';
+}));
+document.querySelectorAll('[data-demo-form]').forEach(form=>form.addEventListener('submit',event=>{
+  event.preventDefault();const success=form.querySelector('.success');success.classList.add('show');const button=form.querySelector('button[type="submit"]');button.textContent='Enquiry received';button.disabled=true;
+}));
+
+const reveals=document.querySelectorAll('.reveal');
+if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}}),{threshold:.12});reveals.forEach(el=>observer.observe(el))}else reveals.forEach(el=>el.classList.add('in'));
+</script>
+</body>
+</html>
