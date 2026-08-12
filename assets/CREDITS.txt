@@ -21,3 +21,9 @@ Supporting photography (Unsplash License)
   https://unsplash.com/photos/glacier-bay-alaska-tYALcHvTdg0
 - Cruise ship at dusk — Peter Hansen
   https://unsplash.com/photos/cruise-ship-MeGmdPNe36w
+
+Airport search data
+- OurAirports open data: airports.csv and countries.csv.
+  https://ourairports.com/data/
+- Public Domain. The local search index includes scheduled-service airports
+  with three-letter IATA codes and was generated on 12 August 2026.
