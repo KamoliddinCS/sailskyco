@@ -20,30 +20,33 @@
 <meta name="twitter:title" content="SailSky &amp; Co — Personal Travel Concierge">
 <meta name="twitter:description" content="Premium cabin flights and luxury cruises, planned around you.">
 <meta name="twitter:image" content="https://birsayt.uz/demos/travel/assets/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23051b2f'/%3E%3Ctext x='7.2' y='23' font-family='Georgia,serif' font-size='21' font-style='italic' fill='%23e7b95f'%3ES%3C/text%3E%3C/svg%3E">
 <style>
 :root{
   --navy:#051b2f;--navy-2:#082640;--navy-3:#103751;--gold:#d8a94f;--gold-2:#f0cb7a;
   --ivory:#f8f5ef;--paper:#fffdf9;--ink:#11283c;--muted:#5e6a73;--line:#ddd7cd;
-  --serif:Georgia,"Times New Roman",serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --shadow:0 24px 70px rgba(3,22,39,.13);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 body.menu-open{overflow:hidden}
 img{display:block;width:100%}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
-h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;text-wrap:balance}
+h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.04;text-wrap:balance}
 button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 :focus-visible{outline:3px solid var(--gold-2);outline-offset:3px}
 ::selection{background:var(--gold);color:var(--navy)}
 .wrap{width:min(1200px,calc(100% - 48px));margin-inline:auto}
 .section{padding:clamp(78px,10vw,132px) 0}
-.eyebrow{display:block;color:#b27b20;font-size:.7rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
+.eyebrow{display:block;color:#b27b20;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
 .eyebrow.light{color:var(--gold-2)}
-.h2{font-size:clamp(2.2rem,4.7vw,4rem);letter-spacing:-.025em}
-.lead{color:var(--muted);font-size:clamp(1rem,1.6vw,1.15rem);max-width:58ch;line-height:1.8}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 25px;border:1px solid var(--gold);background:var(--gold);color:#171106;font-size:.86rem;font-weight:800;letter-spacing:.02em;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.h2{font-size:clamp(2.45rem,4.7vw,4.25rem);letter-spacing:-.02em}
+.lead{color:var(--muted);font-size:clamp(1.04rem,1.6vw,1.22rem);max-width:58ch;line-height:1.8}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 25px;border:1px solid var(--gold);background:var(--gold);color:#171106;font-size:.84rem;font-weight:700;letter-spacing:.025em;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
 .btn:hover{background:var(--gold-2);border-color:var(--gold-2);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
 .btn-outline:hover{background:#fff;color:var(--navy);border-color:#fff}
@@ -61,11 +64,11 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .brand{display:flex;align-items:center;gap:12px;color:#fff;min-width:max-content}
 .brand-mark{position:relative;width:45px;height:45px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.7rem;font-style:italic;color:#fff}
 .brand-mark::after{content:"";position:absolute;width:24px;height:9px;border-bottom:2px solid var(--gold);border-radius:50%;right:-8px;bottom:5px;transform:rotate(-22deg)}
-.brand-name{font-family:var(--serif);font-size:1.25rem;letter-spacing:.01em}
+.brand-name{font-family:var(--serif);font-size:1.42rem;font-weight:600;letter-spacing:.01em;line-height:1}
 .brand-name b{font-weight:400;color:var(--gold-2)}
 .brand-name small{display:block;font-family:var(--sans);font-size:.52rem;text-transform:uppercase;letter-spacing:.18em;color:var(--gold-2);margin-top:2px}
 .nav-links{display:flex;align-items:center;gap:26px;margin-left:auto}
-.nav-links a{font-size:.79rem;color:#edf2f6;transition:color .15s}
+.nav-links a{font-size:.82rem;font-weight:500;color:#edf2f6;transition:color .15s}
 .nav-links a:hover{color:var(--gold-2)}
 .nav .btn{min-height:42px;padding-inline:19px;font-size:.75rem}
 .menu-btn{display:none;margin-left:auto;width:43px;height:43px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer;position:relative}
@@ -81,29 +84,39 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(370px,.8fr);gap:clamp(50px,6vw,88px);align-items:center;padding:150px 0 88px;min-height:760px}
 .hero-copy{max-width:680px;padding-top:24px}
 .hero-copy .overline{font-size:.7rem;text-transform:uppercase;letter-spacing:.33em;font-weight:700;color:#e8edf1}
-.hero h1{font-size:clamp(3rem,6vw,5.7rem);letter-spacing:-.04em;margin:17px 0 25px;max-width:12ch;text-shadow:0 2px 20px rgba(0,0,0,.2)}
+.hero h1{font-size:clamp(3.2rem,6vw,5.9rem);letter-spacing:-.035em;margin:17px 0 25px;max-width:12ch;text-shadow:0 2px 20px rgba(0,0,0,.2)}
 .hero h1 em{font-weight:400;color:var(--gold-2)}
-.hero-copy>p{max-width:57ch;color:#e0e7ec;font-size:clamp(1rem,1.5vw,1.14rem);line-height:1.78}
+.hero-copy>p{max-width:57ch;color:#e0e7ec;font-size:clamp(1.03rem,1.5vw,1.18rem);line-height:1.82}
 .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
-.hero-note{display:flex;align-items:center;gap:11px;margin-top:23px;color:#c6d0d8;font-size:.76rem}
+.hero-note{display:flex;align-items:center;gap:11px;margin-top:23px;color:#c6d0d8;font-size:.8rem}
 .hero-note::before{content:"";width:32px;height:1px;background:var(--gold)}
 .quote-card{background:rgba(5,27,47,.93);border:1px solid rgba(216,169,79,.78);box-shadow:0 28px 70px rgba(0,0,0,.3);padding:27px 25px 23px;backdrop-filter:blur(9px)}
-.quote-card h2{text-align:center;font-size:1.45rem;color:#fff;margin-bottom:18px}
+.quote-card h2{text-align:center;font-size:1.7rem;color:#fff;margin-bottom:18px}
 .trip-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:14px}
-.trip-tab{border:1px solid rgba(255,255,255,.19);background:rgba(255,255,255,.05);color:#dce5eb;font-size:.62rem;padding:8px 4px;cursor:pointer;min-height:35px}
+.trip-tab{border:1px solid rgba(255,255,255,.19);background:rgba(255,255,255,.05);color:#dce5eb;font-size:.68rem;font-weight:600;padding:8px 4px;cursor:pointer;min-height:37px}
 .trip-tab.active{color:var(--navy);background:var(--gold);border-color:var(--gold);font-weight:800}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
 .field{display:grid;gap:5px}.field.full{grid-column:1/-1}.field.return.hidden{display:none}
-.field label{font-size:.6rem;color:#cbd5dc;font-weight:700}
-.field input,.field select,.field textarea{width:100%;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);color:#fff;border-radius:2px;padding:10px 11px;min-height:42px;font-size:.74rem;outline:none;color-scheme:dark}
+.field label{font-size:.67rem;color:#cbd5dc;font-weight:600;letter-spacing:.01em}
+.field input,.field select,.field textarea{width:100%;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);color:#fff;border-radius:2px;padding:10px 11px;min-height:44px;font-size:.8rem;outline:none;color-scheme:dark}
 .field input::placeholder,.field textarea::placeholder{color:#9faeb9}.field textarea{min-height:68px;resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(216,169,79,.14)}
+.airport-field{position:relative}
+.airport-field input[aria-expanded="true"]{border-color:var(--gold);box-shadow:0 0 0 2px rgba(216,169,79,.14)}
+.airport-menu{position:absolute;z-index:36;top:calc(100% + 7px);left:0;width:calc(200% + 9px);max-height:330px;overflow:auto;padding:6px;background:var(--paper);color:var(--ink);border:1px solid var(--gold);box-shadow:0 22px 54px rgba(0,0,0,.3)}
+.airport-field:nth-child(2) .airport-menu{left:auto;right:0}
+.airport-menu[hidden]{display:none}
+.airport-option{width:100%;border:0;border-bottom:1px solid #ece7df;background:transparent;color:var(--ink);padding:10px 11px;display:grid;grid-template-columns:45px minmax(0,1fr);gap:11px;align-items:center;text-align:left;cursor:pointer}
+.airport-option:last-child{border-bottom:0}.airport-option:hover,.airport-option.active,.airport-option:focus-visible{background:#f4ead6;outline:0}
+.airport-code{display:grid;place-items:center;min-height:32px;border:1px solid #d7b871;color:#8b651f;font-size:.72rem;font-weight:700;letter-spacing:.08em}
+.airport-details{min-width:0}.airport-details b{display:block;font-size:.78rem;font-weight:700;line-height:1.35}.airport-details span{display:block;color:#6d777e;font-size:.68rem;line-height:1.4;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.airport-empty{padding:13px;color:#6d777e;font-size:.74rem;text-align:center}
 .phone-input-group{display:grid;grid-template-columns:auto minmax(0,1fr);position:relative;min-height:42px;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);border-radius:2px;transition:border-color .18s,box-shadow .18s}
 .phone-input-group:focus-within{border-color:var(--gold);box-shadow:0 0 0 2px rgba(216,169,79,.14)}
 .field .phone-input-group>input{min-width:0;min-height:40px;border:0;background:transparent;border-radius:0;box-shadow:none;padding-left:12px}
 .field .phone-input-group>input:focus{border:0;box-shadow:none}
 .phone-code-picker{position:relative}
-.phone-code-trigger{height:100%;min-width:101px;border:0;border-right:1px solid rgba(255,255,255,.17);background:transparent;color:#fff;padding:0 11px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:.74rem;cursor:pointer}
+.phone-code-trigger{height:100%;min-width:101px;border:0;border-right:1px solid rgba(255,255,255,.17);background:transparent;color:#fff;padding:0 11px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:.8rem;cursor:pointer}
 .phone-code-trigger:hover,.phone-code-trigger[aria-expanded="true"]{background:rgba(255,255,255,.06)}
 .phone-code-flag,.phone-option-flag{font-size:1rem;line-height:1}.phone-code-value{font-variant-numeric:tabular-nums}
 .phone-code-chevron{width:7px;height:7px;border-right:1.5px solid #dce5eb;border-bottom:1.5px solid #dce5eb;transform:rotate(45deg) translateY(-2px);transition:transform .18s}
@@ -113,7 +126,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .phone-code-option{width:100%;border:0;background:transparent;color:var(--ink);padding:9px 10px;display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:9px;align-items:center;text-align:left;font-size:.72rem;cursor:pointer}
 .phone-code-option:hover,.phone-code-option:focus-visible{background:#f4ead6;outline:0}.phone-code-option[aria-selected="true"]{background:#f4ead6;font-weight:800}.phone-code-option b{color:#8b651f;font-variant-numeric:tabular-nums}
 .date-picker{position:relative}
-.date-trigger{width:100%;min-height:42px;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);color:#fff;border-radius:2px;padding:10px 11px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.74rem;cursor:pointer;text-align:left}
+.date-trigger{width:100%;min-height:44px;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);color:#fff;border-radius:2px;padding:10px 11px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.8rem;cursor:pointer;text-align:left}
 .date-trigger:hover,.date-trigger[aria-expanded="true"]{border-color:var(--gold)}
 .date-trigger.error{border-color:#f0a29b;box-shadow:0 0 0 2px rgba(240,162,155,.13)}
 .date-value.placeholder{color:#9faeb9}
@@ -133,7 +146,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .calendar-day{border:0;background:transparent;color:var(--ink);font-size:.68rem;cursor:pointer;border-radius:50%}
 .calendar-day:hover:not(:disabled){background:#f4ead6}.calendar-day.today{box-shadow:inset 0 0 0 1px var(--gold)}.calendar-day.selected{background:var(--gold);color:#171106;font-weight:800}.calendar-day:disabled{color:#c5c6c7;cursor:not-allowed}
 .passenger-picker{position:relative}
-.passenger-trigger{width:100%;min-height:42px;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);color:#fff;border-radius:2px;padding:9px 11px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.74rem;cursor:pointer;text-align:left}
+.passenger-trigger{width:100%;min-height:44px;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);color:#fff;border-radius:2px;padding:9px 11px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.8rem;cursor:pointer;text-align:left}
 .passenger-trigger:hover,.passenger-trigger[aria-expanded="true"]{border-color:var(--gold)}
 .passenger-trigger-main{display:flex;align-items:center;gap:11px}
 .passenger-icon,.traveller-mark{position:relative;width:19px;height:20px;display:inline-block;flex:0 0 auto}
@@ -154,13 +167,13 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .passenger-stepper button:hover:not(:disabled){filter:brightness(1.07)}.passenger-stepper button:disabled{opacity:.38;cursor:not-allowed}
 .passenger-count{text-align:center;font-size:.84rem;font-variant-numeric:tabular-nums}
 .quote-card .btn{width:100%;margin-top:12px;min-height:45px}
-.form-fine{text-align:center;font-size:.61rem;color:#aebbc5;line-height:1.55;margin-top:9px}
+.form-fine{text-align:center;font-size:.67rem;color:#aebbc5;line-height:1.6;margin-top:9px}
 
 .trust-strip{background:var(--navy);color:#fff;border-top:1px solid rgba(255,255,255,.08)}
 .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);padding:22px 0}
 .trust-item{padding:5px 24px;display:flex;align-items:center;gap:14px;border-right:1px solid rgba(255,255,255,.12)}
 .trust-item:last-child{border:0}.trust-num{font-family:var(--serif);font-size:1.55rem;color:var(--gold-2);font-style:italic}
-.trust-item b{display:block;font-family:var(--serif);font-size:.95rem;font-weight:500}.trust-item span:last-child{font-size:.66rem;color:#adbbc5}
+.trust-item b{display:block;font-family:var(--serif);font-size:1.08rem;font-weight:600}.trust-item span:last-child{font-size:.72rem;color:#adbbc5}
 
 .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(54px,8vw,104px);align-items:center}
 .about-copy .h2{margin-bottom:25px}.about-copy .lead+.lead{margin-top:18px}
@@ -171,7 +184,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .about-caption b{display:block;font-family:var(--serif);font-size:1.13rem;font-weight:500}.about-caption span{font-size:.72rem;color:#bdc9d1}
 .pillars{display:grid;grid-template-columns:repeat(4,1fr);margin-top:80px;border:1px solid var(--line);background:rgba(255,255,255,.48)}
 .pillar{padding:31px 25px;border-right:1px solid var(--line)}.pillar:last-child{border:0}
-.pillar .n{font-family:var(--serif);color:#b27b20;font-style:italic;font-size:1.15rem}.pillar h3{font-size:1.12rem;margin:13px 0 9px}.pillar p{font-size:.78rem;color:var(--muted);line-height:1.65}
+.pillar .n{font-family:var(--serif);color:#b27b20;font-style:italic;font-size:1.2rem}.pillar h3{font-size:1.3rem;margin:13px 0 9px}.pillar p{font-size:.82rem;color:var(--muted);line-height:1.72}
 
 .flights{background:var(--navy);color:#fff;position:relative;overflow:hidden}
 .flights::before{content:"";position:absolute;width:500px;height:500px;border:1px solid rgba(216,169,79,.1);border-radius:50%;right:-200px;top:-280px}
@@ -181,8 +194,8 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .flight-card:hover{transform:translateY(-5px);border-color:var(--gold-2)}
 .flight-card img{position:absolute;inset:0;height:100%;object-fit:cover;z-index:-2;transition:transform .5s}.flight-card:hover img{transform:scale(1.04)}
 .flight-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,22,39,.97),rgba(3,22,39,.05) 75%);z-index:-1}
-.flight-card h3{font-size:1.45rem}.flight-card p{font-size:.72rem;color:#d9e0e5;margin-top:7px}.flight-card .from{color:var(--gold-2);font-weight:800;font-size:.74rem;margin-top:10px}
-.fare-note{text-align:center;font-size:.67rem;color:#92a3b0;font-style:italic;margin-top:14px}
+.flight-card h3{font-size:1.65rem}.flight-card p{font-size:.77rem;color:#d9e0e5;margin-top:7px}.flight-card .from{color:var(--gold-2);font-weight:700;font-size:.78rem;margin-top:10px}
+.fare-note{text-align:center;font-size:.72rem;color:#92a3b0;font-style:italic;margin-top:14px}
 .airline-line{text-align:center;margin-top:45px;padding-top:27px;border-top:1px solid rgba(255,255,255,.12)}
 .airline-line>span{display:block;font-family:var(--serif);font-style:italic;color:#aebbc5;font-size:.84rem;margin-bottom:15px}
 .airline-chips{display:flex;justify-content:center;gap:10px 24px;flex-wrap:wrap;color:#f5f7f8;font-family:var(--serif);font-size:1rem}.airline-chips b{font-weight:500}
@@ -192,7 +205,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .cruise-card{background:var(--paper);border:1px solid var(--line);box-shadow:0 14px 35px rgba(17,40,60,.06);overflow:hidden;transition:transform .25s,box-shadow .25s}
 .cruise-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
 .cruise-card img{height:220px;object-fit:cover}.cruise-card:nth-child(3) img{object-position:center 43%}
-.cruise-body{padding:20px 20px 22px}.cruise-body h3{font-size:1.2rem}.cruise-meta{font-size:.72rem;color:var(--muted);margin-top:8px}.cruise-price{font-size:.76rem;font-weight:800;color:#8b651f;margin-top:11px}
+.cruise-body{padding:20px 20px 22px}.cruise-body h3{font-size:1.4rem}.cruise-meta{font-size:.77rem;color:var(--muted);margin-top:8px}.cruise-price{font-size:.8rem;font-weight:700;color:#8b651f;margin-top:11px}
 .fly-cruise{margin-top:26px;border:1px solid var(--gold);display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:22px 27px;background:#fffaf0}
 .fly-cruise-mark{font-family:var(--serif);font-size:2rem;color:#b27b20;font-style:italic}.fly-cruise h3{font-size:1.06rem}.fly-cruise p{font-size:.73rem;color:var(--muted);margin-top:3px}
 
@@ -201,7 +214,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .experience-copy .h2{margin-bottom:22px}.experience-copy p{color:#c1ccd4;line-height:1.8}
 .experience-list{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.14)}
 .experience-card{padding:36px 25px;border-right:1px solid rgba(255,255,255,.14)}.experience-card:last-child{border:0}
-.experience-card .n{color:var(--gold-2);font-family:var(--serif);font-style:italic;font-size:1.2rem}.experience-card h3{font-size:1.16rem;margin:30px 0 12px}.experience-card p{font-size:.76rem;color:#b9c5cd;line-height:1.7}
+.experience-card .n{color:var(--gold-2);font-family:var(--serif);font-style:italic;font-size:1.24rem}.experience-card h3{font-size:1.35rem;margin:30px 0 12px}.experience-card p{font-size:.82rem;color:#b9c5cd;line-height:1.74}
 
 .process{padding-bottom:0;background:var(--paper)}
 .process-grid{display:grid;grid-template-columns:1fr .92fr;gap:0;align-items:stretch}
@@ -210,16 +223,16 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .steps{display:grid;gap:29px;max-width:620px}
 .step{display:grid;grid-template-columns:47px 1fr;gap:18px;align-items:start}
 .step-n{width:41px;height:41px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);color:#8b651f;font-size:1.02rem}
-.step h3{font-size:1.16rem;margin-bottom:7px}.step p{font-size:.8rem;color:var(--muted);line-height:1.7}
+.step h3{font-size:1.34rem;margin-bottom:7px}.step p{font-size:.86rem;color:var(--muted);line-height:1.74}
 .process-img{min-height:650px}.process-img img{height:100%;object-fit:cover}
 
 .bottom{background:var(--ivory)}
 .bottom-grid{display:grid;grid-template-columns:.78fr 1.05fr 1fr;gap:0;border:1px solid var(--line);background:var(--paper)}
 .bottom-col{padding:clamp(32px,4vw,50px);border-right:1px solid var(--line)}.bottom-col:last-child{border:0}
-.bottom-col .eyebrow{font-size:.6rem}.bottom-col h2{font-size:1.55rem;margin-bottom:18px}.bottom-col>p{font-size:.78rem;color:var(--muted);line-height:1.75}
-.promise-list{display:grid;gap:14px;margin-top:23px}.promise-list span{font-size:.75rem;padding-left:20px;position:relative}.promise-list span::before{content:"✓";position:absolute;left:0;color:#a96f0f;font-weight:800}
-.faq{display:grid;gap:9px}.faq details{border:1px solid var(--line);background:#fff}.faq summary{list-style:none;cursor:pointer;padding:13px 40px 13px 14px;font-size:.74rem;font-weight:700;position:relative}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";position:absolute;right:14px;font-size:1.1rem;font-weight:400;top:8px;color:#9b6b18}.faq details[open] summary::after{content:"−"}.faq details p{padding:0 14px 14px;font-size:.72rem;color:var(--muted);line-height:1.65}
-.contact-mini{display:grid;gap:10px;margin-top:19px}.contact-mini .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.contact-mini input,.contact-mini select,.contact-mini textarea{width:100%;border:1px solid var(--line);background:#fff;padding:11px 12px;font-size:.72rem;min-height:43px;color:var(--ink)}.contact-mini textarea{min-height:83px;resize:vertical}.contact-mini .btn{width:100%;min-height:45px}.success{display:none;color:#5b531d;background:#fff7cf;border:1px solid #dec86e;padding:10px 12px;font-size:.72rem}.success.show{display:block}
+.bottom-col .eyebrow{font-size:.65rem}.bottom-col h2{font-size:1.78rem;margin-bottom:18px}.bottom-col>p{font-size:.84rem;color:var(--muted);line-height:1.78}
+.promise-list{display:grid;gap:14px;margin-top:23px}.promise-list span{font-size:.8rem;padding-left:20px;position:relative}.promise-list span::before{content:"✓";position:absolute;left:0;color:#a96f0f;font-weight:800}
+.faq{display:grid;gap:9px}.faq details{border:1px solid var(--line);background:#fff}.faq summary{list-style:none;cursor:pointer;padding:13px 40px 13px 14px;font-size:.79rem;font-weight:700;position:relative}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";position:absolute;right:14px;font-size:1.1rem;font-weight:400;top:8px;color:#9b6b18}.faq details[open] summary::after{content:"−"}.faq details p{padding:0 14px 14px;font-size:.77rem;color:var(--muted);line-height:1.7}
+.contact-mini{display:grid;gap:10px;margin-top:19px}.contact-mini .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.contact-mini input,.contact-mini select,.contact-mini textarea{width:100%;border:1px solid var(--line);background:#fff;padding:11px 12px;font-size:.78rem;min-height:43px;color:var(--ink)}.contact-mini textarea{min-height:83px;resize:vertical}.contact-mini .btn{width:100%;min-height:45px}.success{display:none;color:#5b531d;background:#fff7cf;border:1px solid #dec86e;padding:10px 12px;font-size:.77rem}.success.show{display:block}
 
 .footer{background:#031522;color:#96a7b3;padding:58px 0 26px}.footer-top{display:flex;align-items:center;justify-content:space-between;gap:30px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
 .footer .brand-name{color:#fff}.footer-links{display:flex;gap:25px;flex-wrap:wrap}.footer-links a{font-size:.75rem}.footer-links a:hover{color:var(--gold-2)}
@@ -246,7 +259,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 @media(max-width:560px){
   .wrap{width:min(100% - 28px,1200px)}.brand-mark{width:41px;height:41px}.brand-name{font-size:1.08rem}.nav{height:70px}.mobile-panel{inset:70px 0 auto}
   .hero-grid{padding-top:110px}.hero-copy .overline{letter-spacing:.22em}.hero h1{font-size:2.8rem}.hero-actions{display:grid}.hero-actions .btn{width:100%}
-  .quote-card{padding:23px 16px}.trip-tabs{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+  .quote-card{padding:23px 16px}.trip-tabs{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.airport-menu,.airport-field:nth-child(2) .airport-menu{left:0;right:auto;width:100%}
   .passenger-popover{width:100%;min-width:260px;padding:16px}.passenger-row{grid-template-columns:26px minmax(0,1fr) auto;gap:9px}.passenger-stepper{grid-template-columns:32px 23px 32px}.passenger-stepper button{width:32px;height:32px}
   .trust-grid,.pillars,.flight-grid,.cruise-grid,.experience-list,.bottom-grid{grid-template-columns:1fr}.trust-item,.trust-item:nth-child(2){border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.trust-item:last-child{border-bottom:0}
   .pillar,.pillar:nth-child(2){border-right:0;border-bottom:1px solid var(--line)}.pillar:last-child{border-bottom:0}
@@ -297,8 +310,8 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
         </div>
         <input type="hidden" name="tripType" value="Round trip">
         <div class="form-grid">
-          <div class="field"><input id="from" name="from" autocomplete="address-level2" aria-label="From" placeholder="From" required></div>
-          <div class="field"><input id="to" name="to" aria-label="To" placeholder="To" required></div>
+          <div class="field airport-field" data-airport-picker><input id="from" name="from" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="from-airports" aria-label="From airport" placeholder="From" required><div class="airport-menu" id="from-airports" role="listbox" aria-label="Departure airports" hidden></div></div>
+          <div class="field airport-field" data-airport-picker><input id="to" name="to" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="to-airports" aria-label="To airport" placeholder="To" required><div class="airport-menu" id="to-airports" role="listbox" aria-label="Destination airports" hidden></div></div>
           <div class="field date-picker" data-date-picker="depart"><label>Departure</label><button class="date-trigger" type="button" aria-label="Choose departure date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input id="depart" name="depart" type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose departure date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div>
           <div class="field date-picker return" data-date-picker="return"><label>Return</label><button class="date-trigger" type="button" aria-label="Choose return date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input id="return" name="return" type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose return date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div>
           <div class="field passenger-picker" data-passenger-picker><label>Passengers</label><button class="passenger-trigger" type="button" aria-label="Choose passengers" aria-haspopup="dialog" aria-expanded="false"><span class="passenger-trigger-main"><span class="passenger-icon" aria-hidden="true"></span><span data-passenger-summary aria-live="polite">1 Passenger</span></span><span class="passenger-chevron" aria-hidden="true"></span></button><input id="travellers" name="travellers" type="hidden" value="1 Adult"><div class="passenger-popover" role="dialog" aria-label="Choose passenger quantities" hidden><h3>Total quantity</h3><div class="passenger-rows">
@@ -434,6 +447,14 @@ window.addEventListener('scroll',()=>header.classList.toggle('stuck',scrollY>50)
 
 const airCabins=['First class','Business class','Premium-Economy class'];
 const cruiseCabins=['Interior','Oceanview','Balcony','Suite'];
+const airports=[
+  ['SYD','Sydney','Sydney Kingsford Smith Airport','Australia'],['MEL','Melbourne','Melbourne Airport','Australia'],['BNE','Brisbane','Brisbane Airport','Australia'],['PER','Perth','Perth Airport','Australia'],['ADL','Adelaide','Adelaide Airport','Australia'],['CBR','Canberra','Canberra Airport','Australia'],['OOL','Gold Coast','Gold Coast Airport','Australia'],['CNS','Cairns','Cairns Airport','Australia'],['HBA','Hobart','Hobart Airport','Australia'],['DRW','Darwin','Darwin International Airport','Australia'],
+  ['JFK','New York','John F. Kennedy International Airport','United States'],['EWR','New York / Newark','Newark Liberty International Airport','United States'],['LGA','New York','LaGuardia Airport','United States'],['LAX','Los Angeles','Los Angeles International Airport','United States'],['SFO','San Francisco','San Francisco International Airport','United States'],['ORD','Chicago','O’Hare International Airport','United States'],['MIA','Miami','Miami International Airport','United States'],['DFW','Dallas / Fort Worth','Dallas Fort Worth International Airport','United States'],['IAH','Houston','George Bush Intercontinental Airport','United States'],['BOS','Boston','Boston Logan International Airport','United States'],['SEA','Seattle','Seattle–Tacoma International Airport','United States'],['ATL','Atlanta','Hartsfield–Jackson Atlanta International Airport','United States'],['IAD','Washington, D.C.','Washington Dulles International Airport','United States'],['DCA','Washington, D.C.','Ronald Reagan Washington National Airport','United States'],['LAS','Las Vegas','Harry Reid International Airport','United States'],['HNL','Honolulu','Daniel K. Inouye International Airport','United States'],['MCO','Orlando','Orlando International Airport','United States'],['SAN','San Diego','San Diego International Airport','United States'],
+  ['LHR','London','Heathrow Airport','United Kingdom'],['LGW','London','Gatwick Airport','United Kingdom'],['CDG','Paris','Charles de Gaulle Airport','France'],['ORY','Paris','Paris Orly Airport','France'],['AMS','Amsterdam','Amsterdam Airport Schiphol','Netherlands'],['FRA','Frankfurt','Frankfurt Airport','Germany'],['MUC','Munich','Munich Airport','Germany'],['ZRH','Zurich','Zurich Airport','Switzerland'],['GVA','Geneva','Geneva Airport','Switzerland'],['FCO','Rome','Leonardo da Vinci–Fiumicino Airport','Italy'],['MXP','Milan','Milan Malpensa Airport','Italy'],['MAD','Madrid','Adolfo Suárez Madrid–Barajas Airport','Spain'],['BCN','Barcelona','Barcelona–El Prat Airport','Spain'],['LIS','Lisbon','Humberto Delgado Airport','Portugal'],['ATH','Athens','Athens International Airport','Greece'],['VIE','Vienna','Vienna International Airport','Austria'],['CPH','Copenhagen','Copenhagen Airport','Denmark'],['ARN','Stockholm','Stockholm Arlanda Airport','Sweden'],['OSL','Oslo','Oslo Airport','Norway'],['HEL','Helsinki','Helsinki Airport','Finland'],['DUB','Dublin','Dublin Airport','Ireland'],
+  ['DXB','Dubai','Dubai International Airport','United Arab Emirates'],['AUH','Abu Dhabi','Zayed International Airport','United Arab Emirates'],['DOH','Doha','Hamad International Airport','Qatar'],['SIN','Singapore','Singapore Changi Airport','Singapore'],['HKG','Hong Kong','Hong Kong International Airport','Hong Kong'],['NRT','Tokyo','Narita International Airport','Japan'],['HND','Tokyo','Haneda Airport','Japan'],['ICN','Seoul','Incheon International Airport','South Korea'],['BKK','Bangkok','Suvarnabhumi Airport','Thailand'],['KUL','Kuala Lumpur','Kuala Lumpur International Airport','Malaysia'],['DEL','Delhi','Indira Gandhi International Airport','India'],['BOM','Mumbai','Chhatrapati Shivaji Maharaj International Airport','India'],['CGK','Jakarta','Soekarno–Hatta International Airport','Indonesia'],['MNL','Manila','Ninoy Aquino International Airport','Philippines'],['TPE','Taipei','Taiwan Taoyuan International Airport','Taiwan'],
+  ['AKL','Auckland','Auckland Airport','New Zealand'],['CHC','Christchurch','Christchurch Airport','New Zealand'],['NAN','Nadi','Nadi International Airport','Fiji'],['PPT','Papeete','Faa’a International Airport','French Polynesia'],['JNB','Johannesburg','O. R. Tambo International Airport','South Africa'],['CPT','Cape Town','Cape Town International Airport','South Africa'],['CAI','Cairo','Cairo International Airport','Egypt'],['CMN','Casablanca','Mohammed V International Airport','Morocco'],['NBO','Nairobi','Jomo Kenyatta International Airport','Kenya'],
+  ['YYZ','Toronto','Toronto Pearson International Airport','Canada'],['YVR','Vancouver','Vancouver International Airport','Canada'],['YUL','Montreal','Montréal–Trudeau International Airport','Canada'],['MEX','Mexico City','Mexico City International Airport','Mexico'],['GRU','São Paulo','São Paulo/Guarulhos International Airport','Brazil'],['GIG','Rio de Janeiro','Rio de Janeiro/Galeão International Airport','Brazil'],['EZE','Buenos Aires','Ministro Pistarini International Airport','Argentina'],['SCL','Santiago','Arturo Merino Benítez International Airport','Chile']
+].map(([code,city,name,country])=>({code,city,name,country}));
 const calendarMonths=['January','February','March','April','May','June','July','August','September','October','November','December'];
 const tomorrow=new Date();tomorrow.setHours(0,0,0,0);tomorrow.setDate(tomorrow.getDate()+1);
 const isoDate=date=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
@@ -449,6 +470,7 @@ const phoneCodeTrigger=phonePicker.querySelector('.phone-code-trigger');
 const phoneCodeMenu=phonePicker.querySelector('.phone-code-menu');
 const phoneCodeOptions=[...phonePicker.querySelectorAll('[data-phone-code-option]')];
 const phoneNumberInput=document.getElementById('phone');
+const airportPickers=[...document.querySelectorAll('[data-airport-picker]')];
 
 function pickerMinimum(picker){
   if(picker.dataset.datePicker==='return')return parseDate(document.getElementById('depart').value)||tomorrow;
@@ -459,6 +481,32 @@ function closeCalendars(except=null){
 }
 function closePassengerPicker(){passengerPanel.hidden=true;passengerTrigger.setAttribute('aria-expanded','false')}
 function closePhonePicker(){phoneCodeMenu.hidden=true;phoneCodeTrigger.setAttribute('aria-expanded','false')}
+function closeAirportPickers(except=null){
+  airportPickers.forEach(picker=>{if(picker===except)return;const input=picker.querySelector('input');picker.querySelector('.airport-menu').hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');picker._active=-1});
+}
+function normalizedAirportText(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
+function matchingAirports(query){
+  const normalized=normalizedAirportText(query);const terms=normalized.split(/\s+/).filter(Boolean);
+  return airports.filter(airport=>{const haystack=normalizedAirportText(`${airport.code} ${airport.city} ${airport.name} ${airport.country}`);return terms.every(term=>haystack.includes(term))}).sort((a,b)=>{
+    const score=airport=>{const code=airport.code.toLowerCase();const city=normalizedAirportText(airport.city);const name=normalizedAirportText(airport.name);if(code===normalized)return 0;if(code.startsWith(normalized))return 1;if(city===normalized)return 2;if(city.startsWith(normalized))return 3;if(name.startsWith(normalized))return 4;return 5};
+    return score(a)-score(b)||a.city.localeCompare(b.city);
+  }).slice(0,7);
+}
+function setActiveAirport(picker,index){
+  const input=picker.querySelector('input');const options=[...picker.querySelectorAll('.airport-option')];if(!options.length)return;
+  picker._active=(index+options.length)%options.length;options.forEach((option,optionIndex)=>{const active=optionIndex===picker._active;option.classList.toggle('active',active);option.setAttribute('aria-selected',String(active))});const active=options[picker._active];input.setAttribute('aria-activedescendant',active.id);active.scrollIntoView({block:'nearest'});
+}
+function selectAirport(picker,airport){
+  const input=picker.querySelector('input');input.value=`${airport.city} (${airport.code}) — ${airport.name}`;input.dataset.airportCode=airport.code;closeAirportPickers();input.focus();
+}
+function renderAirportOptions(picker){
+  const input=picker.querySelector('input');const menu=picker.querySelector('.airport-menu');const query=input.value.trim();closeAirportPickers(picker);menu.replaceChildren();picker._active=-1;
+  if(!query){menu.hidden=true;input.setAttribute('aria-expanded','false');return}
+  const matches=matchingAirports(query);picker._matches=matches;
+  if(!matches.length){const empty=document.createElement('div');empty.className='airport-empty';empty.textContent='No matching airports found';menu.append(empty)}
+  matches.forEach((airport,index)=>{const option=document.createElement('button');option.type='button';option.className='airport-option';option.id=`${menu.id}-option-${airport.code}`;option.setAttribute('role','option');option.setAttribute('aria-selected','false');const code=document.createElement('b');code.className='airport-code';code.textContent=airport.code;const details=document.createElement('span');details.className='airport-details';const place=document.createElement('b');place.textContent=`${airport.city}, ${airport.country}`;const name=document.createElement('span');name.textContent=airport.name;details.append(place,name);option.append(code,details);option.addEventListener('pointerdown',event=>event.preventDefault());option.addEventListener('click',()=>selectAirport(picker,airport));option.addEventListener('mouseenter',()=>setActiveAirport(picker,index));menu.append(option)});
+  menu.hidden=false;input.setAttribute('aria-expanded','true');
+}
 function phoneDigits(value,code){
   let digits=value.replace(/\D/g,'');
   if(code==='+61'){if(digits.startsWith('61')&&digits.length>9)digits=digits.slice(2);if(digits.startsWith('0'))digits=digits.slice(1);return digits.slice(0,9)}
@@ -495,23 +543,36 @@ function renderCalendar(picker){
     button.addEventListener('click',()=>{setPickerValue(picker,isoDate(date));if(picker.dataset.datePicker==='depart'){const returnPicker=datePickers.find(item=>item.dataset.datePicker==='return');const returnDate=parseDate(document.getElementById('return').value);if(returnDate&&returnDate<date)setPickerValue(returnPicker,'');returnPicker._view=new Date(date.getFullYear(),date.getMonth(),1)}closeCalendars()});days.append(button);
   }
 }
+airportPickers.forEach(picker=>{
+  const input=picker.querySelector('input');
+  input.addEventListener('focus',()=>{closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers(picker);if(input.value&&!input.dataset.airportCode)renderAirportOptions(picker)});
+  input.addEventListener('input',()=>{delete input.dataset.airportCode;closeCalendars();closePassengerPicker();closePhonePicker();renderAirportOptions(picker)});
+  input.addEventListener('keydown',event=>{
+    const menu=picker.querySelector('.airport-menu');
+    if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();if(menu.hidden)renderAirportOptions(picker);const step=event.key==='ArrowDown'?1:-1;const start=picker._active>=0?picker._active:(step===1?-1:0);setActiveAirport(picker,start+step)}
+    else if(event.key==='Enter'&&!menu.hidden&&picker._active>=0){event.preventDefault();selectAirport(picker,picker._matches[picker._active])}
+    else if(event.key==='Escape'){closeAirportPickers();input.focus()}
+    else if(event.key==='Tab')closeAirportPickers();
+  });
+  input.addEventListener('blur',()=>setTimeout(()=>{if(!picker.contains(document.activeElement))closeAirportPickers()},0));
+});
 datePickers.forEach(picker=>{
   const trigger=picker.querySelector('.date-trigger');const panel=picker.querySelector('.calendar-popover');
-  trigger.addEventListener('click',()=>{const opening=panel.hidden;closeCalendars(picker);closePassengerPicker();closePhonePicker();panel.hidden=!opening;trigger.setAttribute('aria-expanded',String(opening));if(opening){renderCalendar(picker);const focusTarget=panel.querySelector('.selected:not(:disabled),.calendar-day:not(:disabled)');focusTarget?.focus()}});
+  trigger.addEventListener('click',()=>{const opening=panel.hidden;closeCalendars(picker);closePassengerPicker();closePhonePicker();closeAirportPickers();panel.hidden=!opening;trigger.setAttribute('aria-expanded',String(opening));if(opening){renderCalendar(picker);const focusTarget=panel.querySelector('.selected:not(:disabled),.calendar-day:not(:disabled)');focusTarget?.focus()}});
   picker.querySelector('[data-calendar-prev]').addEventListener('click',()=>{picker._view=new Date(picker._view.getFullYear(),picker._view.getMonth()-1,1);renderCalendar(picker)});
   picker.querySelector('[data-calendar-next]').addEventListener('click',()=>{picker._view=new Date(picker._view.getFullYear(),picker._view.getMonth()+1,1);renderCalendar(picker)});
 });
-passengerTrigger.addEventListener('click',()=>{const opening=passengerPanel.hidden;closeCalendars();closePhonePicker();passengerPanel.hidden=!opening;passengerTrigger.setAttribute('aria-expanded',String(opening))});
+passengerTrigger.addEventListener('click',()=>{const opening=passengerPanel.hidden;closeCalendars();closePhonePicker();closeAirportPickers();passengerPanel.hidden=!opening;passengerTrigger.setAttribute('aria-expanded',String(opening))});
 passengerRows.forEach(row=>row.querySelectorAll('[data-passenger-minus],[data-passenger-plus]').forEach(button=>button.addEventListener('click',()=>{const minimum=Number(row.dataset.min);const current=Number(row.dataset.count);row.dataset.count=String(button.hasAttribute('data-passenger-plus')?current+1:Math.max(minimum,current-1));updatePassengers()})));
 updatePassengers();
-phoneCodeTrigger.addEventListener('click',()=>{const opening=phoneCodeMenu.hidden;closeCalendars();closePassengerPicker();phoneCodeMenu.hidden=!opening;phoneCodeTrigger.setAttribute('aria-expanded',String(opening));if(opening)(phoneCodeOptions.find(option=>option.getAttribute('aria-selected')==='true')||phoneCodeOptions[0]).focus()});
+phoneCodeTrigger.addEventListener('click',()=>{const opening=phoneCodeMenu.hidden;closeCalendars();closePassengerPicker();closeAirportPickers();phoneCodeMenu.hidden=!opening;phoneCodeTrigger.setAttribute('aria-expanded',String(opening));if(opening)(phoneCodeOptions.find(option=>option.getAttribute('aria-selected')==='true')||phoneCodeOptions[0]).focus()});
 phoneCodeOptions.forEach(option=>option.addEventListener('click',()=>{phoneCodeOptions.forEach(item=>item.setAttribute('aria-selected',String(item===option)));document.getElementById('phone-code').value=option.dataset.code;phonePicker.querySelector('[data-phone-code-value]').textContent=option.dataset.code;phonePicker.querySelector('[data-phone-code-flag]').textContent=option.dataset.flag;phoneCodeTrigger.setAttribute('aria-label',`Select phone country code, ${option.dataset.country} ${option.dataset.code}`);applyPhoneFormat();closePhonePicker();phoneNumberInput.focus()}));
 phoneCodeMenu.addEventListener('keydown',event=>{if(!['ArrowDown','ArrowUp','Home','End'].includes(event.key))return;event.preventDefault();const current=Math.max(0,phoneCodeOptions.indexOf(document.activeElement));const next=event.key==='Home'?0:event.key==='End'?phoneCodeOptions.length-1:event.key==='ArrowDown'?(current+1)%phoneCodeOptions.length:(current-1+phoneCodeOptions.length)%phoneCodeOptions.length;phoneCodeOptions[next].focus()});
 phoneNumberInput.addEventListener('input',applyPhoneFormat);
 phoneNumberInput.addEventListener('focus',closePhonePicker);
 applyPhoneFormat();
-document.addEventListener('click',event=>{if(!event.target.closest('[data-date-picker]'))closeCalendars();if(!event.target.closest('[data-passenger-picker]'))closePassengerPicker();if(!event.target.closest('[data-phone-picker]'))closePhonePicker()});
-document.addEventListener('keydown',event=>{if(event.key==='Escape'){const passengerWasOpen=!passengerPanel.hidden;const phoneWasOpen=!phoneCodeMenu.hidden;closeCalendars();closePassengerPicker();closePhonePicker();if(phoneWasOpen)phoneCodeTrigger.focus();else if(passengerWasOpen)passengerTrigger.focus()}});
+document.addEventListener('click',event=>{if(!event.target.closest('[data-date-picker]'))closeCalendars();if(!event.target.closest('[data-passenger-picker]'))closePassengerPicker();if(!event.target.closest('[data-phone-picker]'))closePhonePicker();if(!event.target.closest('[data-airport-picker]'))closeAirportPickers()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){const passengerWasOpen=!passengerPanel.hidden;const phoneWasOpen=!phoneCodeMenu.hidden;closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers();if(phoneWasOpen)phoneCodeTrigger.focus();else if(passengerWasOpen)passengerTrigger.focus()}});
 
 function setCabinOptions(select,tripType){
   const options=tripType==='Cruise'?cruiseCabins:airCabins;select.replaceChildren(...options.map(value=>{const option=document.createElement('option');option.value=value;option.textContent=value;return option}));
@@ -519,7 +580,7 @@ function setCabinOptions(select,tripType){
 document.querySelectorAll('.trip-tab').forEach(tab=>tab.addEventListener('click',()=>{
   const form=tab.closest('form');form.querySelectorAll('.trip-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');form.elements.tripType.value=tab.dataset.trip;
   form.querySelector('.field.return').classList.toggle('hidden',tab.dataset.trip==='One way'||tab.dataset.trip==='Cruise');
-  setCabinOptions(form.elements.cabin,tab.dataset.trip);closeCalendars();closePassengerPicker();closePhonePicker();
+  setCabinOptions(form.elements.cabin,tab.dataset.trip);closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers();
 }));
 document.querySelectorAll('[data-demo-form]').forEach(form=>form.addEventListener('submit',event=>{
   event.preventDefault();
