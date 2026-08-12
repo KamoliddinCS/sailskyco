@@ -96,7 +96,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .trip-tab{border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.06);color:#eef3f6;font-size:.86rem;font-weight:600;padding:9px 6px;cursor:pointer;min-height:42px}
 .trip-tab.active{color:var(--navy);background:var(--gold);border-color:var(--gold);font-weight:800}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.field{display:grid;gap:5px}.field.full{grid-column:1/-1}.field.return.hidden{display:none}
+.field{display:grid;gap:5px;min-width:0}.field.full{grid-column:1/-1}.field.return.hidden{display:none}.field.compact-field{align-self:end}.field.compact-field>input{height:50px;min-height:50px;max-height:50px}
 .field label{font-size:.88rem;color:#e0e7eb;font-weight:600;letter-spacing:.01em}
 .field input,.field select,.field textarea{width:100%;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.08);color:#fff;border-radius:2px;padding:12px 13px;min-height:50px;font-size:.91rem;outline:none;color-scheme:dark}
 .field input::placeholder,.field textarea::placeholder{color:#c2cdd5}.field textarea{min-height:76px;resize:vertical}
@@ -154,7 +154,8 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .passenger-icon::after,.traveller-mark::after{content:"";position:absolute;left:2px;bottom:0;width:15px;height:9px;border:1.5px solid var(--gold-2);border-radius:10px 10px 2px 2px}
 .passenger-chevron{width:9px;height:9px;border-right:2px solid #dce5eb;border-bottom:2px solid #dce5eb;transform:rotate(45deg) translateY(-2px);transition:transform .18s;margin-right:3px}
 .passenger-trigger[aria-expanded="true"] .passenger-chevron{transform:rotate(225deg) translate(-2px,-2px)}
-.passenger-popover{position:absolute;z-index:31;top:calc(100% + 7px);left:0;width:calc(200% + 9px);padding:17px 19px;background:var(--paper);color:var(--ink);border:1px solid var(--line);box-shadow:0 22px 54px rgba(0,0,0,.3)}
+.passenger-popover{position:absolute;z-index:31;top:calc(100% + 7px);left:0;width:calc(200% + 12px);max-width:calc(100vw - 32px);padding:17px 19px;background:var(--paper);color:var(--ink);border:1px solid var(--line);box-shadow:0 22px 54px rgba(0,0,0,.3)}
+.passenger-picker.align-right .passenger-popover{left:auto;right:0}
 .passenger-popover[hidden]{display:none}.passenger-popover h3{font-family:var(--sans);font-size:1.12rem;font-weight:700;margin-bottom:10px}
 .passenger-rows{display:grid;gap:5px}
 .passenger-row{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 0}
@@ -260,7 +261,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .wrap{width:min(100% - 28px,1200px)}.brand-mark{width:41px;height:41px}.brand-name{font-size:1.08rem}.nav{height:70px}.mobile-panel{inset:70px 0 auto}
   .hero-grid{padding-top:110px}.hero-copy .overline{letter-spacing:.22em}.hero h1{font-size:2.8rem}.hero-actions{display:grid}.hero-actions .btn{width:100%}
   .quote-card{padding:23px 16px}.trip-tabs{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.airport-menu,.airport-field:nth-child(2) .airport-menu{left:0;right:auto;width:100%}
-  .passenger-popover{width:100%;min-width:260px;padding:16px}.passenger-row{grid-template-columns:26px minmax(0,1fr) auto;gap:9px}.passenger-stepper{grid-template-columns:32px 23px 32px}.passenger-stepper button{width:32px;height:32px}
+  .passenger-popover,.passenger-picker.align-right .passenger-popover{left:0;right:auto;width:100%;min-width:260px;padding:16px}.passenger-row{grid-template-columns:26px minmax(0,1fr) auto;gap:9px}.passenger-stepper{grid-template-columns:32px 23px 32px}.passenger-stepper button{width:32px;height:32px}
   .trust-grid,.pillars,.flight-grid,.cruise-grid,.experience-list,.bottom-grid{grid-template-columns:1fr}.trust-item,.trust-item:nth-child(2){border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.trust-item:last-child{border-bottom:0}
   .pillar,.pillar:nth-child(2){border-right:0;border-bottom:1px solid var(--line)}.pillar:last-child{border-bottom:0}
   .flight-card{min-height:290px}.cruise-card img{height:240px}
@@ -319,9 +320,9 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
             <div class="passenger-row" data-passenger-row data-min="0" data-count="0" data-singular="Child" data-plural="Children"><span class="traveller-mark child" aria-hidden="true"></span><span class="passenger-copy"><b>Children</b><span>from 2 to 17 years old</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove child">−</button><output class="passenger-count">0</output><button type="button" data-passenger-plus aria-label="Add child">+</button></span></div>
             <div class="passenger-row" data-passenger-row data-min="0" data-count="0" data-singular="Infant" data-plural="Infants"><span class="traveller-mark infant" aria-hidden="true"></span><span class="passenger-copy"><b>Infants</b><span>under 2 years old</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove infant">−</button><output class="passenger-count">0</output><button type="button" data-passenger-plus aria-label="Add infant">+</button></span></div>
           </div></div></div>
-          <div class="field"><label for="cabin">Cabin / journey</label><select id="cabin" name="cabin"><option>First class</option><option>Business class</option><option>Premium-Economy class</option></select></div>
-          <div class="field"><input id="name" name="name" autocomplete="name" aria-label="Your name" placeholder="Your name" required></div>
-          <div class="field"><input id="email" name="email" type="email" autocomplete="email" aria-label="Email" placeholder="Email" required></div>
+          <div class="field"><label for="cabin">Cabin / journey</label><select id="cabin" name="cabin"><option>First Class</option><option>Business Class</option><option>Premium-Economy Class</option></select></div>
+          <div class="field compact-field"><input id="name" name="name" autocomplete="name" aria-label="Your name" placeholder="Your name" required></div>
+          <div class="field compact-field"><input id="email" name="email" type="email" autocomplete="email" aria-label="Email" placeholder="Email" required></div>
           <div class="field full"><div class="phone-input-group" data-phone-picker><div class="phone-code-picker"><button class="phone-code-trigger" type="button" aria-label="Select phone country code, Australia +61" aria-haspopup="listbox" aria-expanded="false" aria-controls="phone-code-menu"><span class="phone-code-flag" data-phone-code-flag aria-hidden="true">🇦🇺</span><span class="phone-code-value" data-phone-code-value>+61</span><span class="phone-code-chevron" aria-hidden="true"></span></button><div class="phone-code-menu" id="phone-code-menu" role="listbox" aria-label="Phone country code" hidden><button class="phone-code-option" type="button" role="option" aria-selected="true" data-phone-code-option data-code="+61" data-country="Australia" data-flag="🇦🇺"><span class="phone-option-flag" aria-hidden="true">🇦🇺</span><span>Australia</span><b>+61</b></button><button class="phone-code-option" type="button" role="option" aria-selected="false" data-phone-code-option data-code="+1" data-country="United States" data-flag="🇺🇸"><span class="phone-option-flag" aria-hidden="true">🇺🇸</span><span>United States</span><b>+1</b></button></div></div><input id="phone-code" name="phone_country_code" type="hidden" value="+61"><input id="phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" aria-label="Phone number" placeholder="Phone number" required></div></div>
         </div>
         <button class="btn" type="submit">Connect me with my travel advisor</button>
@@ -446,7 +447,7 @@ menuBtn.addEventListener('click',()=>{const open=!mobilePanel.classList.contains
 mobilePanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
 window.addEventListener('scroll',()=>header.classList.toggle('stuck',scrollY>50),{passive:true});
 
-const airCabins=['First class','Business class','Premium-Economy class'];
+const airCabins=['First Class','Business Class','Premium-Economy Class'];
 const cruiseCabins=['Interior','Oceanview','Balcony','Suite'];
 const airports=(window.SAILSKY_AIRPORTS||[]).map(([code,city,name,country,tier,keywords])=>({code,city,name,country,tier,keywords}));
 const premiumAirportPriority=new Map(['SYD','MEL','BNE','PER','ADL','CBR','OOL','CNS','HBA','DRW','JFK','EWR','LGA','LAX','SFO','ORD','MIA','DFW','IAH','BOS','SEA','ATL','IAD','DCA','LAS','HNL','MCO','SAN','LHR','LGW','CDG','ORY','AMS','FRA','MUC','ZRH','GVA','FCO','MXP','MAD','BCN','LIS','ATH','VIE','CPH','ARN','OSL','HEL','DUB','DXB','AUH','DOH','SIN','HKG','NRT','HND','ICN','BKK','KUL','DEL','BOM','CGK','MNL','TPE','AKL','CHC','NAN','PPT','JNB','CPT','CAI','CMN','NBO','YYZ','YVR','YUL','MEX','GRU','GIG','EZE','SCL'].map((code,index)=>[code,index]));
@@ -475,6 +476,10 @@ function closeCalendars(except=null){
   datePickers.forEach(picker=>{if(picker===except)return;picker.querySelector('.calendar-popover').hidden=true;picker.querySelector('.date-trigger').setAttribute('aria-expanded','false')});
 }
 function closePassengerPicker(){passengerPanel.hidden=true;passengerTrigger.setAttribute('aria-expanded','false')}
+function updatePassengerPopoverAlignment(){
+  if(window.matchMedia('(max-width:560px)').matches){passengerPicker.classList.remove('align-right');return}
+  const pickerRect=passengerPicker.getBoundingClientRect();const formRect=passengerPicker.closest('.quote-card').getBoundingClientRect();passengerPicker.classList.toggle('align-right',pickerRect.left+pickerRect.width/2>formRect.left+formRect.width/2);
+}
 function closePhonePicker(){phoneCodeMenu.hidden=true;phoneCodeTrigger.setAttribute('aria-expanded','false')}
 function closeAirportPickers(except=null){
   airportPickers.forEach(picker=>{if(picker===except)return;const input=picker.querySelector('input');picker.querySelector('.airport-menu').hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');picker._active=-1});
@@ -558,9 +563,11 @@ datePickers.forEach(picker=>{
   picker.querySelector('[data-calendar-prev]').addEventListener('click',()=>{picker._view=new Date(picker._view.getFullYear(),picker._view.getMonth()-1,1);renderCalendar(picker)});
   picker.querySelector('[data-calendar-next]').addEventListener('click',()=>{picker._view=new Date(picker._view.getFullYear(),picker._view.getMonth()+1,1);renderCalendar(picker)});
 });
-passengerTrigger.addEventListener('click',()=>{const opening=passengerPanel.hidden;closeCalendars();closePhonePicker();closeAirportPickers();passengerPanel.hidden=!opening;passengerTrigger.setAttribute('aria-expanded',String(opening))});
+passengerTrigger.addEventListener('click',()=>{const opening=passengerPanel.hidden;closeCalendars();closePhonePicker();closeAirportPickers();if(opening)updatePassengerPopoverAlignment();passengerPanel.hidden=!opening;passengerTrigger.setAttribute('aria-expanded',String(opening))});
 passengerRows.forEach(row=>row.querySelectorAll('[data-passenger-minus],[data-passenger-plus]').forEach(button=>button.addEventListener('click',()=>{const minimum=Number(row.dataset.min);const current=Number(row.dataset.count);row.dataset.count=String(button.hasAttribute('data-passenger-plus')?current+1:Math.max(minimum,current-1));updatePassengers()})));
 updatePassengers();
+updatePassengerPopoverAlignment();
+window.addEventListener('resize',updatePassengerPopoverAlignment,{passive:true});
 phoneCodeTrigger.addEventListener('click',()=>{const opening=phoneCodeMenu.hidden;closeCalendars();closePassengerPicker();closeAirportPickers();phoneCodeMenu.hidden=!opening;phoneCodeTrigger.setAttribute('aria-expanded',String(opening));if(opening)(phoneCodeOptions.find(option=>option.getAttribute('aria-selected')==='true')||phoneCodeOptions[0]).focus()});
 phoneCodeOptions.forEach(option=>option.addEventListener('click',()=>{phoneCodeOptions.forEach(item=>item.setAttribute('aria-selected',String(item===option)));document.getElementById('phone-code').value=option.dataset.code;phonePicker.querySelector('[data-phone-code-value]').textContent=option.dataset.code;phonePicker.querySelector('[data-phone-code-flag]').textContent=option.dataset.flag;phoneCodeTrigger.setAttribute('aria-label',`Select phone country code, ${option.dataset.country} ${option.dataset.code}`);applyPhoneFormat();closePhonePicker();phoneNumberInput.focus()}));
 phoneCodeMenu.addEventListener('keydown',event=>{if(!['ArrowDown','ArrowUp','Home','End'].includes(event.key))return;event.preventDefault();const current=Math.max(0,phoneCodeOptions.indexOf(document.activeElement));const next=event.key==='Home'?0:event.key==='End'?phoneCodeOptions.length-1:event.key==='ArrowDown'?(current+1)%phoneCodeOptions.length:(current-1+phoneCodeOptions.length)%phoneCodeOptions.length;phoneCodeOptions[next].focus()});
@@ -576,7 +583,7 @@ function setCabinOptions(select,tripType){
 document.querySelectorAll('.trip-tab').forEach(tab=>tab.addEventListener('click',()=>{
   const form=tab.closest('form');form.querySelectorAll('.trip-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');form.elements.tripType.value=tab.dataset.trip;
   form.querySelector('.field.return').classList.toggle('hidden',tab.dataset.trip==='One way'||tab.dataset.trip==='Cruise');
-  setCabinOptions(form.elements.cabin,tab.dataset.trip);closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers();
+  setCabinOptions(form.elements.cabin,tab.dataset.trip);closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers();updatePassengerPopoverAlignment();
 }));
 document.querySelectorAll('[data-demo-form]').forEach(form=>form.addEventListener('submit',event=>{
   event.preventDefault();
