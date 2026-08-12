@@ -118,6 +118,28 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .calendar-day,.calendar-blank{aspect-ratio:1;display:grid;place-items:center}
 .calendar-day{border:0;background:transparent;color:var(--ink);font-size:.68rem;cursor:pointer;border-radius:50%}
 .calendar-day:hover:not(:disabled){background:#f4ead6}.calendar-day.today{box-shadow:inset 0 0 0 1px var(--gold)}.calendar-day.selected{background:var(--gold);color:#171106;font-weight:800}.calendar-day:disabled{color:#c5c6c7;cursor:not-allowed}
+.passenger-picker{position:relative}
+.passenger-trigger{width:100%;min-height:42px;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);color:#fff;border-radius:2px;padding:9px 11px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.74rem;cursor:pointer;text-align:left}
+.passenger-trigger:hover,.passenger-trigger[aria-expanded="true"]{border-color:var(--gold)}
+.passenger-trigger-main{display:flex;align-items:center;gap:11px}
+.passenger-icon,.traveller-mark{position:relative;width:19px;height:20px;display:inline-block;flex:0 0 auto}
+.passenger-icon::before,.traveller-mark::before{content:"";position:absolute;left:6px;top:0;width:7px;height:7px;border:1.5px solid var(--gold-2);border-radius:50%}
+.passenger-icon::after,.traveller-mark::after{content:"";position:absolute;left:2px;bottom:0;width:15px;height:9px;border:1.5px solid var(--gold-2);border-radius:10px 10px 2px 2px}
+.passenger-chevron{width:9px;height:9px;border-right:2px solid #dce5eb;border-bottom:2px solid #dce5eb;transform:rotate(45deg) translateY(-2px);transition:transform .18s;margin-right:3px}
+.passenger-trigger[aria-expanded="true"] .passenger-chevron{transform:rotate(225deg) translate(-2px,-2px)}
+.passenger-popover{position:absolute;z-index:31;top:calc(100% + 7px);left:0;width:calc(200% + 9px);padding:19px;background:var(--paper);color:var(--ink);border:1px solid var(--line);box-shadow:0 22px 54px rgba(0,0,0,.3)}
+.passenger-popover[hidden]{display:none}.passenger-popover h3{font-family:var(--sans);font-size:1.02rem;font-weight:800;margin-bottom:14px}
+.passenger-rows{display:grid;gap:3px}
+.passenger-row{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:12px;align-items:center;padding:8px 0}
+.traveller-mark::before,.traveller-mark::after{border-color:var(--navy)}
+.traveller-mark.youth::before{width:10px;height:10px;left:4.5px}.traveller-mark.youth::after{width:17px;height:17px;left:1px;border-radius:50%;bottom:-1px;border-top-color:transparent}
+.traveller-mark.child{transform:scale(.82)}.traveller-mark.infant{transform:rotate(-35deg) scale(.78)}
+.passenger-copy b{display:block;font-family:var(--sans);font-size:.86rem;line-height:1.2}.passenger-copy span{display:block;color:#7b8084;font-size:.67rem;line-height:1.35;margin-top:3px}
+.passenger-stepper{display:grid;grid-template-columns:34px 25px 34px;gap:5px;align-items:center}
+.passenger-stepper button{width:34px;height:34px;border:0;border-radius:8px;font-size:1.15rem;line-height:1;cursor:pointer}
+.passenger-stepper button[data-passenger-minus]{background:#edf0f2;color:#69747c}.passenger-stepper button[data-passenger-plus]{background:#c78a3c;color:#fff}
+.passenger-stepper button:hover:not(:disabled){filter:brightness(1.07)}.passenger-stepper button:disabled{opacity:.38;cursor:not-allowed}
+.passenger-count{text-align:center;font-size:.84rem;font-variant-numeric:tabular-nums}
 .quote-card .btn{width:100%;margin-top:12px;min-height:45px}
 .form-fine{text-align:center;font-size:.61rem;color:#aebbc5;line-height:1.55;margin-top:9px}
 
@@ -212,6 +234,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .wrap{width:min(100% - 28px,1200px)}.brand-mark{width:41px;height:41px}.brand-name{font-size:1.08rem}.nav{height:70px}.mobile-panel{inset:70px 0 auto}
   .hero-grid{padding-top:110px}.hero-copy .overline{letter-spacing:.22em}.hero h1{font-size:2.8rem}.hero-actions{display:grid}.hero-actions .btn{width:100%}
   .quote-card{padding:23px 16px}.trip-tabs{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+  .passenger-popover{width:100%;min-width:260px;padding:16px}.passenger-row{grid-template-columns:26px minmax(0,1fr) auto;gap:9px}.passenger-stepper{grid-template-columns:32px 23px 32px}.passenger-stepper button{width:32px;height:32px}
   .trust-grid,.pillars,.flight-grid,.cruise-grid,.experience-list,.bottom-grid{grid-template-columns:1fr}.trust-item,.trust-item:nth-child(2){border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.trust-item:last-child{border-bottom:0}
   .pillar,.pillar:nth-child(2){border-right:0;border-bottom:1px solid var(--line)}.pillar:last-child{border-bottom:0}
   .flight-card{min-height:290px}.cruise-card img{height:240px}
@@ -265,7 +288,13 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
           <div class="field"><input id="to" name="to" aria-label="To" placeholder="To" required></div>
           <div class="field date-picker" data-date-picker="depart"><label>Departure</label><button class="date-trigger" type="button" aria-label="Choose departure date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input id="depart" name="depart" type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose departure date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div>
           <div class="field date-picker return" data-date-picker="return"><label>Return</label><button class="date-trigger" type="button" aria-label="Choose return date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input id="return" name="return" type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose return date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div>
-          <div class="field"><label for="travellers">Travellers</label><select id="travellers" name="travellers"><option>1 traveller</option><option>2 travellers</option><option>3 travellers</option><option>4+ travellers</option></select></div>
+          <div class="field passenger-picker" data-passenger-picker><label>Passengers</label><button class="passenger-trigger" type="button" aria-label="Choose passengers" aria-haspopup="dialog" aria-expanded="false"><span class="passenger-trigger-main"><span class="passenger-icon" aria-hidden="true"></span><span data-passenger-summary aria-live="polite">1 Passenger</span></span><span class="passenger-chevron" aria-hidden="true"></span></button><input id="travellers" name="travellers" type="hidden" value="1 Adult"><div class="passenger-popover" role="dialog" aria-label="Choose passenger quantities" hidden><h3>Total quantity</h3><div class="passenger-rows">
+            <div class="passenger-row" data-passenger-row data-min="1" data-count="1" data-singular="Adult" data-plural="Adults"><span class="traveller-mark" aria-hidden="true"></span><span class="passenger-copy"><b>Adults</b><span>from 18 to 64 years old</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove adult">−</button><output class="passenger-count">1</output><button type="button" data-passenger-plus aria-label="Add adult">+</button></span></div>
+            <div class="passenger-row" data-passenger-row data-min="0" data-count="0" data-singular="Senior" data-plural="Seniors"><span class="traveller-mark" aria-hidden="true"></span><span class="passenger-copy"><b>Seniors</b><span>over 65 years old</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove senior">−</button><output class="passenger-count">0</output><button type="button" data-passenger-plus aria-label="Add senior">+</button></span></div>
+            <div class="passenger-row" data-passenger-row data-min="0" data-count="0" data-singular="Youth" data-plural="Youth"><span class="traveller-mark youth" aria-hidden="true"></span><span class="passenger-copy"><b>Youth</b><span>from 12 to 17 years old</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove youth passenger">−</button><output class="passenger-count">0</output><button type="button" data-passenger-plus aria-label="Add youth passenger">+</button></span></div>
+            <div class="passenger-row" data-passenger-row data-min="0" data-count="0" data-singular="Child" data-plural="Children"><span class="traveller-mark child" aria-hidden="true"></span><span class="passenger-copy"><b>Children</b><span>from 2 to 11 years old</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove child">−</button><output class="passenger-count">0</output><button type="button" data-passenger-plus aria-label="Add child">+</button></span></div>
+            <div class="passenger-row" data-passenger-row data-min="0" data-count="0" data-singular="Infant" data-plural="Infants"><span class="traveller-mark infant" aria-hidden="true"></span><span class="passenger-copy"><b>Infants</b><span>under 2 years old</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove infant">−</button><output class="passenger-count">0</output><button type="button" data-passenger-plus aria-label="Add infant">+</button></span></div>
+          </div></div></div>
           <div class="field"><label for="cabin">Cabin / journey</label><select id="cabin" name="cabin"><option>First class</option><option>Business class</option><option>Premium-Economy class</option></select></div>
           <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Full name" required></div>
           <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
@@ -399,6 +428,10 @@ const isoDate=date=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(
 const parseDate=value=>{if(!value)return null;const [year,month,day]=value.split('-').map(Number);return new Date(year,month-1,day)};
 const formatDate=date=>`${String(date.getDate()).padStart(2,'0')} ${calendarMonths[date.getMonth()].slice(0,3)} ${date.getFullYear()}`;
 const datePickers=[...document.querySelectorAll('[data-date-picker]')];
+const passengerPicker=document.querySelector('[data-passenger-picker]');
+const passengerTrigger=passengerPicker.querySelector('.passenger-trigger');
+const passengerPanel=passengerPicker.querySelector('.passenger-popover');
+const passengerRows=[...passengerPicker.querySelectorAll('[data-passenger-row]')];
 
 function pickerMinimum(picker){
   if(picker.dataset.datePicker==='return')return parseDate(document.getElementById('depart').value)||tomorrow;
@@ -406,6 +439,13 @@ function pickerMinimum(picker){
 }
 function closeCalendars(except=null){
   datePickers.forEach(picker=>{if(picker===except)return;picker.querySelector('.calendar-popover').hidden=true;picker.querySelector('.date-trigger').setAttribute('aria-expanded','false')});
+}
+function closePassengerPicker(){passengerPanel.hidden=true;passengerTrigger.setAttribute('aria-expanded','false')}
+function updatePassengers(){
+  let total=0;const selections=[];
+  passengerRows.forEach(row=>{const count=Number(row.dataset.count);const minimum=Number(row.dataset.min);total+=count;row.querySelector('.passenger-count').textContent=String(count);row.querySelector('[data-passenger-minus]').disabled=count<=minimum;if(count)selections.push(`${count} ${count===1?row.dataset.singular:row.dataset.plural}`)});
+  passengerPicker.querySelector('[data-passenger-summary]').textContent=`${total} ${total===1?'Passenger':'Passengers'}`;
+  document.getElementById('travellers').value=selections.join(', ');
 }
 function setPickerValue(picker,value){
   const input=picker.querySelector('input[type="hidden"]');const label=picker.querySelector('.date-value');input.value=value;
@@ -428,12 +468,15 @@ function renderCalendar(picker){
 }
 datePickers.forEach(picker=>{
   const trigger=picker.querySelector('.date-trigger');const panel=picker.querySelector('.calendar-popover');
-  trigger.addEventListener('click',()=>{const opening=panel.hidden;closeCalendars(picker);panel.hidden=!opening;trigger.setAttribute('aria-expanded',String(opening));if(opening){renderCalendar(picker);const focusTarget=panel.querySelector('.selected:not(:disabled),.calendar-day:not(:disabled)');focusTarget?.focus()}});
+  trigger.addEventListener('click',()=>{const opening=panel.hidden;closeCalendars(picker);closePassengerPicker();panel.hidden=!opening;trigger.setAttribute('aria-expanded',String(opening));if(opening){renderCalendar(picker);const focusTarget=panel.querySelector('.selected:not(:disabled),.calendar-day:not(:disabled)');focusTarget?.focus()}});
   picker.querySelector('[data-calendar-prev]').addEventListener('click',()=>{picker._view=new Date(picker._view.getFullYear(),picker._view.getMonth()-1,1);renderCalendar(picker)});
   picker.querySelector('[data-calendar-next]').addEventListener('click',()=>{picker._view=new Date(picker._view.getFullYear(),picker._view.getMonth()+1,1);renderCalendar(picker)});
 });
-document.addEventListener('click',event=>{if(!event.target.closest('[data-date-picker]'))closeCalendars()});
-document.addEventListener('keydown',event=>{if(event.key==='Escape')closeCalendars()});
+passengerTrigger.addEventListener('click',()=>{const opening=passengerPanel.hidden;closeCalendars();passengerPanel.hidden=!opening;passengerTrigger.setAttribute('aria-expanded',String(opening))});
+passengerRows.forEach(row=>row.querySelectorAll('[data-passenger-minus],[data-passenger-plus]').forEach(button=>button.addEventListener('click',()=>{const minimum=Number(row.dataset.min);const current=Number(row.dataset.count);row.dataset.count=String(button.hasAttribute('data-passenger-plus')?current+1:Math.max(minimum,current-1));updatePassengers()})));
+updatePassengers();
+document.addEventListener('click',event=>{if(!event.target.closest('[data-date-picker]'))closeCalendars();if(!event.target.closest('[data-passenger-picker]'))closePassengerPicker()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){const passengerWasOpen=!passengerPanel.hidden;closeCalendars();closePassengerPicker();if(passengerWasOpen)passengerTrigger.focus()}});
 
 function setCabinOptions(select,tripType){
   const options=tripType==='Cruise'?cruiseCabins:airCabins;select.replaceChildren(...options.map(value=>{const option=document.createElement('option');option.value=value;option.textContent=value;return option}));
@@ -441,7 +484,7 @@ function setCabinOptions(select,tripType){
 document.querySelectorAll('.trip-tab').forEach(tab=>tab.addEventListener('click',()=>{
   const form=tab.closest('form');form.querySelectorAll('.trip-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');form.elements.tripType.value=tab.dataset.trip;
   form.querySelector('.field.return').classList.toggle('hidden',tab.dataset.trip==='One way'||tab.dataset.trip==='Cruise');
-  setCabinOptions(form.elements.cabin,tab.dataset.trip);closeCalendars();
+  setCabinOptions(form.elements.cabin,tab.dataset.trip);closeCalendars();closePassengerPicker();
 }));
 document.querySelectorAll('[data-demo-form]').forEach(form=>form.addEventListener('submit',event=>{
   event.preventDefault();
