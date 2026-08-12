@@ -98,6 +98,26 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .field input,.field select,.field textarea{width:100%;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);color:#fff;border-radius:2px;padding:10px 11px;min-height:42px;font-size:.74rem;outline:none;color-scheme:dark}
 .field input::placeholder,.field textarea::placeholder{color:#9faeb9}.field textarea{min-height:68px;resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(216,169,79,.14)}
+.date-picker{position:relative}
+.date-trigger{width:100%;min-height:42px;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);color:#fff;border-radius:2px;padding:10px 11px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.74rem;cursor:pointer;text-align:left}
+.date-trigger:hover,.date-trigger[aria-expanded="true"]{border-color:var(--gold)}
+.date-trigger.error{border-color:#f0a29b;box-shadow:0 0 0 2px rgba(240,162,155,.13)}
+.date-value.placeholder{color:#9faeb9}
+.date-icon{position:relative;width:14px;height:13px;border:1px solid var(--gold-2);border-radius:1px;flex:0 0 auto}
+.date-icon::before{content:"";position:absolute;left:1px;right:1px;top:3px;border-top:1px solid var(--gold-2)}
+.date-icon::after{content:"";position:absolute;width:2px;height:2px;left:3px;top:6px;background:var(--gold-2);box-shadow:4px 0 var(--gold-2),0 3px var(--gold-2),4px 3px var(--gold-2)}
+.calendar-popover{position:absolute;z-index:30;top:calc(100% + 7px);left:0;width:280px;padding:15px;background:var(--paper);color:var(--ink);border:1px solid var(--gold);box-shadow:0 22px 54px rgba(0,0,0,.3)}
+.return .calendar-popover{left:auto;right:0}
+.calendar-popover[hidden]{display:none}
+.calendar-head{display:grid;grid-template-columns:32px 1fr 32px;align-items:center;gap:5px;margin-bottom:12px}
+.calendar-title{text-align:center;font-family:var(--serif);font-size:1rem;font-weight:600}
+.calendar-nav{width:32px;height:32px;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:1.25rem;line-height:1;cursor:pointer}
+.calendar-nav:hover:not(:disabled){border-color:var(--gold);background:#fff8e8}.calendar-nav:disabled{opacity:.28;cursor:not-allowed}
+.calendar-weekdays,.calendar-days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.calendar-weekdays{margin-bottom:4px}.calendar-weekdays span{text-align:center;color:#7a858d;font-size:.57rem;font-weight:800;text-transform:uppercase}
+.calendar-day,.calendar-blank{aspect-ratio:1;display:grid;place-items:center}
+.calendar-day{border:0;background:transparent;color:var(--ink);font-size:.68rem;cursor:pointer;border-radius:50%}
+.calendar-day:hover:not(:disabled){background:#f4ead6}.calendar-day.today{box-shadow:inset 0 0 0 1px var(--gold)}.calendar-day.selected{background:var(--gold);color:#171106;font-weight:800}.calendar-day:disabled{color:#c5c6c7;cursor:not-allowed}
 .quote-card .btn{width:100%;margin-top:12px;min-height:45px}
 .form-fine{text-align:center;font-size:.61rem;color:#aebbc5;line-height:1.55;margin-top:9px}
 
@@ -241,12 +261,12 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
         </div>
         <input type="hidden" name="tripType" value="Round trip">
         <div class="form-grid">
-          <div class="field"><label for="from">From</label><input id="from" name="from" autocomplete="address-level2" placeholder="London or airport" required></div>
-          <div class="field"><label for="to">To</label><input id="to" name="to" placeholder="Where would you like to go?" required></div>
-          <div class="field"><label for="depart">Departure</label><input id="depart" name="depart" type="date" required></div>
-          <div class="field return"><label for="return">Return</label><input id="return" name="return" type="date"></div>
+          <div class="field"><input id="from" name="from" autocomplete="address-level2" aria-label="From" placeholder="From" required></div>
+          <div class="field"><input id="to" name="to" aria-label="To" placeholder="To" required></div>
+          <div class="field date-picker" data-date-picker="depart"><label>Departure</label><button class="date-trigger" type="button" aria-label="Choose departure date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input id="depart" name="depart" type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose departure date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div>
+          <div class="field date-picker return" data-date-picker="return"><label>Return</label><button class="date-trigger" type="button" aria-label="Choose return date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input id="return" name="return" type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose return date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div>
           <div class="field"><label for="travellers">Travellers</label><select id="travellers" name="travellers"><option>1 traveller</option><option>2 travellers</option><option>3 travellers</option><option>4+ travellers</option></select></div>
-          <div class="field"><label for="cabin">Cabin / journey</label><select id="cabin" name="cabin"><option>Business class</option><option>First class</option><option>Luxury cruise</option><option>Fly-cruise</option></select></div>
+          <div class="field"><label for="cabin">Cabin / journey</label><select id="cabin" name="cabin"><option>First class</option><option>Business class</option><option>Premium-Economy class</option></select></div>
           <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Full name" required></div>
           <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
         </div>
@@ -371,15 +391,65 @@ menuBtn.addEventListener('click',()=>{const open=!mobilePanel.classList.contains
 mobilePanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
 window.addEventListener('scroll',()=>header.classList.toggle('stuck',scrollY>50),{passive:true});
 
-const today=new Date();today.setDate(today.getDate()+1);const minDate=today.toISOString().split('T')[0];
-document.querySelectorAll('input[type="date"]').forEach(input=>input.min=minDate);
+const airCabins=['First class','Business class','Premium-Economy class'];
+const cruiseCabins=['Interior','Oceanview','Balcony','Suite'];
+const calendarMonths=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const tomorrow=new Date();tomorrow.setHours(0,0,0,0);tomorrow.setDate(tomorrow.getDate()+1);
+const isoDate=date=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+const parseDate=value=>{if(!value)return null;const [year,month,day]=value.split('-').map(Number);return new Date(year,month-1,day)};
+const formatDate=date=>`${String(date.getDate()).padStart(2,'0')} ${calendarMonths[date.getMonth()].slice(0,3)} ${date.getFullYear()}`;
+const datePickers=[...document.querySelectorAll('[data-date-picker]')];
+
+function pickerMinimum(picker){
+  if(picker.dataset.datePicker==='return')return parseDate(document.getElementById('depart').value)||tomorrow;
+  return tomorrow;
+}
+function closeCalendars(except=null){
+  datePickers.forEach(picker=>{if(picker===except)return;picker.querySelector('.calendar-popover').hidden=true;picker.querySelector('.date-trigger').setAttribute('aria-expanded','false')});
+}
+function setPickerValue(picker,value){
+  const input=picker.querySelector('input[type="hidden"]');const label=picker.querySelector('.date-value');input.value=value;
+  if(value){label.textContent=formatDate(parseDate(value));label.classList.remove('placeholder');picker.querySelector('.date-trigger').classList.remove('error')}
+  else{label.textContent='Select date';label.classList.add('placeholder')}
+}
+function renderCalendar(picker){
+  const input=picker.querySelector('input[type="hidden"]');const selected=parseDate(input.value);const minimum=pickerMinimum(picker);
+  if(!picker._view)picker._view=new Date((selected||minimum).getFullYear(),(selected||minimum).getMonth(),1);
+  const view=picker._view;picker.querySelector('.calendar-title').textContent=`${calendarMonths[view.getMonth()]} ${view.getFullYear()}`;
+  const earliestMonth=new Date(minimum.getFullYear(),minimum.getMonth(),1);picker.querySelector('[data-calendar-prev]').disabled=view<=earliestMonth;
+  const days=picker.querySelector('.calendar-days');days.replaceChildren();const firstOffset=(new Date(view.getFullYear(),view.getMonth(),1).getDay()+6)%7;
+  for(let i=0;i<firstOffset;i++){const blank=document.createElement('span');blank.className='calendar-blank';days.append(blank)}
+  const count=new Date(view.getFullYear(),view.getMonth()+1,0).getDate();const now=new Date();now.setHours(0,0,0,0);
+  for(let day=1;day<=count;day++){
+    const date=new Date(view.getFullYear(),view.getMonth(),day);const button=document.createElement('button');button.type='button';button.className='calendar-day';button.textContent=String(day);button.disabled=date<minimum;button.setAttribute('aria-label',`${day} ${calendarMonths[date.getMonth()]} ${date.getFullYear()}`);
+    if(isoDate(date)===isoDate(now))button.classList.add('today');if(selected&&isoDate(date)===isoDate(selected)){button.classList.add('selected');button.setAttribute('aria-pressed','true')}
+    button.addEventListener('click',()=>{setPickerValue(picker,isoDate(date));if(picker.dataset.datePicker==='depart'){const returnPicker=datePickers.find(item=>item.dataset.datePicker==='return');const returnDate=parseDate(document.getElementById('return').value);if(returnDate&&returnDate<date)setPickerValue(returnPicker,'');returnPicker._view=new Date(date.getFullYear(),date.getMonth(),1)}closeCalendars()});days.append(button);
+  }
+}
+datePickers.forEach(picker=>{
+  const trigger=picker.querySelector('.date-trigger');const panel=picker.querySelector('.calendar-popover');
+  trigger.addEventListener('click',()=>{const opening=panel.hidden;closeCalendars(picker);panel.hidden=!opening;trigger.setAttribute('aria-expanded',String(opening));if(opening){renderCalendar(picker);const focusTarget=panel.querySelector('.selected:not(:disabled),.calendar-day:not(:disabled)');focusTarget?.focus()}});
+  picker.querySelector('[data-calendar-prev]').addEventListener('click',()=>{picker._view=new Date(picker._view.getFullYear(),picker._view.getMonth()-1,1);renderCalendar(picker)});
+  picker.querySelector('[data-calendar-next]').addEventListener('click',()=>{picker._view=new Date(picker._view.getFullYear(),picker._view.getMonth()+1,1);renderCalendar(picker)});
+});
+document.addEventListener('click',event=>{if(!event.target.closest('[data-date-picker]'))closeCalendars()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeCalendars()});
+
+function setCabinOptions(select,tripType){
+  const options=tripType==='Cruise'?cruiseCabins:airCabins;select.replaceChildren(...options.map(value=>{const option=document.createElement('option');option.value=value;option.textContent=value;return option}));
+}
 document.querySelectorAll('.trip-tab').forEach(tab=>tab.addEventListener('click',()=>{
   const form=tab.closest('form');form.querySelectorAll('.trip-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');form.elements.tripType.value=tab.dataset.trip;
   form.querySelector('.field.return').classList.toggle('hidden',tab.dataset.trip==='One way'||tab.dataset.trip==='Cruise');
-  if(tab.dataset.trip==='Cruise')form.elements.cabin.value='Luxury cruise';
+  setCabinOptions(form.elements.cabin,tab.dataset.trip);closeCalendars();
 }));
 document.querySelectorAll('[data-demo-form]').forEach(form=>form.addEventListener('submit',event=>{
-  event.preventDefault();const success=form.querySelector('.success');success.classList.add('show');const button=form.querySelector('button[type="submit"]');button.textContent='Enquiry received';button.disabled=true;
+  event.preventDefault();
+  if(form.id==='quote'){
+    const needsReturn=!form.querySelector('.field.return').classList.contains('hidden');const missingPicker=!form.elements.depart.value?datePickers[0]:(needsReturn&&!form.elements.return.value?datePickers[1]:null);
+    if(missingPicker){const trigger=missingPicker.querySelector('.date-trigger');trigger.classList.add('error');trigger.focus();trigger.click();return}
+  }
+  const success=form.querySelector('.success');success.classList.add('show');const button=form.querySelector('button[type="submit"]');button.textContent='Enquiry received';button.disabled=true;
 }));
 
 const reveals=document.querySelectorAll('.reveal');
