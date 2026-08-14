@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SailSky &amp; Co — Business Class Flights &amp; Luxury Cruises</title>
-<meta name="description" content="A personal travel concierge for thoughtfully planned business and first class flights, luxury cruises, and seamless fly-cruise journeys.">
+<title>SailSky &amp; Co — Premium Flights, Hotels &amp; Luxury Cruises</title>
+<meta name="description" content="A personal travel concierge for thoughtfully planned business and first class flights, luxury hotels, cruises, and seamless multi-part journeys.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#051b2f">
 <link rel="canonical" href="https://birsayt.uz/demos/travel/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SailSky &amp; Co — Personal Travel Concierge">
-<meta property="og:description" content="Premium cabin flights and luxury cruises, planned around you by one dedicated advisor.">
+<meta property="og:description" content="Premium cabin flights, luxury hotels and cruises, planned around you by one dedicated advisor.">
 <meta property="og:url" content="https://birsayt.uz/demos/travel/">
 <meta property="og:image" content="https://birsayt.uz/demos/travel/assets/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -18,7 +18,7 @@
 <meta property="og:image:alt" content="A passenger aircraft and luxury cruise ship at sunset">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SailSky &amp; Co — Personal Travel Concierge">
-<meta name="twitter:description" content="Premium cabin flights and luxury cruises, planned around you.">
+<meta name="twitter:description" content="Premium cabin flights, luxury hotels and cruises, planned around you.">
 <meta name="twitter:image" content="https://birsayt.uz/demos/travel/assets/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,11 +92,11 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .hero-note::before{content:"";width:32px;height:1px;background:var(--gold)}
 .quote-card{background:rgba(5,27,47,.96);border:1.5px solid rgba(240,203,122,.88);box-shadow:0 34px 86px rgba(0,0,0,.38);padding:36px 34px 30px;backdrop-filter:blur(11px)}
 .quote-card h2{text-align:center;font-size:2.02rem;color:#fff;margin-bottom:24px}
-.trip-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:18px}
+.trip-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-bottom:18px}
 .trip-tab{border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.06);color:#eef3f6;font-size:.86rem;font-weight:600;padding:9px 6px;cursor:pointer;min-height:42px}
 .trip-tab.active{color:var(--navy);background:var(--gold);border-color:var(--gold);font-weight:800}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.field{display:grid;gap:5px;min-width:0}.field.full{grid-column:1/-1}.field.return.hidden{display:none}.field.compact-field{align-self:end}.field.compact-field>input{height:50px;min-height:50px;max-height:50px}
+.field{display:grid;gap:5px;min-width:0}.field.full{grid-column:1/-1}.field.hidden{display:none}.field.compact-field{align-self:end}.field.compact-field>input{height:50px;min-height:50px;max-height:50px}
 .field label{font-size:.88rem;color:#e0e7eb;font-weight:600;letter-spacing:.01em}
 .field input,.field select,.field textarea{width:100%;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.08);color:#fff;border-radius:2px;padding:12px 13px;min-height:50px;font-size:.91rem;outline:none;color-scheme:dark}
 .field input::placeholder,.field textarea::placeholder{color:#c2cdd5}.field textarea{min-height:76px;resize:vertical}
@@ -203,6 +203,16 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .airline-line>span{display:block;font-family:var(--serif);font-style:italic;color:#c7d1d8;font-size:1rem;margin-bottom:15px}
 .airline-chips{display:flex;justify-content:center;gap:10px 24px;flex-wrap:wrap;color:#f5f7f8;font-family:var(--serif);font-size:1rem}.airline-chips b{font-weight:500}
 
+.hotels{background:var(--paper);position:relative;overflow:hidden}
+.hotels::before{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(216,169,79,.18);border-radius:50%;left:-240px;bottom:-250px}
+.hotel-layout{display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(48px,8vw,105px);align-items:center;position:relative}
+.hotel-intro .h2{margin-bottom:22px}.hotel-intro .lead{margin-bottom:29px}.hotel-intro .btn{min-width:190px}
+.hotel-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:var(--ivory)}
+.hotel-card{min-height:230px;padding:31px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hotel-card:nth-child(2n){border-right:0}.hotel-card:nth-last-child(-n+2){border-bottom:0}
+.hotel-card .n{display:block;color:#9b6715;font-family:var(--serif);font-size:1.2rem;font-style:italic}
+.hotel-card h3{font-size:1.58rem;margin:22px 0 11px}.hotel-card p{font-size:.95rem;color:var(--muted);line-height:1.75}
+
 .cruise-head{display:flex;align-items:end;justify-content:space-between;gap:36px;margin-bottom:44px}.cruise-head .lead{max-width:47ch}
 .cruise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .cruise-card{background:var(--paper);border:1px solid var(--line);box-shadow:0 14px 35px rgba(17,40,60,.06);overflow:hidden;transition:transform .25s,box-shadow .25s}
@@ -247,6 +257,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .mobile-panel.open{transform:translateY(0)}.mobile-panel a{padding:14px 5px;color:#fff;border-bottom:1px solid rgba(255,255,255,.1);font-family:var(--serif);font-size:1.1rem}.mobile-panel .btn{margin-top:15px;color:var(--navy);font-family:var(--sans)}
   .hero-grid{grid-template-columns:1fr;gap:44px;padding-top:140px}.hero-copy{max-width:760px}.quote-card{max-width:820px;width:100%}.hero{min-height:auto}
   .pillars,.flight-grid,.cruise-grid{grid-template-columns:1fr 1fr}
+  .hotel-layout{grid-template-columns:1fr}.hotel-intro{max-width:720px}
   .experience-grid{grid-template-columns:1fr}.experience-copy{max-width:700px}
   .bottom-grid{grid-template-columns:1fr 1fr}.bottom-col:nth-child(2){border-right:0}.bottom-col:last-child{grid-column:1/-1;border-top:1px solid var(--line)}
 }
@@ -261,10 +272,11 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 @media(max-width:560px){
   .wrap{width:min(100% - 28px,1200px)}.brand-mark{width:41px;height:41px}.brand-name{font-size:1.08rem}.nav{height:70px}.mobile-panel{inset:70px 0 auto}
   .hero-grid{padding-top:110px}.hero-copy .overline{letter-spacing:.22em}.hero h1{font-size:2.8rem}.hero-actions{display:grid}.hero-actions .btn{width:100%}
-  .quote-card{padding:23px 16px}.trip-tabs{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.airport-menu,.airport-field:nth-child(2) .airport-menu{left:0;right:auto;width:100%}
+  .quote-card{padding:23px 16px}.trip-tabs{grid-template-columns:1fr 1fr}.trip-tab:last-child{grid-column:1/-1}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.airport-menu,.airport-field:nth-child(2) .airport-menu{left:0;right:auto;width:100%}
   .passenger-popover,.passenger-picker.align-right .passenger-popover{left:0;right:auto;width:100%;min-width:260px;padding:16px}.passenger-row{grid-template-columns:26px minmax(0,1fr) auto;gap:9px}.passenger-stepper{grid-template-columns:32px 23px 32px}.passenger-stepper button{width:32px;height:32px}
   .pillars,.flight-grid,.cruise-grid,.experience-list,.bottom-grid{grid-template-columns:1fr}
   .flight-card{min-height:290px}.cruise-card img{height:240px}
+  .hotel-grid{grid-template-columns:1fr}.hotel-card,.hotel-card:nth-child(2n),.hotel-card:nth-last-child(-n+2){min-height:auto;border-right:0;border-bottom:1px solid var(--line)}.hotel-card:last-child{border-bottom:0}
   .fly-cruise{grid-template-columns:1fr;gap:10px}.fly-cruise .btn{grid-column:auto}.experience-card{border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}.experience-card:last-child{border:0}
   .bottom-col,.bottom-col:nth-child(2){border-right:0;border-bottom:1px solid var(--line)}.bottom-col:last-child{grid-column:auto;border-top:0;border-bottom:0}.contact-mini .row{grid-template-columns:1fr}
   .footer-links{display:grid;grid-template-columns:1fr 1fr}.demo-tag{right:10px;bottom:10px}
@@ -282,13 +294,13 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
       <span class="brand-name">SailSky <b>&amp; Co</b><small>Personal travel concierge</small></span>
     </a>
     <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#about">About</a><a href="#flights">Flights</a><a href="#cruises">Cruises</a><a href="#process">How it works</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#flights">Flights</a><a href="#hotels">Hotels</a><a href="#cruises">Cruises</a><a href="#process">How it works</a><a href="#contact">Contact</a>
     </nav>
     <a class="btn" href="#quote">Plan my journey</a>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
   <nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
-    <a href="#about">About</a><a href="#flights">Flights</a><a href="#cruises">Cruises</a><a href="#process">How it works</a><a href="#contact">Contact</a><a class="btn" href="#quote">Plan my journey</a>
+    <a href="#about">About</a><a href="#flights">Flights</a><a href="#hotels">Hotels</a><a href="#cruises">Cruises</a><a href="#process">How it works</a><a href="#contact">Contact</a><a class="btn" href="#quote">Plan my journey</a>
   </nav>
 </header>
 
@@ -299,28 +311,29 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
       <div class="hero-copy reveal">
         <span class="overline">Personal travel advisor</span>
         <h1>Premium travel, <em>personally handled.</em></h1>
-        <p>Business and first class flights, exceptional cruises, and seamless combinations—planned by one dedicated advisor who knows every detail of your journey.</p>
+        <p>Business and first class flights, exceptional hotels, luxury cruises, and seamless combinations—planned by one dedicated advisor who knows every detail of your journey.</p>
         <div class="hero-actions"><a class="btn" href="#quote">Request a complimentary plan <span aria-hidden="true">→</span></a><a class="btn btn-outline" href="#cruises">Explore journeys</a></div>
         <div class="hero-note">One point of contact from first idea to final arrival</div>
       </div>
 
       <form class="quote-card reveal" id="quote" data-demo-form>
-        <h2>Tell me where you would like to go</h2>
+        <h2 data-form-title>Tell me where you would like to go</h2>
         <div class="trip-tabs" role="group" aria-label="Trip type">
-          <button class="trip-tab active" type="button" data-trip="Round trip">Round trip</button><button class="trip-tab" type="button" data-trip="One way">One way</button><button class="trip-tab" type="button" data-trip="Multi-city">Multi-city</button><button class="trip-tab" type="button" data-trip="Cruise">Cruise</button>
+          <button class="trip-tab active" type="button" data-trip="Round trip">Round trip</button><button class="trip-tab" type="button" data-trip="One way">One way</button><button class="trip-tab" type="button" data-trip="Multi-city">Multi-city</button><button class="trip-tab" type="button" data-trip="Cruise">Cruise</button><button class="trip-tab" type="button" data-trip="Hotel">Hotel</button>
         </div>
         <input type="hidden" name="tripType" value="Round trip">
         <div class="form-grid">
-          <div class="field airport-field" data-airport-picker><input id="from" name="from" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="from-airports" aria-label="From airport" placeholder="From" required><div class="airport-menu" id="from-airports" role="listbox" aria-label="Departure airports" hidden></div></div>
-          <div class="field airport-field" data-airport-picker><input id="to" name="to" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="to-airports" aria-label="To airport" placeholder="To" required><div class="airport-menu" id="to-airports" role="listbox" aria-label="Destination airports" hidden></div></div>
+          <div class="field airport-field" data-airport-picker data-route-field="from"><input id="from" name="from" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="from-airports" aria-label="From airport" placeholder="From" required><div class="airport-menu" id="from-airports" role="listbox" aria-label="Departure airports" hidden></div></div>
+          <div class="field airport-field" data-airport-picker data-route-field="to"><input id="to" name="to" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="to-airports" aria-label="To airport" placeholder="To" required><div class="airport-menu" id="to-airports" role="listbox" aria-label="Destination airports" hidden></div></div>
           <div class="field date-picker" data-date-picker="depart"><label>Departure</label><button class="date-trigger" type="button" aria-label="Choose departure date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input id="depart" name="depart" type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose departure date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div>
           <div class="field date-picker return" data-date-picker="return"><label>Return</label><button class="date-trigger" type="button" aria-label="Choose return date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input id="return" name="return" type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose return date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div>
-          <div class="field passenger-picker" data-passenger-picker><label>Passengers</label><button class="passenger-trigger" type="button" aria-label="Choose passengers" aria-haspopup="dialog" aria-expanded="false"><span class="passenger-trigger-main"><span class="passenger-icon" aria-hidden="true"></span><span data-passenger-summary aria-live="polite">1 Passenger</span></span><span class="passenger-chevron" aria-hidden="true"></span></button><input id="travellers" name="travellers" type="hidden" value="1 Adult"><div class="passenger-popover" role="dialog" aria-label="Choose passenger quantities" hidden><h3>Total quantity</h3><div class="passenger-rows">
+          <div class="field passenger-picker" data-passenger-picker><label data-passenger-label>Passengers</label><button class="passenger-trigger" type="button" aria-label="Choose passengers" aria-haspopup="dialog" aria-expanded="false"><span class="passenger-trigger-main"><span class="passenger-icon" aria-hidden="true"></span><span data-passenger-summary aria-live="polite">1 Passenger</span></span><span class="passenger-chevron" aria-hidden="true"></span></button><input id="travellers" name="travellers" type="hidden" value="1 Adult"><div class="passenger-popover" role="dialog" aria-label="Choose passenger quantities" hidden><h3>Total quantity</h3><div class="passenger-rows">
             <div class="passenger-row" data-passenger-row data-min="1" data-count="1" data-singular="Adult" data-plural="Adults"><span class="traveller-mark" aria-hidden="true"></span><span class="passenger-copy"><b>Adults</b><span>18 years and over</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove adult">−</button><output class="passenger-count">1</output><button type="button" data-passenger-plus aria-label="Add adult">+</button></span></div>
             <div class="passenger-row" data-passenger-row data-min="0" data-count="0" data-singular="Child" data-plural="Children"><span class="traveller-mark child" aria-hidden="true"></span><span class="passenger-copy"><b>Children</b><span>from 2 to 17 years old</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove child">−</button><output class="passenger-count">0</output><button type="button" data-passenger-plus aria-label="Add child">+</button></span></div>
             <div class="passenger-row" data-passenger-row data-min="0" data-count="0" data-singular="Infant" data-plural="Infants"><span class="traveller-mark infant" aria-hidden="true"></span><span class="passenger-copy"><b>Infants</b><span>under 2 years old</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove infant">−</button><output class="passenger-count">0</output><button type="button" data-passenger-plus aria-label="Add infant">+</button></span></div>
           </div></div></div>
-          <div class="field"><label for="cabin">Cabin / journey</label><select id="cabin" name="cabin"><option>First Class</option><option>Business Class</option><option>Premium-Economy Class</option></select></div>
+          <div class="field hidden" data-hotel-only><label for="rooms">Rooms</label><select id="rooms" name="rooms" disabled><option value="1">1 Room</option><option value="2">2 Rooms</option><option value="3">3 Rooms</option><option value="4">4 Rooms</option><option value="5">5 Rooms</option></select></div>
+          <div class="field" data-cabin-field><label for="cabin" data-cabin-label>Cabin / journey</label><select id="cabin" name="cabin"><option>First Class</option><option>Business Class</option><option>Premium-Economy Class</option></select></div>
           <div class="field compact-field"><input id="name" name="name" autocomplete="name" aria-label="Your name" placeholder="Your name" required></div>
           <div class="field compact-field"><input id="email" name="email" type="email" autocomplete="email" aria-label="Email" placeholder="Email" required></div>
           <div class="field full"><div class="phone-input-group" data-phone-picker><div class="phone-code-picker"><button class="phone-code-trigger" type="button" aria-label="Select phone country code, Australia +61" aria-haspopup="listbox" aria-expanded="false" aria-controls="phone-code-menu"><span class="phone-code-flag" data-phone-code-flag aria-hidden="true">🇦🇺</span><span class="phone-code-value" data-phone-code-value>+61</span><span class="phone-code-chevron" aria-hidden="true"></span></button><div class="phone-code-menu" id="phone-code-menu" role="listbox" aria-label="Phone country code" hidden><button class="phone-code-option" type="button" role="option" aria-selected="true" data-phone-code-option data-code="+61" data-country="Australia" data-flag="🇦🇺"><span class="phone-option-flag" aria-hidden="true">🇦🇺</span><span>Australia</span><b>+61</b></button><button class="phone-code-option" type="button" role="option" aria-selected="false" data-phone-code-option data-code="+1" data-country="United States" data-flag="🇺🇸"><span class="phone-option-flag" aria-hidden="true">🇺🇸</span><span>United States</span><b>+1</b></button></div></div><input id="phone-code" name="phone_country_code" type="hidden" value="+61"><input id="phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" aria-label="Phone number" placeholder="Phone number" required></div></div>
@@ -341,8 +354,8 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
       <div class="pillars reveal">
         <article class="pillar"><span class="n" aria-hidden="true">01</span><h3>A dedicated advisor, not a call centre</h3><p>One point of contact from your first enquiry to touchdown—or gangway.</p></article>
         <article class="pillar"><span class="n" aria-hidden="true">02</span><h3>Backed by Top Business Class</h3><p>Bookings are issued and financially protected through Top Business Class or an accredited partner agency.</p></article>
-        <article class="pillar"><span class="n" aria-hidden="true">03</span><h3>Flights &amp; cruises, one advisor</h3><p>Premium cabins and luxury cruises are planned together whenever your journey calls for both.</p></article>
-        <article class="pillar"><span class="n" aria-hidden="true">04</span><h3>Private rates</h3><p>Access to negotiated premium fares and cabin allocations not ordinarily available to the public.</p></article>
+        <article class="pillar"><span class="n" aria-hidden="true">03</span><h3>Flights, hotels &amp; cruises, one advisor</h3><p>Premium cabins, exceptional stays and luxury cruises are planned together whenever your journey calls for them.</p></article>
+        <article class="pillar"><span class="n" aria-hidden="true">04</span><h3>Private rates</h3><p>Access to negotiated fares, preferred hotel benefits and cabin allocations not ordinarily available to the public.</p></article>
       </div>
     </div>
   </section>
@@ -353,13 +366,13 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
         <div class="about-copy reveal">
           <span class="eyebrow">A more personal way to travel</span>
           <h2 class="h2">Your journey deserves more than a search box.</h2>
-          <p class="lead">The right premium trip is not simply the cheapest result. It is the right seat, the sensible connection, the ship that suits your pace, and a plan that still works when something changes.</p>
+          <p class="lead">The right premium trip is not simply the cheapest result. It is the right seat, the sensible connection, the hotel that understands your priorities, the ship that suits your pace, and a plan that still works when something changes.</p>
           <p class="lead">I bring those decisions together for a small circle of travellers—listening first, comparing carefully, and staying close to every booking from departure to homecoming.</p>
           <p class="about-sign">Consider it handled.</p>
         </div>
         <figure class="about-visual reveal">
           <img src="assets/window.jpg" alt="Golden sunset seen through an aircraft window" loading="lazy">
-          <figcaption class="about-caption"><b>Details shape the whole journey.</b><span>Cabin, connection, timing, transfer, suite and shore.</span></figcaption>
+          <figcaption class="about-caption"><b>Details shape the whole journey.</b><span>Cabin, connection, hotel, transfer, suite and shore.</span></figcaption>
         </figure>
       </div>
     </div>
@@ -376,6 +389,23 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
       </div>
       <p class="fare-note">*Concept pricing only. Actual fares vary by origin, date, cabin, airline and availability.</p>
       <div class="airline-line reveal"><span>Planning across leading global airline networks</span><div class="airline-chips"><b>Thoughtful schedules</b><b>Quality cabins</b><b>Lounge access</b><b>Sensible connections</b><b>Flexible options</b></div></div>
+    </div>
+  </section>
+
+  <section class="section hotels" id="hotels">
+    <div class="wrap hotel-layout">
+      <div class="hotel-intro reveal">
+        <span class="eyebrow">Luxury hotels</span>
+        <h2 class="h2">A better stay, selected around you.</h2>
+        <p class="lead">From a polished city base to a private villa by the water, I shortlist hotels for the details that matter: location, room, service, timing and the character of your trip.</p>
+        <a class="btn btn-dark" href="#quote" data-select-trip="Hotel">Plan my stay</a>
+      </div>
+      <div class="hotel-grid reveal">
+        <article class="hotel-card"><span class="n" aria-hidden="true">01</span><h3>City stays</h3><p>Well-located hotels with calm rooms, dependable service and the right rhythm for business or a weekend away.</p></article>
+        <article class="hotel-card"><span class="n" aria-hidden="true">02</span><h3>Resort retreats</h3><p>Beach, wellness and destination resorts selected for atmosphere, facilities and how you prefer to spend your time.</p></article>
+        <article class="hotel-card"><span class="n" aria-hidden="true">03</span><h3>Cruise extensions</h3><p>Pre- and post-cruise nights planned around embarkation, transfers, recovery time and a little room to explore.</p></article>
+        <article class="hotel-card"><span class="n" aria-hidden="true">04</span><h3>Villas &amp; residences</h3><p>More space, privacy and flexibility for families, longer stays, celebrations and journeys shared with friends.</p></article>
+      </div>
     </div>
   </section>
 
@@ -418,15 +448,15 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
     <div class="wrap bottom-grid reveal">
       <div class="bottom-col"><span class="eyebrow">A clear promise</span><h2>Your journey, thoughtfully managed.</h2><p>This concept is built around straightforward advice and a single accountable relationship.</p><div class="promise-list"><span>Options explained in plain language</span><span>Illustrative pricing clearly labelled</span><span>No manufactured reviews or credentials</span><span>One itinerary, one point of contact</span></div></div>
       <div class="bottom-col"><span class="eyebrow">Questions</span><h2>Frequently asked</h2><div class="faq">
-        <details><summary>Can you arrange both flights and cruises?</summary><p>Yes. Flights, hotel nights, transfers and the cruise can be considered together so timings and comfort work as one journey.</p></details>
-        <details><summary>Do you only plan luxury travel?</summary><p>The focus is business and first class air travel, premium cruises and special journeys where personal planning adds meaningful value.</p></details>
+        <details><summary>Can you arrange flights, hotels and cruises together?</summary><p>Yes. Flights, hotel stays, transfers and cruises can be considered together so timing, location and comfort work as one journey.</p></details>
+        <details><summary>Do you only plan luxury travel?</summary><p>The focus is business and first class air travel, exceptional hotels, premium cruises and special journeys where personal planning adds meaningful value.</p></details>
         <details><summary>How quickly will I hear back?</summary><p>A first response would normally arrive within one business day. Complex multi-stop itineraries may need a little longer to research properly.</p></details>
-        <details><summary>Are the prices on this page live fares?</summary><p>No. They are illustrative concept prices only. A real quote depends on origin, dates, cabin, route and live availability.</p></details>
+        <details><summary>Are the prices on this page live rates?</summary><p>No. They are illustrative concept prices only. A real quote depends on origin, dates, cabin or room type, route and live availability.</p></details>
       </div></div>
       <div class="bottom-col"><span class="eyebrow">Start a conversation</span><h2>Where shall we take you?</h2><p>Share the idea—even if the dates and details are not yet final.</p><form class="contact-mini" data-demo-form>
         <div class="row"><input name="name" aria-label="Full name" placeholder="Full name" required><input name="phone" aria-label="Phone number" placeholder="Phone number"></div>
         <input name="email" type="email" aria-label="Email address" placeholder="Email address" required>
-        <select name="interest" aria-label="Journey type"><option value="">I am interested in…</option><option>Business class flights</option><option>First class flights</option><option>Luxury cruise</option><option>Fly-cruise journey</option></select>
+        <select name="interest" aria-label="Journey type"><option value="">I am interested in…</option><option>Business class flights</option><option>First class flights</option><option>Luxury hotel</option><option>Luxury cruise</option><option>Complete itinerary</option></select>
         <textarea name="message" aria-label="Journey details" placeholder="Tell me a little about your trip…"></textarea>
         <button class="btn" type="submit">Send my enquiry</button><div class="success" role="status">Thank you—your demo enquiry has been captured.</div>
       </form></div>
@@ -435,7 +465,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 </main>
 
 <footer class="footer"><div class="wrap">
-  <div class="footer-top"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">SailSky <b>&amp; Co</b><small>Personal travel concierge</small></span></a><nav class="footer-links" aria-label="Footer navigation"><a href="#about">About</a><a href="#flights">Flights</a><a href="#cruises">Cruises</a><a href="#process">How it works</a><a href="#contact">Contact</a></nav></div>
+  <div class="footer-top"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">SailSky <b>&amp; Co</b><small>Personal travel concierge</small></span></a><nav class="footer-links" aria-label="Footer navigation"><a href="#about">About</a><a href="#flights">Flights</a><a href="#hotels">Hotels</a><a href="#cruises">Cruises</a><a href="#process">How it works</a><a href="#contact">Contact</a></nav></div>
   <div class="footer-bottom"><span>Concept travel concierge website. All prices are illustrative.</span><span>Website concept by <a href="../../">Bir Sayt</a></span></div>
 </div></footer>
 
@@ -451,6 +481,7 @@ window.addEventListener('scroll',()=>header.classList.toggle('stuck',scrollY>50)
 
 const airCabins=['First Class','Business Class','Premium-Economy Class'];
 const cruiseCabins=['Interior','Oceanview','Balcony','Suite'];
+const hotelRooms=['Hotel Room','Junior Suite','Suite','Villa / Residence'];
 const airports=(window.SAILSKY_AIRPORTS||[]).map(([code,city,name,country,tier,keywords])=>({code,city,name,country,tier,keywords}));
 const premiumAirportPriority=new Map(['SYD','MEL','BNE','PER','ADL','CBR','OOL','CNS','HBA','DRW','JFK','EWR','LGA','LAX','SFO','ORD','MIA','DFW','IAH','BOS','SEA','ATL','IAD','DCA','LAS','HNL','MCO','SAN','LHR','LGW','CDG','ORY','AMS','FRA','MUC','ZRH','GVA','FCO','MXP','MAD','BCN','LIS','ATH','VIE','CPH','ARN','OSL','HEL','DUB','DXB','AUH','DOH','SIN','HKG','NRT','HND','ICN','BKK','KUL','DEL','BOM','CGK','MNL','TPE','AKL','CHC','NAN','PPT','JNB','CPT','CAI','CMN','NBO','YYZ','YVR','YUL','MEX','GRU','GIG','EZE','SCL'].map((code,index)=>[code,index]));
 const calendarMonths=['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -484,7 +515,7 @@ function updatePassengerPopoverAlignment(){
 }
 function closePhonePicker(){phoneCodeMenu.hidden=true;phoneCodeTrigger.setAttribute('aria-expanded','false')}
 function closeAirportPickers(except=null){
-  airportPickers.forEach(picker=>{if(picker===except)return;const input=picker.querySelector('input');picker.querySelector('.airport-menu').hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');picker._active=-1});
+  airportPickers.forEach(picker=>{if(picker===except)return;const input=picker.querySelector('input');picker.querySelector('.airport-menu').hidden=true;if(picker.dataset.searchType==='hotel')input.removeAttribute('aria-expanded');else input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');picker._active=-1});
 }
 function normalizedAirportText(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
 function matchingAirports(query){
@@ -504,6 +535,7 @@ function selectAirport(picker,airport){
 }
 function renderAirportOptions(picker){
   const input=picker.querySelector('input');const menu=picker.querySelector('.airport-menu');const query=input.value.trim();closeAirportPickers(picker);menu.replaceChildren();picker._active=-1;
+  if(picker.dataset.searchType==='hotel'){menu.hidden=true;input.removeAttribute('aria-expanded');return}
   if(!query){menu.hidden=true;input.setAttribute('aria-expanded','false');return}
   const matches=matchingAirports(query);picker._matches=matches;
   if(!matches.length){const empty=document.createElement('div');empty.className='airport-empty';empty.textContent='No matching airports found';menu.append(empty)}
@@ -522,9 +554,9 @@ function formatPhoneNumber(value,code){
 }
 function applyPhoneFormat(){const code=document.getElementById('phone-code').value;phoneNumberInput.value=formatPhoneNumber(phoneNumberInput.value,code)}
 function updatePassengers(){
-  let total=0;const selections=[];
+  let total=0;const selections=[];const hotelMode=document.querySelector('#quote [name="tripType"]').value==='Hotel';
   passengerRows.forEach(row=>{const count=Number(row.dataset.count);const minimum=Number(row.dataset.min);total+=count;row.querySelector('.passenger-count').textContent=String(count);row.querySelector('[data-passenger-minus]').disabled=count<=minimum;if(count)selections.push(`${count} ${count===1?row.dataset.singular:row.dataset.plural}`)});
-  passengerPicker.querySelector('[data-passenger-summary]').textContent=`${total} ${total===1?'Passenger':'Passengers'}`;
+  passengerPicker.querySelector('[data-passenger-summary]').textContent=`${total} ${hotelMode?(total===1?'Guest':'Guests'):(total===1?'Passenger':'Passengers')}`;
   document.getElementById('travellers').value=selections.join(', ');
 }
 function setPickerValue(picker,value){
@@ -551,6 +583,7 @@ airportPickers.forEach(picker=>{
   input.addEventListener('focus',()=>{closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers(picker);if(input.value&&!input.dataset.airportCode)renderAirportOptions(picker)});
   input.addEventListener('input',()=>{delete input.dataset.airportCode;closeCalendars();closePassengerPicker();closePhonePicker();renderAirportOptions(picker)});
   input.addEventListener('keydown',event=>{
+    if(picker.dataset.searchType==='hotel')return;
     const menu=picker.querySelector('.airport-menu');
     if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();if(menu.hidden)renderAirportOptions(picker);const step=event.key==='ArrowDown'?1:-1;const start=picker._active>=0?picker._active:(step===1?-1:0);setActiveAirport(picker,start+step)}
     else if(event.key==='Enter'&&!menu.hidden&&picker._active>=0){event.preventDefault();selectAirport(picker,picker._matches[picker._active])}
@@ -580,13 +613,24 @@ document.addEventListener('click',event=>{if(!event.target.closest('[data-date-p
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){const passengerWasOpen=!passengerPanel.hidden;const phoneWasOpen=!phoneCodeMenu.hidden;closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers();if(phoneWasOpen)phoneCodeTrigger.focus();else if(passengerWasOpen)passengerTrigger.focus()}});
 
 function setCabinOptions(select,tripType){
-  const options=tripType==='Cruise'?cruiseCabins:airCabins;select.replaceChildren(...options.map(value=>{const option=document.createElement('option');option.value=value;option.textContent=value;return option}));
+  const options=tripType==='Hotel'?hotelRooms:tripType==='Cruise'?cruiseCabins:airCabins;select.replaceChildren(...options.map(value=>{const option=document.createElement('option');option.value=value;option.textContent=value;return option}));
+}
+function setTripMode(form,tripType){
+  const hotelMode=tripType==='Hotel';const previousTrip=form.dataset.activeTrip;const fromField=form.querySelector('[data-route-field="from"]');const toField=form.querySelector('[data-route-field="to"]');const fromInput=fromField.querySelector('input');const toInput=toField.querySelector('input');
+  if(previousTrip&&(previousTrip==='Hotel')!==hotelMode){toInput.value='';delete toInput.dataset.airportCode}
+  form.dataset.activeTrip=tripType;form.elements.tripType.value=tripType;form.querySelector('[data-form-title]').textContent=hotelMode?'Tell me about your hotel stay':'Tell me where you would like to go';
+  fromField.classList.toggle('hidden',hotelMode);fromInput.required=!hotelMode;toField.classList.toggle('full',hotelMode);toField.dataset.searchType=hotelMode?'hotel':'airport';toInput.name=hotelMode?'hotel_destination':'to';toInput.placeholder=hotelMode?'City, hotel or destination':'To';toInput.setAttribute('aria-label',hotelMode?'Hotel destination':'To airport');
+  if(hotelMode){toInput.removeAttribute('role');toInput.removeAttribute('aria-autocomplete');toInput.removeAttribute('aria-controls');toInput.removeAttribute('aria-expanded')}else{toInput.setAttribute('role','combobox');toInput.setAttribute('aria-autocomplete','list');toInput.setAttribute('aria-controls','to-airports');toInput.setAttribute('aria-expanded','false')}
+  form.querySelector('.field.return').classList.toggle('hidden',tripType==='One way'||tripType==='Cruise');
+  datePickers.forEach(picker=>{const start=picker.dataset.datePicker==='depart';const label=hotelMode?(start?'Check-in':'Check-out'):(start?'Departure':'Return');picker.querySelector('label').textContent=label;picker.querySelector('.date-trigger').setAttribute('aria-label',`Choose ${label.toLowerCase()} date`);picker.querySelector('.calendar-popover').setAttribute('aria-label',`Choose ${label.toLowerCase()} date`);picker.querySelector('input[type="hidden"]').name=hotelMode?(start?'check_in':'check_out'):(start?'depart':'return')});
+  form.querySelector('[data-passenger-label]').textContent=hotelMode?'Guests':'Passengers';passengerTrigger.setAttribute('aria-label',hotelMode?'Choose guests':'Choose passengers');passengerPanel.setAttribute('aria-label',hotelMode?'Choose guest quantities':'Choose passenger quantities');document.getElementById('travellers').name=hotelMode?'guests':'travellers';const roomsField=form.querySelector('[data-hotel-only]');roomsField.classList.toggle('hidden',!hotelMode);roomsField.querySelector('select').disabled=!hotelMode;const cabinField=form.querySelector('[data-cabin-field]');cabinField.classList.toggle('full',hotelMode);form.querySelector('[data-cabin-label]').textContent=hotelMode?'Room preference':'Cabin / journey';form.elements.cabin.name=hotelMode?'room_preference':'cabin';
+  setCabinOptions(form.elements.cabin,tripType);updatePassengers();closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers();updatePassengerPopoverAlignment();
 }
 document.querySelectorAll('.trip-tab').forEach(tab=>tab.addEventListener('click',()=>{
-  const form=tab.closest('form');form.querySelectorAll('.trip-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');form.elements.tripType.value=tab.dataset.trip;
-  form.querySelector('.field.return').classList.toggle('hidden',tab.dataset.trip==='One way'||tab.dataset.trip==='Cruise');
-  setCabinOptions(form.elements.cabin,tab.dataset.trip);closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers();updatePassengerPopoverAlignment();
+  const form=tab.closest('form');form.querySelectorAll('.trip-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');setTripMode(form,tab.dataset.trip);
 }));
+document.querySelectorAll('[data-select-trip]').forEach(link=>link.addEventListener('click',()=>document.querySelector(`.trip-tab[data-trip="${link.dataset.selectTrip}"]`)?.click()));
+setTripMode(document.getElementById('quote'),'Round trip');
 document.querySelectorAll('[data-demo-form]').forEach(form=>form.addEventListener('submit',event=>{
   event.preventDefault();
   if(form.id==='quote'){
