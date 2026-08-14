@@ -622,7 +622,7 @@ window.addEventListener('scroll',()=>header.classList.toggle('stuck',scrollY>50)
 
 const airCabins=['First Class','Business Class','Premium-Economy Class'];
 const cruiseCabins=['Interior','Oceanview','Balcony','Suite'];
-const hotelRooms=['Hotel Room','Junior Suite','Suite','Villa / Residence'];
+const hotelRooms=['Standard','Deluxe','Suite','Family room'];
 const airports=(window.SAILSKY_AIRPORTS||[]).map(([code,city,name,country,tier,keywords])=>({code,city,name,country,tier,keywords}));
 const premiumAirportPriority=new Map(['SYD','MEL','BNE','PER','ADL','CBR','OOL','CNS','HBA','DRW','JFK','EWR','LGA','LAX','SFO','ORD','MIA','DFW','IAH','BOS','SEA','ATL','IAD','DCA','LAS','HNL','MCO','SAN','LHR','LGW','CDG','ORY','AMS','FRA','MUC','ZRH','GVA','FCO','MXP','MAD','BCN','LIS','ATH','VIE','CPH','ARN','OSL','HEL','DUB','DXB','AUH','DOH','SIN','HKG','NRT','HND','ICN','BKK','KUL','DEL','BOM','CGK','MNL','TPE','AKL','CHC','NAN','PPT','JNB','CPT','CAI','CMN','NBO','YYZ','YVR','YUL','MEX','GRU','GIG','EZE','SCL'].map((code,index)=>[code,index]));
 const calendarMonths=['January','February','March','April','May','June','July','August','September','October','November','December'];
