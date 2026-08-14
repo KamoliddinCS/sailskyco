@@ -180,7 +180,12 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .why-work-head{text-align:center}.why-work-head .eyebrow{margin-bottom:8px}.why-work-title{font-size:clamp(2.15rem,3.4vw,3.05rem);letter-spacing:-.015em}
 .why-work .pillars{margin-top:34px;background:transparent;border:0;gap:14px}
 .why-work .pillar,.why-work .pillar:last-child{min-height:245px;padding:31px 27px 30px;text-align:center;border:1px solid var(--line);background:var(--paper);box-shadow:0 12px 30px rgba(17,40,60,.055)}
-.why-work .pillar .n{display:grid;place-items:center;width:45px;height:45px;margin:0 auto;border:1px solid rgba(155,103,21,.5);border-radius:50%;font-size:1rem;font-style:normal}
+.why-work .pillar-icon{display:grid;place-items:center;width:48px;height:48px;margin:0 auto;border:1px solid rgba(155,103,21,.5);border-radius:50%;color:#9b6715}
+.why-work .pillar-icon::before{content:"";width:25px;height:25px;background:currentColor;-webkit-mask:var(--pillar-icon) center/contain no-repeat;mask:var(--pillar-icon) center/contain no-repeat}
+.why-work .pillar-icon.advisor{--pillar-icon:url("assets/icons/user-round-check.svg")}
+.why-work .pillar-icon.protection{--pillar-icon:url("assets/icons/shield-check.svg")}
+.why-work .pillar-icon.journey{--pillar-icon:url("assets/icons/route.svg")}
+.why-work .pillar-icon.rates{--pillar-icon:url("assets/icons/badge-percent.svg")}
 .why-work .pillar h3{font-size:1.43rem;line-height:1.13;margin:17px auto 11px;max-width:14ch}
 .why-work .pillar p{font-size:.96rem;line-height:1.72}
 
@@ -376,10 +381,10 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
         <h2 class="why-work-title" id="why-work-title">Why personal service matters</h2>
       </header>
       <div class="pillars reveal">
-        <article class="pillar"><span class="n" aria-hidden="true">01</span><h3>A dedicated advisor, not a call centre</h3><p>One point of contact from your first enquiry to touchdown—or gangway.</p></article>
-        <article class="pillar"><span class="n" aria-hidden="true">02</span><h3>Backed by Top Business Class</h3><p>Bookings are issued and financially protected through Top Business Class or an accredited partner agency.</p></article>
-        <article class="pillar"><span class="n" aria-hidden="true">03</span><h3>Flights, hotels &amp; cruises, one advisor</h3><p>Premium cabins, exceptional stays and luxury cruises are brought together whenever your journey calls for them.</p></article>
-        <article class="pillar"><span class="n" aria-hidden="true">04</span><h3>Private rates</h3><p>Access to negotiated fares, preferred hotel benefits and cabin allocations not ordinarily available to the public.</p></article>
+        <article class="pillar"><span class="pillar-icon advisor" aria-hidden="true"></span><h3>A dedicated advisor, not a call centre</h3><p>One point of contact from your first enquiry to touchdown—or gangway.</p></article>
+        <article class="pillar"><span class="pillar-icon protection" aria-hidden="true"></span><h3>Backed by Top Business Class</h3><p>Bookings are issued and financially protected through Top Business Class or an accredited partner agency.</p></article>
+        <article class="pillar"><span class="pillar-icon journey" aria-hidden="true"></span><h3>Flights, hotels &amp; cruises, one advisor</h3><p>Premium cabins, exceptional stays and luxury cruises are brought together whenever your journey calls for them.</p></article>
+        <article class="pillar"><span class="pillar-icon rates" aria-hidden="true"></span><h3>Private rates</h3><p>Access to negotiated fares, preferred hotel benefits and cabin allocations not ordinarily available to the public.</p></article>
       </div>
     </div>
   </section>
