@@ -90,7 +90,6 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
 .hero-advisor{display:flex;align-items:center;gap:13px;margin-top:23px;color:#fff}.advisor-monogram{width:44px;height:44px;flex:0 0 44px;border:1px solid rgba(240,203,122,.75);border-radius:50%;display:grid;place-items:center;background:rgba(5,27,47,.6);color:var(--gold-2);font-family:var(--serif);font-size:1.05rem;font-weight:600}.hero-advisor b{display:block;font-family:var(--serif);font-size:1.14rem;font-weight:600;line-height:1.15}.hero-advisor small{display:block;color:#d7e0e6;font-size:.82rem;line-height:1.5;margin-top:3px}
 .quote-card{background:rgba(5,27,47,.96);border:1.5px solid rgba(240,203,122,.88);box-shadow:0 34px 86px rgba(0,0,0,.38);padding:36px 34px 30px;backdrop-filter:blur(11px)}
-.form-advisor{display:flex;align-items:center;justify-content:center;gap:11px;padding-bottom:17px;margin-bottom:18px;border-bottom:1px solid rgba(255,255,255,.15);text-align:left}.form-advisor .advisor-monogram{width:40px;height:40px;flex-basis:40px}.form-advisor b{display:block;color:#fff;font-size:.9rem;line-height:1.3}.form-advisor small{display:block;color:#c8d3da;font-size:.76rem;line-height:1.45;margin-top:2px}
 .quote-card h2{text-align:center;font-size:2.02rem;color:#fff;margin-bottom:24px}
 .trip-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-bottom:18px}
 .trip-tab{border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.06);color:#eef3f6;font-size:.86rem;font-weight:600;padding:9px 6px;cursor:pointer;min-height:42px}
@@ -309,11 +308,11 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="#about">Meet Patrick</a><a href="#flights">Flights</a><a href="#hotels">Hotels</a><a href="#cruises">Cruises</a><a href="#reviews">Reviews</a><a href="#process">How it works</a><a href="#contact">Contact</a>
     </nav>
-    <a class="btn" href="#quote">Speak with Patrick</a>
+    <a class="btn" href="#quote">Plan my journey</a>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
   <nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
-    <a href="#about">Meet Patrick</a><a href="#flights">Flights</a><a href="#hotels">Hotels</a><a href="#cruises">Cruises</a><a href="#reviews">Reviews</a><a href="#process">How it works</a><a href="#contact">Contact</a><a class="btn" href="#quote">Speak with Patrick</a>
+    <a href="#about">Meet Patrick</a><a href="#flights">Flights</a><a href="#hotels">Hotels</a><a href="#cruises">Cruises</a><a href="#reviews">Reviews</a><a href="#process">How it works</a><a href="#contact">Contact</a><a class="btn" href="#quote">Plan my journey</a>
   </nav>
 </header>
 
@@ -322,16 +321,15 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy reveal">
-        <span class="overline">Patrick Morgan · Personal Travel Concierge</span>
+        <span class="overline">Personal travel concierge</span>
         <h1>Premium travel, <em>personally handled.</em></h1>
-        <p>I’m Patrick Morgan. I personally plan business and first class flights, exceptional hotels, luxury cruises, and seamless combinations—staying close to every detail of your journey.</p>
-        <div class="hero-actions"><a class="btn" href="#quote">Plan my journey with Patrick <span aria-hidden="true">→</span></a><a class="btn btn-outline" href="#about">Meet Patrick</a></div>
-        <div class="hero-advisor"><span class="advisor-monogram" aria-hidden="true">PM</span><span><b>You will work directly with Patrick</b><small>One personal point of contact from first idea to final arrival</small></span></div>
+        <p>Business and first class flights, exceptional hotels, luxury cruises, and seamless combinations—planned with care around the way you prefer to travel.</p>
+        <div class="hero-actions"><a class="btn" href="#quote">Request a complimentary plan <span aria-hidden="true">→</span></a><a class="btn btn-outline" href="#cruises">Explore journeys</a></div>
+        <div class="hero-advisor"><span class="advisor-monogram" aria-hidden="true">PM</span><span><b>Patrick Morgan</b><small>Your personal advisor from first idea to final arrival</small></span></div>
       </div>
 
       <form class="quote-card reveal" id="quote" data-demo-form>
-        <div class="form-advisor"><span class="advisor-monogram" aria-hidden="true">PM</span><span><b>Your enquiry goes directly to Patrick Morgan</b><small>Personal advice, never an anonymous call centre</small></span></div>
-        <h2 data-form-title>Tell Patrick where you would like to go</h2>
+        <h2 data-form-title>Tell me where you would like to go</h2>
         <div class="trip-tabs" role="group" aria-label="Trip type">
           <button class="trip-tab active" type="button" data-trip="Round trip">Round trip</button><button class="trip-tab" type="button" data-trip="One way">One way</button><button class="trip-tab" type="button" data-trip="Multi-city">Multi-city</button><button class="trip-tab" type="button" data-trip="Cruise">Cruise</button><button class="trip-tab" type="button" data-trip="Hotel">Hotel</button>
         </div>
@@ -352,9 +350,9 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
           <div class="field compact-field"><input id="email" name="email" type="email" autocomplete="email" aria-label="Email" placeholder="Email" required></div>
           <div class="field full"><div class="phone-input-group" data-phone-picker><div class="phone-code-picker"><button class="phone-code-trigger" type="button" aria-label="Select phone country code, Australia +61" aria-haspopup="listbox" aria-expanded="false" aria-controls="phone-code-menu"><span class="phone-code-flag" data-phone-code-flag aria-hidden="true">🇦🇺</span><span class="phone-code-value" data-phone-code-value>+61</span><span class="phone-code-chevron" aria-hidden="true"></span></button><div class="phone-code-menu" id="phone-code-menu" role="listbox" aria-label="Phone country code" hidden><button class="phone-code-option" type="button" role="option" aria-selected="true" data-phone-code-option data-code="+61" data-country="Australia" data-flag="🇦🇺"><span class="phone-option-flag" aria-hidden="true">🇦🇺</span><span>Australia</span><b>+61</b></button><button class="phone-code-option" type="button" role="option" aria-selected="false" data-phone-code-option data-code="+1" data-country="United States" data-flag="🇺🇸"><span class="phone-option-flag" aria-hidden="true">🇺🇸</span><span>United States</span><b>+1</b></button></div></div><input id="phone-code" name="phone_country_code" type="hidden" value="+61"><input id="phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" aria-label="Phone number" placeholder="Phone number" required></div></div>
         </div>
-        <button class="btn" type="submit">Connect me with Patrick Morgan</button>
-        <p class="form-fine">Patrick will personally review your request. There is no charge until he finds your best price and dates. Tickets and bookings are issued through Top Business Class and accredited partner agencies.</p>
-        <div class="success" role="status">Thank you—Patrick has received your travel enquiry.</div>
+        <button class="btn" type="submit">Connect me with my travel advisor</button>
+        <p class="form-fine">No charge until we find your best price and dates. Tickets and bookings are issued through Top Business Class and our accredited partner agencies.</p>
+        <div class="success" role="status">Thank you—your travel enquiry has been received.</div>
       </form>
     </div>
   </section>
@@ -363,12 +361,12 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
     <div class="wrap">
       <header class="why-work-head reveal">
         <span class="eyebrow">The concierge difference</span>
-        <h2 class="why-work-title" id="why-work-title">Why travellers work with Patrick</h2>
+        <h2 class="why-work-title" id="why-work-title">Why personal service matters</h2>
       </header>
       <div class="pillars reveal">
-        <article class="pillar"><span class="n" aria-hidden="true">01</span><h3>Patrick is your dedicated advisor</h3><p>You deal directly with Patrick from your first enquiry to touchdown—or gangway.</p></article>
+        <article class="pillar"><span class="n" aria-hidden="true">01</span><h3>A dedicated advisor, not a call centre</h3><p>One point of contact from your first enquiry to touchdown—or gangway.</p></article>
         <article class="pillar"><span class="n" aria-hidden="true">02</span><h3>Backed by Top Business Class</h3><p>Bookings are issued and financially protected through Top Business Class or an accredited partner agency.</p></article>
-        <article class="pillar"><span class="n" aria-hidden="true">03</span><h3>Flights, hotels &amp; cruises, one advisor</h3><p>Patrick brings premium cabins, exceptional stays and luxury cruises together whenever your journey calls for them.</p></article>
+        <article class="pillar"><span class="n" aria-hidden="true">03</span><h3>Flights, hotels &amp; cruises, one advisor</h3><p>Premium cabins, exceptional stays and luxury cruises are brought together whenever your journey calls for them.</p></article>
         <article class="pillar"><span class="n" aria-hidden="true">04</span><h3>Private rates</h3><p>Access to negotiated fares, preferred hotel benefits and cabin allocations not ordinarily available to the public.</p></article>
       </div>
     </div>
@@ -378,15 +376,15 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
     <div class="wrap">
       <div class="about-grid">
         <div class="about-copy reveal">
-          <span class="eyebrow">Meet Patrick Morgan</span>
-          <h2 class="h2">Your personal travel concierge.</h2>
-          <p class="lead">Hello, I’m Patrick Morgan. I plan business and first class flights, exceptional hotels, luxury cruises and complex itineraries for travellers who value clarity, comfort and a real person they can reach.</p>
+          <span class="eyebrow">Meet your travel concierge</span>
+          <h2 class="h2">Patrick Morgan.</h2>
+          <p class="lead">I plan business and first class flights, exceptional hotels, luxury cruises and complex itineraries for travellers who value clarity, comfort and a real person they can reach.</p>
           <p class="lead">From our first conversation to your return home, you deal directly with me. I listen first, compare the meaningful options, explain the details clearly and remain close to every booking when plans change.</p>
-          <p class="about-sign">Patrick Morgan<small>Personal Travel Concierge</small></p>
+          <p class="about-sign">Consider it handled.<small>Personal Travel Concierge</small></p>
         </div>
         <figure class="about-visual reveal">
           <img src="assets/window.jpg" alt="Golden sunset seen through an aircraft window" loading="lazy">
-          <figcaption class="about-caption"><b>Personally planned by Patrick.</b><span>Cabin, connection, hotel, transfer, suite and shore—considered as one journey.</span></figcaption>
+          <figcaption class="about-caption"><b>Details shape the whole journey.</b><span>Cabin, connection, hotel, transfer, suite and shore—considered as one journey.</span></figcaption>
         </figure>
       </div>
     </div>
@@ -439,8 +437,8 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
     <div class="wrap">
       <header class="reviews-head reveal">
-        <div><span class="eyebrow light">Five-star client feedback</span><h2 class="h2" id="reviews-title">What clients say about Patrick.</h2></div>
-        <div class="reviews-summary"><div class="review-score"><strong>5.0</strong><span class="review-stars" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span><span>8 five-star reviews</span></div><p>Recent feedback from travellers Patrick supported through Top Business Class, covering responsiveness, persistence, value and expert premium-flight planning.</p></div>
+        <div><span class="eyebrow light">Five-star client feedback</span><h2 class="h2" id="reviews-title">What clients say.</h2></div>
+        <div class="reviews-summary"><div class="review-score"><strong>5.0</strong><span class="review-stars" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span><span>8 five-star reviews</span></div><p>Recent feedback from travellers supported through Top Business Class, covering responsiveness, persistence, value and expert premium-flight planning.</p></div>
       </header>
       <div class="review-carousel-bar reveal"><span>Browse client reviews</span><div class="review-controls"><button class="review-control" type="button" data-review-prev aria-label="Previous review" disabled>←</button><span class="review-progress" data-review-progress aria-live="polite">1–2 of 8</span><button class="review-control" type="button" data-review-next aria-label="Next review">→</button></div></div>
       <div class="review-grid reveal" data-review-track tabindex="0" role="region" aria-label="Client reviews carousel">
@@ -485,16 +483,16 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
           <blockquote><p>We experienced <strong>great service from Patrick and a really good price</strong> for last-minute Business Class flights to Europe.</p></blockquote>
         </article>
       </div>
-      <p class="reviews-note">Client feedback relates to Patrick’s service through Top Business Class. Capitalisation, punctuation and minor grammatical errors have been lightly edited for readability.</p>
+      <p class="reviews-note">Client feedback relates to service provided through Top Business Class. Capitalisation, punctuation and minor grammatical errors have been lightly edited for readability.</p>
     </div>
   </section>
 
   <section class="process" id="process">
     <div class="process-grid">
-      <div class="process-copy reveal"><span class="eyebrow">How Patrick works</span><h2 class="h2">One advisor. Every detail.</h2><div class="steps">
-        <article class="step"><span class="step-n">1</span><div><h3>Share your plans with Patrick</h3><p>Tell Patrick where, when, who is travelling, and what would make the journey feel right.</p></div></article>
-        <article class="step"><span class="step-n">2</span><div><h3>Patrick researches the options</h3><p>He compares the meaningful choices and returns with a clear recommendation, usually within one business day.</p></div></article>
-        <article class="step"><span class="step-n">3</span><div><h3>Confirm and travel</h3><p>Patrick brings every chosen element together, explains your itinerary clearly and remains your point of contact.</p></div></article>
+      <div class="process-copy reveal"><span class="eyebrow">How it works</span><h2 class="h2">Simple. Personal. Professional.</h2><div class="steps">
+        <article class="step"><span class="step-n">1</span><div><h3>Share the shape of your trip</h3><p>Tell me where, when, who is travelling, and what would make the journey feel right.</p></div></article>
+        <article class="step"><span class="step-n">2</span><div><h3>Receive a considered shortlist</h3><p>I compare the meaningful options and return with a clear recommendation, usually within one business day.</p></div></article>
+        <article class="step"><span class="step-n">3</span><div><h3>Confirm and travel</h3><p>Once you are happy, every chosen element is brought together, explained clearly and carefully managed.</p></div></article>
       </div></div>
       <div class="process-img"><img src="assets/cruise.jpg" alt="Luxury cruise ship sailing at dusk" loading="lazy"></div>
     </div>
@@ -502,20 +500,20 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 
   <section class="section bottom" id="contact">
     <div class="wrap bottom-grid reveal">
-      <div class="bottom-col"><span class="eyebrow">Booking &amp; protection</span><h2>Confidence behind every confirmation.</h2><p>Patrick provides the personal advice; tickets and bookings are issued through Top Business Class and accredited partner agencies for established fulfilment.</p><div class="promise-list"><span>No charge until Patrick finds the best price and dates</span><span>Bookings issued through established, accredited partners</span><span>Fares, room types and cabin conditions clearly explained</span><span>Patrick remains your advisor from enquiry to travel</span></div></div>
+      <div class="bottom-col"><span class="eyebrow">Booking &amp; protection</span><h2>Confidence behind every confirmation.</h2><p>Tickets and bookings are issued through Top Business Class and accredited partner agencies, combining personal advice with established fulfilment.</p><div class="promise-list"><span>No charge until the best price and dates are found</span><span>Bookings issued through established, accredited partners</span><span>Fares, room types and cabin conditions clearly explained</span><span>One advisor from first enquiry to travel</span></div></div>
       <div class="bottom-col"><span class="eyebrow">Questions</span><h2>Frequently asked</h2><div class="faq">
         <details><summary>Who will personally handle my enquiry?</summary><p>Patrick Morgan will review your request, research the options and remain your dedicated point of contact. You will not be passed between anonymous agents.</p></details>
-        <details><summary>Can Patrick arrange flights, hotels and cruises together?</summary><p>Yes. Patrick can consider flights, hotel stays, transfers and cruises together so timing, location and comfort work as one journey.</p></details>
+        <details><summary>Can you arrange flights, hotels and cruises together?</summary><p>Yes. Flights, hotel stays, transfers and cruises can be considered together so timing, location and comfort work as one journey.</p></details>
         <details><summary>Do you only plan luxury travel?</summary><p>The focus is business and first class air travel, exceptional hotels, premium cruises and special journeys where personal planning adds meaningful value.</p></details>
         <details><summary>How quickly will I hear back?</summary><p>A first response would normally arrive within one business day. Complex multi-stop itineraries may need a little longer to research properly.</p></details>
         <details><summary>Are the prices on this page live rates?</summary><p>No. They are illustrative concept prices only. A real quote depends on origin, dates, cabin or room type, route and live availability.</p></details>
       </div></div>
-      <div class="bottom-col"><span class="eyebrow">Contact Patrick Morgan</span><h2>Plan your next journey with Patrick.</h2><p>Your message goes directly to Patrick—even if the dates and details are not yet final.</p><form class="contact-mini" data-demo-form>
+      <div class="bottom-col"><span class="eyebrow">Start a conversation</span><h2>Where would you like to go?</h2><p>Share the idea—even if the dates and details are not yet final.</p><form class="contact-mini" data-demo-form>
         <div class="row"><input name="name" aria-label="Full name" placeholder="Full name" required><input name="phone" aria-label="Phone number" placeholder="Phone number"></div>
         <input name="email" type="email" aria-label="Email address" placeholder="Email address" required>
         <select name="interest" aria-label="Journey type"><option value="">I am interested in…</option><option>Business class flights</option><option>First class flights</option><option>Luxury hotel</option><option>Luxury cruise</option><option>Complete itinerary</option></select>
         <textarea name="message" aria-label="Journey details" placeholder="Tell me a little about your trip…"></textarea>
-        <button class="btn" type="submit">Send my enquiry to Patrick</button><div class="success" role="status">Thank you—Patrick has received your enquiry.</div>
+        <button class="btn" type="submit">Send my enquiry</button><div class="success" role="status">Thank you—your enquiry has been received.</div>
       </form></div>
     </div>
   </section>
@@ -523,7 +521,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 
 <footer class="footer"><div class="wrap">
   <div class="footer-top"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">SailSky <b>&amp; Co</b><small>By Patrick Morgan</small></span></a><nav class="footer-links" aria-label="Footer navigation"><a href="#about">Meet Patrick</a><a href="#flights">Flights</a><a href="#hotels">Hotels</a><a href="#cruises">Cruises</a><a href="#reviews">Reviews</a><a href="#process">How it works</a><a href="#contact">Contact</a></nav></div>
-  <div class="footer-bottom"><span>Patrick Morgan · Personal Travel Concierge. All displayed prices are illustrative.</span><span>Website concept by <a href="../../">Bir Sayt</a></span></div>
+  <div class="footer-bottom"><span>Personal travel concierge service. All displayed prices are illustrative.</span><span>Website concept by <a href="../../">Bir Sayt</a></span></div>
 </div></footer>
 
 <script src="assets/airports.js"></script>
@@ -675,7 +673,7 @@ function setCabinOptions(select,tripType){
 function setTripMode(form,tripType){
   const hotelMode=tripType==='Hotel';const previousTrip=form.dataset.activeTrip;const fromField=form.querySelector('[data-route-field="from"]');const toField=form.querySelector('[data-route-field="to"]');const fromInput=fromField.querySelector('input');const toInput=toField.querySelector('input');
   if(previousTrip&&(previousTrip==='Hotel')!==hotelMode){toInput.value='';delete toInput.dataset.airportCode}
-  form.dataset.activeTrip=tripType;form.elements.tripType.value=tripType;form.querySelector('[data-form-title]').textContent=hotelMode?'Tell Patrick about your hotel stay':'Tell Patrick where you would like to go';
+  form.dataset.activeTrip=tripType;form.elements.tripType.value=tripType;form.querySelector('[data-form-title]').textContent=hotelMode?'Tell me about your hotel stay':'Tell me where you would like to go';
   fromField.classList.toggle('hidden',hotelMode);fromInput.required=!hotelMode;toField.classList.toggle('full',hotelMode);toField.classList.toggle('hotel-destination',hotelMode);toField.dataset.searchType=hotelMode?'hotel':'airport';toInput.name=hotelMode?'hotel_destination':'to';toInput.placeholder=hotelMode?'San Francisco':'To';toInput.setAttribute('aria-label',hotelMode?'Enter destination, for example San Francisco':'To airport');
   if(hotelMode){toInput.removeAttribute('role');toInput.removeAttribute('aria-autocomplete');toInput.removeAttribute('aria-controls');toInput.removeAttribute('aria-expanded')}else{toInput.setAttribute('role','combobox');toInput.setAttribute('aria-autocomplete','list');toInput.setAttribute('aria-controls','to-airports');toInput.setAttribute('aria-expanded','false')}
   form.querySelector('.field.return').classList.toggle('hidden',tripType==='One way'||tripType==='Cruise');
