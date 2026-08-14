@@ -78,8 +78,8 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .mobile-panel{display:none}
 
 .hero{position:relative;min-height:900px;color:#fff;background:var(--navy);isolation:isolate;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:-3;background:url("assets/hero-concierge.jpg") center 60%/cover no-repeat;transform:scale(1.01)}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(3,22,39,.94) 0%,rgba(3,22,39,.8) 42%,rgba(3,22,39,.52) 72%,rgba(3,22,39,.7) 100%),linear-gradient(0deg,rgba(3,22,39,.8),transparent 50%)}
+.hero-bg{position:absolute;inset:0;z-index:-3;background:url("assets/hero-concierge.jpg") center 60%/cover no-repeat;filter:brightness(1.14) saturate(1.08) contrast(1.04);transform:scale(1.01)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(3,22,39,.8) 0%,rgba(3,22,39,.66) 42%,rgba(3,22,39,.34) 72%,rgba(3,22,39,.45) 100%),linear-gradient(0deg,rgba(3,22,39,.48),rgba(3,22,39,.08) 52%,rgba(3,22,39,.18))}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 36% 43%,rgba(216,169,79,.11),transparent 32%)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,.88fr) minmax(520px,1.12fr);gap:clamp(36px,4vw,58px);align-items:center;padding:150px 0 92px;min-height:850px}
 .hero-copy{max-width:680px;padding-top:24px}
