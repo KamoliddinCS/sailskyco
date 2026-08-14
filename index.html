@@ -101,9 +101,12 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .field input::placeholder,.field textarea::placeholder{color:#c2cdd5}.field textarea{min-height:76px;resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(216,169,79,.14)}
 .airport-field{position:relative}
-.airport-field.hotel-destination::before{content:"🛏️";position:absolute;z-index:2;left:14px;top:50%;transform:translateY(-50%);font-size:1.05rem;line-height:1;pointer-events:none}
-.airport-field.hotel-destination::after{content:"Enter destination";position:absolute;z-index:2;left:47px;top:6px;color:#c7d2da;font-size:.68rem;font-weight:500;line-height:1;pointer-events:none}
-.airport-field.hotel-destination input{padding:20px 38px 5px 47px}
+.hotel-bed-icon{display:none;position:absolute;z-index:2;left:15px;top:50%;width:24px;height:17px;transform:translateY(-50%);border-left:2px solid var(--gold-2);border-bottom:2px solid var(--gold-2);pointer-events:none}
+.hotel-bed-icon::before{content:"";position:absolute;left:3px;bottom:5px;width:5px;height:5px;border:2px solid var(--gold-2);border-radius:50%}
+.hotel-bed-icon::after{content:"";position:absolute;left:10px;right:-1px;bottom:5px;height:7px;border:2px solid var(--gold-2);border-radius:3px 3px 0 0}
+.airport-field.hotel-destination .hotel-bed-icon{display:block}
+.airport-field.hotel-destination input{padding-left:50px}
+.airport-field.hotel-destination .airport-menu{left:0;right:auto;width:100%}
 .airport-field input[aria-expanded="true"]{border-color:var(--gold);box-shadow:0 0 0 2px rgba(216,169,79,.14)}
 .airport-menu{position:absolute;z-index:36;top:calc(100% + 7px);left:0;width:calc(200% + 9px);max-height:330px;overflow:auto;padding:6px;background:var(--paper);color:var(--ink);border:1px solid var(--gold);box-shadow:0 22px 54px rgba(0,0,0,.3)}
 .airport-field:nth-child(2) .airport-menu{left:auto;right:0}
@@ -111,6 +114,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .airport-option{width:100%;border:0;border-bottom:1px solid #e4ded5;background:transparent;color:var(--ink);padding:12px 12px;display:grid;grid-template-columns:50px minmax(0,1fr);gap:12px;align-items:center;text-align:left;cursor:pointer}
 .airport-option:last-child{border-bottom:0}.airport-option:hover,.airport-option.active,.airport-option:focus-visible{background:#f4ead6;outline:0}
 .airport-code{display:grid;place-items:center;min-height:36px;border:1px solid #caa75e;color:#754f12;font-size:.86rem;font-weight:700;letter-spacing:.08em}
+.airport-option.hotel-city-option .airport-code{font-size:.68rem;letter-spacing:.1em}
 .airport-details{min-width:0}.airport-details b{display:block;font-size:.92rem;font-weight:700;line-height:1.4}.airport-details span{display:block;color:#52616b;font-size:.86rem;line-height:1.45;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .airport-empty{padding:15px;color:#52616b;font-size:.9rem;text-align:center}
 .phone-input-group{display:grid;grid-template-columns:auto minmax(0,1fr);position:relative;min-height:50px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.08);border-radius:2px;transition:border-color .18s,box-shadow .18s}
@@ -344,7 +348,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
         <input type="hidden" name="tripType" value="Round trip">
         <div class="form-grid">
           <div class="field airport-field" data-airport-picker data-route-field="from"><input id="from" name="from" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="from-airports" aria-label="From airport" placeholder="From" required><div class="airport-menu" id="from-airports" role="listbox" aria-label="Departure airports" hidden></div></div>
-          <div class="field airport-field" data-airport-picker data-route-field="to"><input id="to" name="to" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="to-airports" aria-label="To airport" placeholder="To" required><div class="airport-menu" id="to-airports" role="listbox" aria-label="Destination airports" hidden></div></div>
+          <div class="field airport-field" data-airport-picker data-route-field="to"><span class="hotel-bed-icon" aria-hidden="true"></span><input id="to" name="to" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="to-airports" aria-label="To airport" placeholder="To" required><div class="airport-menu" id="to-airports" role="listbox" aria-label="Destination airports" hidden></div></div>
           <div class="field date-picker" data-date-picker="depart"><label>Departure</label><button class="date-trigger" type="button" aria-label="Choose departure date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input id="depart" name="depart" type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose departure date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div>
           <div class="field date-picker return" data-date-picker="return"><label>Return</label><button class="date-trigger" type="button" aria-label="Choose return date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input id="return" name="return" type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose return date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div>
           <div class="field passenger-picker" data-passenger-picker><label data-passenger-label>Passengers</label><button class="passenger-trigger" type="button" aria-label="Choose passengers" aria-haspopup="dialog" aria-expanded="false"><span class="passenger-trigger-main"><span class="passenger-icon" aria-hidden="true"></span><span data-passenger-summary aria-live="polite">1 Passenger</span></span><span class="passenger-chevron" aria-hidden="true"></span></button><input id="travellers" name="travellers" type="hidden" value="1 Adult"><div class="passenger-popover" role="dialog" aria-label="Choose passenger quantities" hidden><h3>Total quantity</h3><div class="passenger-rows">
@@ -625,6 +629,7 @@ const cruiseCabins=['Interior','Oceanview','Balcony','Suite'];
 const hotelRooms=['Standard','Deluxe','Suite','Family room'];
 const airports=(window.SAILSKY_AIRPORTS||[]).map(([code,city,name,country,tier,keywords])=>({code,city,name,country,tier,keywords}));
 const premiumAirportPriority=new Map(['SYD','MEL','BNE','PER','ADL','CBR','OOL','CNS','HBA','DRW','JFK','EWR','LGA','LAX','SFO','ORD','MIA','DFW','IAH','BOS','SEA','ATL','IAD','DCA','LAS','HNL','MCO','SAN','LHR','LGW','CDG','ORY','AMS','FRA','MUC','ZRH','GVA','FCO','MXP','MAD','BCN','LIS','ATH','VIE','CPH','ARN','OSL','HEL','DUB','DXB','AUH','DOH','SIN','HKG','NRT','HND','ICN','BKK','KUL','DEL','BOM','CGK','MNL','TPE','AKL','CHC','NAN','PPT','JNB','CPT','CAI','CMN','NBO','YYZ','YVR','YUL','MEX','GRU','GIG','EZE','SCL'].map((code,index)=>[code,index]));
+const hotelDestinations=[...airports.reduce((destinations,airport)=>{const key=`${airport.city}\u0000${airport.country}`;const priority=premiumAirportPriority.get(airport.code)??9999;const current=destinations.get(key);if(current){current.searchText+=` ${airport.code} ${airport.name} ${airport.keywords}`;current.priority=Math.min(current.priority,priority);current.tier=Math.min(current.tier,airport.tier)}else destinations.set(key,{city:airport.city,country:airport.country,tier:airport.tier,priority,searchText:`${airport.city} ${airport.country} ${airport.code} ${airport.name} ${airport.keywords}`});return destinations},new Map()).values()];
 const calendarMonths=['January','February','March','April','May','June','July','August','September','October','November','December'];
 const tomorrow=new Date();tomorrow.setHours(0,0,0,0);tomorrow.setDate(tomorrow.getDate()+1);
 const isoDate=date=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
@@ -656,7 +661,7 @@ function updatePassengerPopoverAlignment(){
 }
 function closePhonePicker(){phoneCodeMenu.hidden=true;phoneCodeTrigger.setAttribute('aria-expanded','false')}
 function closeAirportPickers(except=null){
-  airportPickers.forEach(picker=>{if(picker===except)return;const input=picker.querySelector('input');picker.querySelector('.airport-menu').hidden=true;if(picker.dataset.searchType==='hotel')input.removeAttribute('aria-expanded');else input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');picker._active=-1});
+  airportPickers.forEach(picker=>{if(picker===except)return;const input=picker.querySelector('input');picker.querySelector('.airport-menu').hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');picker._active=-1});
 }
 function normalizedAirportText(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
 function matchingAirports(query){
@@ -667,6 +672,13 @@ function matchingAirports(query){
     return score(a)-score(b)||priority(a)-priority(b)||a.tier-b.tier||a.city.localeCompare(b.city);
   }).slice(0,7);
 }
+function matchingHotelDestinations(query){
+  const normalized=normalizedAirportText(query);const terms=normalized.split(/\s+/).filter(Boolean);
+  return hotelDestinations.filter(destination=>{const haystack=normalizedAirportText(destination.searchText);return terms.every(term=>haystack.includes(term))}).sort((a,b)=>{
+    const score=destination=>{const city=normalizedAirportText(destination.city);const country=normalizedAirportText(destination.country);if(city===normalized)return 0;if(city.startsWith(normalized))return 1;if(country===normalized)return 2;if(country.startsWith(normalized))return 3;return 4};
+    return score(a)-score(b)||a.priority-b.priority||a.tier-b.tier||a.city.localeCompare(b.city);
+  }).slice(0,7);
+}
 function setActiveAirport(picker,index){
   const input=picker.querySelector('input');const options=[...picker.querySelectorAll('.airport-option')];if(!options.length)return;
   picker._active=(index+options.length)%options.length;options.forEach((option,optionIndex)=>{const active=optionIndex===picker._active;option.classList.toggle('active',active);option.setAttribute('aria-selected',String(active))});const active=options[picker._active];input.setAttribute('aria-activedescendant',active.id);active.scrollIntoView({block:'nearest'});
@@ -674,13 +686,18 @@ function setActiveAirport(picker,index){
 function selectAirport(picker,airport){
   const input=picker.querySelector('input');input.value=`${airport.city} (${airport.code}) — ${airport.name}`;input.dataset.airportCode=airport.code;closeAirportPickers();input.focus();
 }
+function selectHotelDestination(picker,destination){
+  const input=picker.querySelector('input');input.value=`${destination.city}, ${destination.country}`;input.dataset.hotelDestination=destination.city;closeAirportPickers();input.focus();
+}
+function selectSearchResult(picker,result){
+  if(picker.dataset.searchType==='hotel')selectHotelDestination(picker,result);else selectAirport(picker,result);
+}
 function renderAirportOptions(picker){
   const input=picker.querySelector('input');const menu=picker.querySelector('.airport-menu');const query=input.value.trim();closeAirportPickers(picker);menu.replaceChildren();picker._active=-1;
-  if(picker.dataset.searchType==='hotel'){menu.hidden=true;input.removeAttribute('aria-expanded');return}
   if(!query){menu.hidden=true;input.setAttribute('aria-expanded','false');return}
-  const matches=matchingAirports(query);picker._matches=matches;
-  if(!matches.length){const empty=document.createElement('div');empty.className='airport-empty';empty.textContent='No matching airports found';menu.append(empty)}
-  matches.forEach((airport,index)=>{const option=document.createElement('button');option.type='button';option.className='airport-option';option.id=`${menu.id}-option-${airport.code}`;option.setAttribute('role','option');option.setAttribute('aria-selected','false');const code=document.createElement('b');code.className='airport-code';code.textContent=airport.code;const details=document.createElement('span');details.className='airport-details';const place=document.createElement('b');place.textContent=`${airport.city}, ${airport.country}`;const name=document.createElement('span');name.textContent=airport.name;details.append(place,name);option.append(code,details);option.addEventListener('pointerdown',event=>event.preventDefault());option.addEventListener('click',()=>selectAirport(picker,airport));option.addEventListener('mouseenter',()=>setActiveAirport(picker,index));menu.append(option)});
+  const hotelMode=picker.dataset.searchType==='hotel';const matches=hotelMode?matchingHotelDestinations(query):matchingAirports(query);picker._matches=matches;
+  if(!matches.length){const empty=document.createElement('div');empty.className='airport-empty';empty.textContent=hotelMode?'No matching destinations found':'No matching airports found';menu.append(empty)}
+  matches.forEach((result,index)=>{const option=document.createElement('button');option.type='button';option.className=`airport-option${hotelMode?' hotel-city-option':''}`;option.id=`${menu.id}-option-${hotelMode?'city-'+index:result.code}`;option.setAttribute('role','option');option.setAttribute('aria-selected','false');const code=document.createElement('b');code.className='airport-code';code.textContent=hotelMode?'CITY':result.code;const details=document.createElement('span');details.className='airport-details';const place=document.createElement('b');place.textContent=`${result.city}, ${result.country}`;const name=document.createElement('span');name.textContent=hotelMode?'Hotel destination':result.name;details.append(place,name);option.append(code,details);option.addEventListener('pointerdown',event=>event.preventDefault());option.addEventListener('click',()=>selectSearchResult(picker,result));option.addEventListener('mouseenter',()=>setActiveAirport(picker,index));menu.append(option)});
   menu.hidden=false;input.setAttribute('aria-expanded','true');
 }
 function phoneDigits(value,code){
@@ -721,13 +738,12 @@ function renderCalendar(picker){
 }
 airportPickers.forEach(picker=>{
   const input=picker.querySelector('input');
-  input.addEventListener('focus',()=>{closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers(picker);if(input.value&&!input.dataset.airportCode)renderAirportOptions(picker)});
-  input.addEventListener('input',()=>{delete input.dataset.airportCode;closeCalendars();closePassengerPicker();closePhonePicker();renderAirportOptions(picker)});
+  input.addEventListener('focus',()=>{closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers(picker);const selected=picker.dataset.searchType==='hotel'?input.dataset.hotelDestination:input.dataset.airportCode;if(input.value&&!selected)renderAirportOptions(picker)});
+  input.addEventListener('input',()=>{delete input.dataset.airportCode;delete input.dataset.hotelDestination;closeCalendars();closePassengerPicker();closePhonePicker();renderAirportOptions(picker)});
   input.addEventListener('keydown',event=>{
-    if(picker.dataset.searchType==='hotel')return;
     const menu=picker.querySelector('.airport-menu');
     if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();if(menu.hidden)renderAirportOptions(picker);const step=event.key==='ArrowDown'?1:-1;const start=picker._active>=0?picker._active:(step===1?-1:0);setActiveAirport(picker,start+step)}
-    else if(event.key==='Enter'&&!menu.hidden&&picker._active>=0){event.preventDefault();selectAirport(picker,picker._matches[picker._active])}
+    else if(event.key==='Enter'&&!menu.hidden&&picker._active>=0){event.preventDefault();selectSearchResult(picker,picker._matches[picker._active])}
     else if(event.key==='Escape'){closeAirportPickers();input.focus()}
     else if(event.key==='Tab')closeAirportPickers();
   });
@@ -758,10 +774,10 @@ function setCabinOptions(select,tripType){
 }
 function setTripMode(form,tripType){
   const hotelMode=tripType==='Hotel';const previousTrip=form.dataset.activeTrip;const fromField=form.querySelector('[data-route-field="from"]');const toField=form.querySelector('[data-route-field="to"]');const fromInput=fromField.querySelector('input');const toInput=toField.querySelector('input');
-  if(previousTrip&&(previousTrip==='Hotel')!==hotelMode){toInput.value='';delete toInput.dataset.airportCode}
+  if(previousTrip&&(previousTrip==='Hotel')!==hotelMode){toInput.value='';delete toInput.dataset.airportCode;delete toInput.dataset.hotelDestination}
   form.dataset.activeTrip=tripType;form.elements.tripType.value=tripType;form.querySelector('[data-form-title]').textContent=hotelMode?'Tell me about your hotel stay':'Tell me where you would like to go';
-  fromField.classList.toggle('hidden',hotelMode);fromInput.required=!hotelMode;toField.classList.toggle('full',hotelMode);toField.classList.toggle('hotel-destination',hotelMode);toField.dataset.searchType=hotelMode?'hotel':'airport';toInput.name=hotelMode?'hotel_destination':'to';toInput.placeholder=hotelMode?'San Francisco':'To';toInput.setAttribute('aria-label',hotelMode?'Enter destination, for example San Francisco':'To airport');
-  if(hotelMode){toInput.removeAttribute('role');toInput.removeAttribute('aria-autocomplete');toInput.removeAttribute('aria-controls');toInput.removeAttribute('aria-expanded')}else{toInput.setAttribute('role','combobox');toInput.setAttribute('aria-autocomplete','list');toInput.setAttribute('aria-controls','to-airports');toInput.setAttribute('aria-expanded','false')}
+  fromField.classList.toggle('hidden',hotelMode);fromInput.required=!hotelMode;toField.classList.toggle('full',hotelMode);toField.classList.toggle('hotel-destination',hotelMode);toField.dataset.searchType=hotelMode?'hotel':'airport';toInput.name=hotelMode?'hotel_destination':'to';toInput.placeholder=hotelMode?'Enter destination':'To';toInput.setAttribute('aria-label',hotelMode?'Enter hotel destination city':'To airport');toField.querySelector('.airport-menu').setAttribute('aria-label',hotelMode?'Hotel city destinations':'Destination airports');
+  toInput.setAttribute('role','combobox');toInput.setAttribute('aria-autocomplete','list');toInput.setAttribute('aria-controls','to-airports');toInput.setAttribute('aria-expanded','false');
   form.querySelector('.field.return').classList.toggle('hidden',tripType==='One way'||tripType==='Cruise');
   datePickers.forEach(picker=>{const start=picker.dataset.datePicker==='depart';const label=hotelMode?(start?'Check-in':'Check-out'):(start?'Departure':'Return');picker.querySelector('label').textContent=label;picker.querySelector('.date-trigger').setAttribute('aria-label',`Choose ${label.toLowerCase()} date`);picker.querySelector('.calendar-popover').setAttribute('aria-label',`Choose ${label.toLowerCase()} date`);picker.querySelector('input[type="hidden"]').name=hotelMode?(start?'check_in':'check_out'):(start?'depart':'return')});
   form.querySelector('[data-passenger-label]').textContent=hotelMode?'Guests':'Passengers';passengerTrigger.setAttribute('aria-label',hotelMode?'Choose guests':'Choose passengers');passengerPanel.setAttribute('aria-label',hotelMode?'Choose guest quantities':'Choose passenger quantities');document.getElementById('travellers').name=hotelMode?'guests':'travellers';const roomsField=form.querySelector('[data-hotel-only]');roomsField.classList.toggle('hidden',!hotelMode);roomsField.querySelector('select').disabled=!hotelMode;const cabinField=form.querySelector('[data-cabin-field]');cabinField.classList.toggle('full',hotelMode);form.querySelector('[data-cabin-label]').textContent=hotelMode?'Room preference':'Cabin / journey';form.elements.cabin.name=hotelMode?'room_preference':'cabin';
