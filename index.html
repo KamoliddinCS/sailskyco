@@ -241,6 +241,14 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .review-card blockquote{margin:20px 0 0}.review-card blockquote p{color:#eef3f6;font-family:var(--serif);font-size:1.2rem;line-height:1.5}.review-card blockquote strong{color:#fff;font-weight:600}
 .reviews-note{color:#aebdc7;font-size:.8rem;line-height:1.65;margin-top:24px;text-align:center}
 
+.review-share{padding:clamp(74px,9vw,112px) 0;background:linear-gradient(180deg,#f4f6f7 0%,var(--ivory) 100%);border-bottom:1px solid var(--line)}
+.review-share-card{width:min(980px,100%);margin-inline:auto;background:var(--paper);border:1px solid var(--line);box-shadow:0 24px 70px rgba(17,40,60,.09);padding:clamp(34px,6vw,68px)}
+.review-share-head{text-align:center;max-width:690px;margin-inline:auto}.review-share-head .h2{font-size:clamp(2.25rem,4vw,3.35rem)}.review-share-head .lead{margin-top:13px}
+.review-form{margin-top:34px}.rating-field{border:0;padding:0;margin:0 0 29px;text-align:center}.rating-field legend{width:100%;font-family:var(--sans);font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:10px}
+.star-picker{display:flex;justify-content:center;gap:7px}.rating-star{border:0;background:transparent;color:#c9c4ba;font-size:2.8rem;line-height:1;padding:2px 3px;cursor:pointer;transition:color .16s,transform .16s}.rating-star.selected{color:#cf982e}.rating-star:hover{transform:translateY(-2px)}.rating-error{color:#9b2f2f;font-size:.82rem;line-height:1.5;margin-top:8px}.rating-error[hidden]{display:none}
+.review-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.review-field{display:grid;gap:8px}.review-field.full{grid-column:1/-1}.review-field label{font-size:.91rem;font-weight:700;color:var(--ink)}.review-field label span{font-weight:500;color:var(--muted)}.review-field input,.review-field textarea{width:100%;border:1px solid #cfc9bf;background:#fff;color:var(--ink);border-radius:2px;padding:14px 16px;min-height:54px;font-size:.95rem;outline:none}.review-field textarea{min-height:150px;resize:vertical;line-height:1.65}.review-field input::placeholder,.review-field textarea::placeholder{color:#89939a}.review-field input:focus,.review-field textarea:focus{border-color:#ad771d;box-shadow:0 0 0 3px rgba(216,169,79,.15)}
+.review-submit-row{display:flex;align-items:center;justify-content:space-between;gap:26px;margin-top:24px}.review-policy{max-width:58ch;color:var(--muted);font-size:.78rem;line-height:1.6}.review-submit-row .btn{flex:0 0 auto;min-width:220px}.review-form-success{margin-top:18px;text-align:center}
+
 .process{padding-bottom:0;background:var(--paper)}
 .process-grid{display:grid;grid-template-columns:1fr .92fr;gap:0;align-items:stretch}
 .process-copy{padding:clamp(60px,8vw,110px) clamp(36px,8vw,110px) clamp(60px,8vw,110px) max(24px,calc((100vw - 1200px)/2));background:var(--paper)}
@@ -276,7 +284,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 @media(max-width:780px){
   .wrap{width:min(100% - 36px,1200px)}.section{padding:70px 0}
   .hero-grid{padding:125px 0 60px}.hero h1{font-size:clamp(2.85rem,12vw,4.6rem)}.hero-bg{background-position:60% 65%}
-  .why-work{padding:50px 0 62px}.why-work .pillar,.why-work .pillar:last-child{min-height:auto}.about-grid,.process-grid{grid-template-columns:1fr}.about-visual{padding-left:23px}.about-visual img{height:400px}.review-card{flex-basis:100%}
+  .why-work{padding:50px 0 62px}.why-work .pillar,.why-work .pillar:last-child{min-height:auto}.about-grid,.process-grid{grid-template-columns:1fr}.about-visual{padding-left:23px}.about-visual img{height:400px}.review-card{flex-basis:100%}.review-share-card{padding:38px 28px}
   .cruise-head{display:block}.cruise-head .lead{margin-top:20px}.fly-cruise{grid-template-columns:auto 1fr}.fly-cruise .btn{grid-column:1/-1}
   .process-copy{padding-inline:24px}.process-img{min-height:420px}.process-img img{height:420px}
   .footer-top{align-items:flex-start;flex-direction:column}
@@ -289,7 +297,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .pillars,.flight-grid,.cruise-grid,.bottom-grid{grid-template-columns:1fr}
   .flight-card{min-height:290px}.cruise-card img{height:240px}
   .hotel-grid{grid-template-columns:1fr}.hotel-card,.hotel-card:nth-child(2n),.hotel-card:nth-last-child(-n+2){min-height:auto;border-right:0;border-bottom:1px solid var(--line)}.hotel-card:last-child{border-bottom:0}
-  .fly-cruise{grid-template-columns:1fr;gap:10px}.fly-cruise .btn{grid-column:auto}.review-carousel-bar{align-items:flex-start}.review-carousel-bar>span{max-width:11ch;line-height:1.45}.review-controls{gap:7px}.review-control{width:42px;height:42px}.review-card{padding:24px 21px}.review-card blockquote p{font-size:1.14rem}
+  .fly-cruise{grid-template-columns:1fr;gap:10px}.fly-cruise .btn{grid-column:auto}.review-carousel-bar{align-items:flex-start}.review-carousel-bar>span{max-width:11ch;line-height:1.45}.review-controls{gap:7px}.review-control{width:42px;height:42px}.review-card{padding:24px 21px}.review-card blockquote p{font-size:1.14rem}.review-form-grid{grid-template-columns:1fr}.review-field.full{grid-column:auto}.review-submit-row{display:grid}.review-submit-row .btn{width:100%}.rating-star{font-size:2.45rem}
   .bottom-col,.bottom-col:nth-child(2){border-right:0;border-bottom:1px solid var(--line)}.bottom-col:last-child{grid-column:auto;border-top:0;border-bottom:0}.contact-mini .row{grid-template-columns:1fr}
   .footer-links{display:grid;grid-template-columns:1fr 1fr}.demo-tag{right:10px;bottom:10px}
 }
@@ -532,6 +540,39 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
     </div>
   </section>
 
+  <section class="review-share" id="leave-review" aria-labelledby="leave-review-title">
+    <div class="wrap">
+      <div class="review-share-card reveal">
+        <header class="review-share-head">
+          <span class="eyebrow">Your experience matters</span>
+          <h2 class="h2" id="leave-review-title">Share your experience.</h2>
+          <p class="lead">Travelled with SailSky &amp; Co? Leave a review to help fellow travellers know what to expect.</p>
+        </header>
+        <form class="review-form" data-review-form novalidate>
+          <fieldset class="rating-field">
+            <legend>Your rating</legend>
+            <div class="star-picker" role="radiogroup" aria-label="Your rating" data-rating-picker>
+              <button class="rating-star" type="button" role="radio" aria-checked="false" aria-label="1 star" data-rating="1">★</button>
+              <button class="rating-star" type="button" role="radio" aria-checked="false" aria-label="2 stars" data-rating="2" tabindex="-1">★</button>
+              <button class="rating-star" type="button" role="radio" aria-checked="false" aria-label="3 stars" data-rating="3" tabindex="-1">★</button>
+              <button class="rating-star" type="button" role="radio" aria-checked="false" aria-label="4 stars" data-rating="4" tabindex="-1">★</button>
+              <button class="rating-star" type="button" role="radio" aria-checked="false" aria-label="5 stars" data-rating="5" tabindex="-1">★</button>
+            </div>
+            <input type="hidden" name="rating" data-rating-value>
+            <p class="rating-error" data-rating-error hidden>Please select a star rating.</p>
+          </fieldset>
+          <div class="review-form-grid">
+            <div class="review-field"><label for="review-name">Name</label><input id="review-name" name="name" autocomplete="name" placeholder="Your name" required></div>
+            <div class="review-field"><label for="review-route">Journey route <span>(optional)</span></label><input id="review-route" name="route" placeholder="Sydney → London"></div>
+            <div class="review-field full"><label for="review-text">Your review</label><textarea id="review-text" name="review" maxlength="1200" placeholder="Tell us how your journey went…" required></textarea></div>
+          </div>
+          <div class="review-submit-row"><p class="review-policy">Reviews are checked against completed travel records before publication and may be lightly edited for spelling or length.</p><button class="btn btn-dark" type="submit">Submit review</button></div>
+          <div class="success review-form-success" role="status">Thank you—your review has been submitted for verification.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <section class="process" id="process">
     <div class="process-grid">
       <div class="process-copy reveal"><span class="eyebrow">How it works</span><h2 class="h2">Simple. Personal. Professional.</h2><div class="steps">
@@ -755,6 +796,14 @@ if(reviewTrack){
   document.addEventListener('visibilitychange',scheduleReviewAutoplay);reviewTrack.addEventListener('scroll',()=>{cancelAnimationFrame(reviewFrame);reviewFrame=requestAnimationFrame(updateReviewControls)},{passive:true});window.addEventListener('resize',()=>{updateReviewControls();scheduleReviewAutoplay()},{passive:true});
   if('IntersectionObserver'in window)new IntersectionObserver(entries=>{reviewInView=entries[0].isIntersecting;scheduleReviewAutoplay()},{threshold:.05}).observe(reviewSection);
   syncReviewToggle();updateReviewControls();scheduleReviewAutoplay();
+}
+
+const reviewForm=document.querySelector('[data-review-form]');
+if(reviewForm){
+  const ratingStars=[...reviewForm.querySelectorAll('[data-rating]')];const ratingValue=reviewForm.querySelector('[data-rating-value]');const ratingError=reviewForm.querySelector('[data-rating-error]');let selectedRating=0;
+  const setRating=(value,focus=false)=>{selectedRating=Math.min(5,Math.max(1,value));ratingValue.value=String(selectedRating);ratingStars.forEach(star=>{const starValue=Number(star.dataset.rating);star.classList.toggle('selected',starValue<=selectedRating);star.setAttribute('aria-checked',String(starValue===selectedRating));star.tabIndex=starValue===selectedRating?0:-1});ratingError.hidden=true;if(focus)ratingStars[selectedRating-1].focus()};
+  ratingStars.forEach(star=>{star.addEventListener('click',()=>setRating(Number(star.dataset.rating)));star.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'].includes(event.key))return;event.preventDefault();const next=event.key==='Home'?1:event.key==='End'?5:selectedRating+(event.key==='ArrowLeft'||event.key==='ArrowDown'?-1:1);setRating(next,true)})});
+  reviewForm.addEventListener('submit',event=>{event.preventDefault();if(!selectedRating){ratingError.hidden=false;ratingStars[0].focus();return}if(!reviewForm.checkValidity()){reviewForm.reportValidity();return}reviewForm.querySelector('.review-form-success').classList.add('show');const button=reviewForm.querySelector('button[type="submit"]');button.textContent='Review submitted';button.disabled=true;reviewForm.querySelectorAll('input,textarea').forEach(field=>field.disabled=true);ratingStars.forEach(star=>star.disabled=true)});
 }
 
 const reveals=document.querySelectorAll('.reveal');
