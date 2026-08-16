@@ -34,8 +34,8 @@ Airport search data
 - Public Domain. The local search index includes scheduled-service airports
   with three-letter IATA codes and was generated on 12 August 2026.
 
-Airline brand icons
-- Simple Icons 16.21.0.
-  https://simpleicons.org/
-- Brand names and marks remain the property of their respective owners. See
-  assets/airlines/LICENSE-simple-icons.md and DISCLAIMER-simple-icons.md.
+Airline brand logos
+- Current airline wordmarks sourced from the airlines' Wikipedia brand files.
+  https://en.wikipedia.org/
+- Colors were adapted for legibility on the website's dark background. Brand
+  names and marks remain the property of their respective owners.

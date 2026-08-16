@@ -213,10 +213,10 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .airline-line{text-align:center;margin-top:45px;padding-top:27px;border-top:1px solid rgba(255,255,255,.15)}
 .airline-line>span{display:block;font-family:var(--serif);font-style:italic;color:#c7d1d8;font-size:1rem;margin-bottom:18px}
 .airline-marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
-.airline-track{display:flex;width:max-content;will-change:transform;animation:airline-marquee 36s linear infinite}
-.airline-logos{display:flex;align-items:center;gap:12px;flex:none;list-style:none;margin:0;padding:0 12px 0 0}
-.airline-logos li{width:126px;height:62px;flex:none;display:grid;place-items:center;border:1px solid rgba(240,203,122,.24);background:rgba(255,255,255,.035)}
-.airline-logos img{width:39px;height:39px;object-fit:contain;filter:brightness(0) invert(1);opacity:.88}
+.airline-track{display:flex;width:max-content;will-change:transform;animation:airline-marquee 42s linear infinite}
+.airline-logos{display:flex;align-items:center;gap:28px;flex:none;list-style:none;margin:0;padding:0 28px 0 0}
+.airline-logos li{width:178px;height:66px;flex:none;display:grid;place-items:center}
+.airline-logos img{width:158px;height:54px;object-fit:contain;opacity:.96;filter:drop-shadow(0 3px 10px rgba(0,0,0,.16))}
 @keyframes airline-marquee{to{transform:translateX(-50%)}}
 
 .hotels{background:var(--paper);position:relative;overflow:hidden}
@@ -309,7 +309,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .quote-card{padding:23px 16px}.trip-tabs{grid-template-columns:1fr 1fr}.trip-tab:last-child{grid-column:1/-1}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.airport-menu,.airport-field:nth-child(2) .airport-menu{left:0;right:auto;width:100%}
   .passenger-popover,.passenger-picker.align-right .passenger-popover{left:0;right:auto;width:100%;min-width:260px;padding:16px}.passenger-row{grid-template-columns:26px minmax(0,1fr) auto;gap:9px}.passenger-stepper{grid-template-columns:32px 23px 32px}.passenger-stepper button{width:32px;height:32px}
   .pillars,.flight-grid,.cruise-grid,.bottom-grid{grid-template-columns:1fr}
-  .airline-logos li{width:108px;height:56px}.airline-logos img{width:35px;height:35px}.airline-track{animation-duration:31s}
+  .airline-logos{gap:20px;padding-right:20px}.airline-logos li{width:142px;height:56px}.airline-logos img{width:130px;height:44px}.airline-track{animation-duration:36s}
   .flight-card{min-height:290px}.cruise-card img{height:240px}
   .hotel-grid{grid-template-columns:1fr}.hotel-card,.hotel-card:nth-child(2n),.hotel-card:nth-last-child(-n+2){min-height:auto;border-right:0;border-bottom:1px solid var(--line)}.hotel-card:last-child{border-bottom:0}
   .fly-cruise{grid-template-columns:1fr;gap:10px}.fly-cruise .btn{grid-column:auto}.review-carousel-bar{align-items:flex-start}.review-carousel-bar>span{max-width:11ch;line-height:1.45}.review-controls{gap:7px}.review-control{width:42px;height:42px}.review-card{padding:24px 21px}.review-card blockquote p{font-size:1.14rem}.review-form-grid{grid-template-columns:1fr}.review-field.full{grid-column:auto}.review-submit-row{display:grid}.review-submit-row .btn{width:100%}.rating-star{font-size:2.45rem}
