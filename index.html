@@ -211,9 +211,13 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .flight-card h3{font-size:1.72rem}.flight-card p{font-size:.87rem;color:#e4eaee;margin-top:8px;line-height:1.6}.flight-card .from{color:var(--gold-2);font-weight:700;font-size:.88rem;margin-top:11px}
 .fare-note{text-align:center;font-size:.88rem;color:#bdc9d1;font-style:italic;margin-top:16px}
 .airline-line{text-align:center;margin-top:45px;padding-top:27px;border-top:1px solid rgba(255,255,255,.15)}
-.airline-line>span{display:block;font-family:var(--serif);font-style:italic;color:#c7d1d8;font-size:1rem;margin-bottom:15px}
-.airline-chips{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;list-style:none;margin:0;padding:0;color:#f5f7f8}
-.airline-chips li{min-height:48px;padding:9px 10px;border:1px solid rgba(240,203,122,.28);background:rgba(255,255,255,.035);display:grid;place-items:center;font-family:var(--serif);font-size:.96rem;font-weight:500;line-height:1.25}
+.airline-line>span{display:block;font-family:var(--serif);font-style:italic;color:#c7d1d8;font-size:1rem;margin-bottom:18px}
+.airline-marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.airline-track{display:flex;width:max-content;will-change:transform;animation:airline-marquee 36s linear infinite}
+.airline-logos{display:flex;align-items:center;gap:12px;flex:none;list-style:none;margin:0;padding:0 12px 0 0}
+.airline-logos li{width:126px;height:62px;flex:none;display:grid;place-items:center;border:1px solid rgba(240,203,122,.24);background:rgba(255,255,255,.035)}
+.airline-logos img{width:39px;height:39px;object-fit:contain;filter:brightness(0) invert(1);opacity:.88}
+@keyframes airline-marquee{to{transform:translateX(-50%)}}
 
 .hotels{background:var(--paper);position:relative;overflow:hidden}
 .hotels::before{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(216,169,79,.18);border-radius:50%;left:-240px;bottom:-250px}
@@ -287,7 +291,6 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .mobile-panel.open{transform:translateY(0)}.mobile-panel a{padding:14px 5px;color:#fff;border-bottom:1px solid rgba(255,255,255,.1);font-family:var(--serif);font-size:1.1rem}.mobile-panel .btn{margin-top:15px;color:var(--navy);font-family:var(--sans)}
   .hero-grid{grid-template-columns:1fr;gap:44px;padding-top:140px}.hero-copy{max-width:760px}.quote-card{max-width:820px;width:100%}.hero{min-height:auto}
   .pillars,.flight-grid,.cruise-grid{grid-template-columns:1fr 1fr}
-  .airline-chips{grid-template-columns:repeat(4,minmax(0,1fr))}
   .hotel-layout{grid-template-columns:1fr}.hotel-intro{max-width:720px}
   .reviews-head{grid-template-columns:1fr}.reviews-head .h2{max-width:14ch}.reviews-summary{max-width:760px}
   .bottom-grid{grid-template-columns:1fr 1fr}.bottom-col:nth-child(2){border-right:0}.bottom-col:last-child{grid-column:1/-1;border-top:1px solid var(--line)}
@@ -296,7 +299,6 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .wrap{width:min(100% - 36px,1200px)}.section{padding:70px 0}
   .hero-grid{padding:125px 0 60px}.hero h1{font-size:clamp(2.85rem,12vw,4.6rem)}.hero-bg{background-position:60% 65%}
   .why-work{padding:50px 0 62px}.why-work .pillar,.why-work .pillar:last-child{min-height:auto}.about-grid,.process-grid{grid-template-columns:1fr}.about-visual{padding-left:23px}.about-visual img{height:400px}.review-card{flex-basis:100%}.review-share-card{padding:38px 28px}
-  .airline-chips{grid-template-columns:repeat(3,minmax(0,1fr))}
   .cruise-head{display:block}.cruise-head .lead{margin-top:20px}.fly-cruise{grid-template-columns:auto 1fr}.fly-cruise .btn{grid-column:1/-1}
   .process-copy{padding-inline:24px}.process-img{min-height:420px}.process-img img{height:420px}
   .footer-top{align-items:flex-start;flex-direction:column}
@@ -307,7 +309,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .quote-card{padding:23px 16px}.trip-tabs{grid-template-columns:1fr 1fr}.trip-tab:last-child{grid-column:1/-1}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.airport-menu,.airport-field:nth-child(2) .airport-menu{left:0;right:auto;width:100%}
   .passenger-popover,.passenger-picker.align-right .passenger-popover{left:0;right:auto;width:100%;min-width:260px;padding:16px}.passenger-row{grid-template-columns:26px minmax(0,1fr) auto;gap:9px}.passenger-stepper{grid-template-columns:32px 23px 32px}.passenger-stepper button{width:32px;height:32px}
   .pillars,.flight-grid,.cruise-grid,.bottom-grid{grid-template-columns:1fr}
-  .airline-chips{grid-template-columns:1fr 1fr}.airline-chips li{font-size:.9rem}
+  .airline-logos li{width:108px;height:56px}.airline-logos img{width:35px;height:35px}.airline-track{animation-duration:31s}
   .flight-card{min-height:290px}.cruise-card img{height:240px}
   .hotel-grid{grid-template-columns:1fr}.hotel-card,.hotel-card:nth-child(2n),.hotel-card:nth-last-child(-n+2){min-height:auto;border-right:0;border-bottom:1px solid var(--line)}.hotel-card:last-child{border-bottom:0}
   .fly-cruise{grid-template-columns:1fr;gap:10px}.fly-cruise .btn{grid-column:auto}.review-carousel-bar{align-items:flex-start}.review-carousel-bar>span{max-width:11ch;line-height:1.45}.review-controls{gap:7px}.review-control{width:42px;height:42px}.review-card{padding:24px 21px}.review-card blockquote p{font-size:1.14rem}.review-form-grid{grid-template-columns:1fr}.review-field.full{grid-column:auto}.review-submit-row{display:grid}.review-submit-row .btn{width:100%}.rating-star{font-size:2.45rem}
@@ -421,7 +423,10 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
         <article class="flight-card"><img src="assets/alaska.jpg" alt="Glacial landscape in Alaska" loading="lazy"><div><h3>North America</h3><p>New York, California, Canada and Alaska</p><div class="from">Illustrative return from $7,400*</div></div></article>
       </div>
       <p class="fare-note">*Concept pricing only. Actual fares vary by origin, date, cabin, airline and availability.</p>
-      <div class="airline-line reveal"><span>Planning across leading global airline networks</span><ul class="airline-chips" aria-label="Airline partners"><li>Qatar Airways</li><li>Singapore Airlines</li><li>Turkish Airlines</li><li>American Airlines</li><li>Qantas Airways</li><li>British Airways</li><li>United Airlines</li><li>Delta Air Lines</li><li>Air Canada</li><li>Japan Airlines</li><li>Lufthansa</li><li>Air France</li></ul></div>
+      <div class="airline-line reveal"><span>Planning across leading global airline networks</span><div class="airline-marquee" role="group" aria-label="Airline partners"><div class="airline-track">
+        <ul class="airline-logos"><li><img src="assets/airlines/qatarairways.svg" alt="Qatar Airways"></li><li><img src="assets/airlines/singaporeairlines.svg" alt="Singapore Airlines"></li><li><img src="assets/airlines/turkishairlines.svg" alt="Turkish Airlines"></li><li><img src="assets/airlines/americanairlines.svg" alt="American Airlines"></li><li><img src="assets/airlines/qantas.svg" alt="Qantas Airways"></li><li><img src="assets/airlines/britishairways.svg" alt="British Airways"></li><li><img src="assets/airlines/unitedairlines.svg" alt="United Airlines"></li><li><img src="assets/airlines/delta.svg" alt="Delta Air Lines"></li><li><img src="assets/airlines/aircanada.svg" alt="Air Canada"></li><li><img src="assets/airlines/japanairlines.svg" alt="Japan Airlines"></li><li><img src="assets/airlines/lufthansa.svg" alt="Lufthansa"></li><li><img src="assets/airlines/airfrance.svg" alt="Air France"></li></ul>
+        <ul class="airline-logos" aria-hidden="true"><li><img src="assets/airlines/qatarairways.svg" alt=""></li><li><img src="assets/airlines/singaporeairlines.svg" alt=""></li><li><img src="assets/airlines/turkishairlines.svg" alt=""></li><li><img src="assets/airlines/americanairlines.svg" alt=""></li><li><img src="assets/airlines/qantas.svg" alt=""></li><li><img src="assets/airlines/britishairways.svg" alt=""></li><li><img src="assets/airlines/unitedairlines.svg" alt=""></li><li><img src="assets/airlines/delta.svg" alt=""></li><li><img src="assets/airlines/aircanada.svg" alt=""></li><li><img src="assets/airlines/japanairlines.svg" alt=""></li><li><img src="assets/airlines/lufthansa.svg" alt=""></li><li><img src="assets/airlines/airfrance.svg" alt=""></li></ul>
+      </div></div></div>
     </div>
   </section>
 
