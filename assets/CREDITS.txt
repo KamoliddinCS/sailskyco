@@ -21,6 +21,12 @@ Supporting photography (Unsplash License)
   https://unsplash.com/photos/glacier-bay-alaska-tYALcHvTdg0
 - Cruise ship at dusk — Peter Hansen
   https://unsplash.com/photos/cruise-ship-MeGmdPNe36w
+- Cape Town coastline — John O'Nolan
+  https://unsplash.com/photos/rqrv0bbzMLg
+
+Supporting photography (Pexels License)
+- Dubai skyline at sunset — Michael Kabus
+  https://www.pexels.com/photo/the-dubai-skyline-during-sunset-5288791/
 
 Airport search data
 - OurAirports open data: airports.csv and countries.csv.
