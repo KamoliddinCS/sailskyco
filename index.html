@@ -80,7 +80,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .hero-bg{position:absolute;inset:0;z-index:-3;background:url("assets/hero-concierge.jpg") center 60%/cover no-repeat;filter:brightness(1.14) saturate(1.08) contrast(1.04);transform:scale(1.01)}
 .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(3,22,39,.8) 0%,rgba(3,22,39,.66) 42%,rgba(3,22,39,.34) 72%,rgba(3,22,39,.45) 100%),linear-gradient(0deg,rgba(3,22,39,.48),rgba(3,22,39,.08) 52%,rgba(3,22,39,.18))}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 36% 43%,rgba(216,169,79,.11),transparent 32%)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,.88fr) minmax(520px,1.12fr);gap:clamp(36px,4vw,58px);align-items:center;padding:150px 0 92px;min-height:850px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,.88fr) minmax(520px,1.12fr);gap:clamp(36px,4vw,58px);align-items:center;padding:150px 0 92px;min-height:850px}.hero-grid.multi-city-active{align-items:start}
 .hero-copy{max-width:680px;padding-top:24px}
 .hero-copy .overline{font-size:.8rem;text-transform:uppercase;letter-spacing:.27em;font-weight:700;color:#f0f3f5}
 .hero h1{font-size:clamp(3.2rem,6vw,5.9rem);letter-spacing:-.035em;margin:17px 0 25px;max-width:12ch;text-shadow:0 2px 20px rgba(0,0,0,.2)}
@@ -837,6 +837,7 @@ function setCabinOptions(select,tripType){
 }
 function setTripMode(form,tripType){
   const hotelMode=tripType==='Hotel';const multiCityMode=tripType==='Multi-city';const previousTrip=form.dataset.activeTrip;const fromField=form.querySelector('[data-route-field="from"]');const toField=form.querySelector('[data-route-field="to"]');const fromInput=fromField.querySelector('input');const toInput=toField.querySelector('input');
+  form.closest('.hero-grid')?.classList.toggle('multi-city-active',multiCityMode);
   if(previousTrip&&(previousTrip==='Hotel')!==hotelMode){toInput.value='';delete toInput.dataset.airportCode;delete toInput.dataset.hotelDestination}
   form.dataset.activeTrip=tripType;form.elements.tripType.value=tripType;form.querySelector('[data-form-title]').textContent=hotelMode?'Tell me about your hotel stay':multiCityMode?'Build your multi-city itinerary':'Tell me where you would like to go';
   fromField.classList.toggle('hidden',hotelMode||multiCityMode);fromInput.required=!hotelMode&&!multiCityMode;fromInput.disabled=hotelMode||multiCityMode;toField.classList.toggle('hidden',multiCityMode);toField.classList.toggle('full',hotelMode);toField.classList.toggle('hotel-destination',hotelMode);toField.dataset.searchType=hotelMode?'hotel':'airport';toInput.name=hotelMode?'hotel_destination':'to';toInput.placeholder=hotelMode?'Enter destination':'To';toInput.setAttribute('aria-label',hotelMode?'Enter hotel destination city':'To airport');toInput.required=!multiCityMode;toInput.disabled=multiCityMode;toField.querySelector('.airport-menu').setAttribute('aria-label',hotelMode?'Hotel city destinations':'Destination airports');
