@@ -192,6 +192,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 
 .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(54px,8vw,104px);align-items:center}
 .about-copy .h2{margin-bottom:25px}.about-copy .lead+.lead{margin-top:18px}
+.about-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:520px;margin:0 0 25px;border-block:1px solid var(--line)}.about-stat{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:12px;padding:17px 18px 17px 0}.about-stat+.about-stat{padding-left:22px;border-left:1px solid var(--line)}.about-stat strong{font-family:var(--serif);color:#9b6715;font-size:2.1rem;font-weight:600;line-height:1}.about-stat span{color:var(--muted);font-size:.82rem;font-weight:700;line-height:1.45;text-transform:uppercase;letter-spacing:.055em}
 .about-sign{font-family:var(--serif);font-size:1.25rem;font-style:italic;color:#8b651f;margin-top:25px}.about-sign small{display:block;font-family:var(--sans);font-size:.72rem;font-style:normal;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:5px}
 .about-visual{position:relative;padding:0 0 38px 42px}
 .about-visual img{height:480px;object-fit:cover;object-position:center;border-radius:2px;box-shadow:var(--shadow)}
@@ -316,6 +317,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .airline-logos{gap:20px;padding-right:20px}.airline-logos li{width:142px;height:56px}.airline-logos img{width:130px;height:44px}.airline-track{animation-duration:36s}
   .flight-card{min-height:290px}.cruise-card img{height:240px}
   .hotel-grid{grid-template-columns:1fr}.hotel-card,.hotel-card:nth-child(2n),.hotel-card:nth-last-child(-n+2){min-height:auto;border-right:0;border-bottom:1px solid var(--line)}.hotel-card:last-child{border-bottom:0}
+  .about-stat{grid-template-columns:1fr;gap:5px;padding-right:12px}.about-stat+.about-stat{padding-left:16px}.about-stat strong{font-size:1.85rem}.about-stat span{font-size:.72rem}
   .fly-cruise{grid-template-columns:1fr;gap:10px}.fly-cruise .btn{grid-column:auto}.review-carousel-bar{align-items:flex-start}.review-carousel-bar>span{max-width:11ch;line-height:1.45}.review-controls{gap:6px}.review-control{width:38px;height:38px}.review-card{padding:17px}.review-card blockquote p{font-size:1rem}.review-form-grid{grid-template-columns:1fr}.review-field.full{grid-column:auto}.review-submit-row{display:grid}.review-submit-row .btn{width:100%}.rating-star{font-size:2rem}
   .bottom-col,.bottom-col:nth-child(2){border-right:0;border-bottom:1px solid var(--line)}.bottom-col:last-child{grid-column:auto;border-top:0;border-bottom:0}.contact-mini .row{grid-template-columns:1fr}
   .footer-links{display:grid;grid-template-columns:1fr 1fr}.demo-tag{right:10px;bottom:10px}.whatsapp-cta{left:10px;bottom:58px;padding:8px 14px 8px 9px}.whatsapp-mark{width:33px;height:33px}
@@ -326,7 +328,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 </head>
 <body>
 <a class="demo-tag" href="../../#demos" title="Return to Bir Sayt portfolio">Concept website · <b>Bir Sayt</b></a>
-<a class="whatsapp-cta" href="https://wa.me/61272538651?text=Hello%20Patrick%2C%20I%20would%20like%20help%20planning%20a%20premium%20trip." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Patrick at +61 2 7253 8651"><span class="whatsapp-mark" aria-hidden="true">S</span><span class="whatsapp-copy"><b>WhatsApp Patrick</b><small>+61 2 7253 8651</small></span></a>
+<a class="whatsapp-cta" href="https://wa.me/61272538651?text=Hello%20Patrick%2C%20I%20would%20like%20help%20planning%20a%20premium%20trip." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Patrick at country code 61, 2 7253 8651"><span class="whatsapp-mark" aria-hidden="true">S</span><span class="whatsapp-copy"><b>WhatsApp Patrick</b><small>(61) 2 7253 8651</small></span></a>
 
 <header class="header" id="header">
   <div class="wrap nav">
@@ -337,7 +339,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="#about">Meet Patrick</a><a href="#flights">Flights</a><a href="#hotels">Hotels</a><a href="#cruises">Cruises</a><a href="#reviews">Reviews</a><a href="#process">How it works</a><a href="#contact">Contact</a>
     </nav>
-    <a class="header-phone" href="tel:+61272538651" aria-label="Call Patrick Morgan at +61 2 7253 8651"><span>Phone</span><b>(+61 2 7253 8651)</b></a>
+    <a class="header-phone" href="tel:+61272538651" aria-label="Call Patrick Morgan at country code 61, 2 7253 8651"><span>Phone</span><b>(61) 2 7253 8651</b></a>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
   <nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
@@ -407,6 +409,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
         <div class="about-copy reveal">
           <span class="eyebrow">Meet your travel concierge</span>
           <h2 class="h2">Patrick Morgan.</h2>
+          <div class="about-stats" aria-label="Patrick Morgan's experience"><div class="about-stat"><strong>5+</strong><span>Years of travel experience</span></div><div class="about-stat"><strong>200+</strong><span>Satisfied clients</span></div></div>
           <p class="lead">I plan business and first class flights, exceptional hotels, luxury cruises and complex itineraries for travellers who value clarity, comfort and a real person they can reach.</p>
           <p class="lead">From our first conversation to your return home, you deal directly with me. I listen first, compare the meaningful options, explain the details clearly and remain close to every booking when plans change.</p>
           <p class="about-sign">Consider it handled.<small>Personal Travel Concierge</small></p>
