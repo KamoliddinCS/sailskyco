@@ -150,6 +150,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .calendar-day,.calendar-blank{aspect-ratio:1;display:grid;place-items:center}
 .calendar-day{border:0;background:transparent;color:var(--ink);font-size:.8rem;cursor:pointer;border-radius:50%}
 .calendar-day:hover:not(:disabled){background:#f4ead6}.calendar-day.today{box-shadow:inset 0 0 0 1px var(--gold)}.calendar-day.selected{background:var(--gold);color:#171106;font-weight:800}.calendar-day:disabled{color:#c5c6c7;cursor:not-allowed}
+.multi-city-panel{grid-column:1/-1;display:grid;gap:12px;padding:14px;border:1px solid rgba(216,169,79,.48);background:rgba(255,255,255,.035)}.multi-city-panel.hidden{display:none}.multi-city-head{display:flex;align-items:center;justify-content:space-between;gap:16px}.multi-city-head b{font-family:var(--serif);color:#fff;font-size:1.18rem;font-weight:600}.multi-city-head span{color:#bfcbd3;font-size:.76rem;line-height:1.4}.multi-city-legs{display:grid;gap:10px}.multi-city-leg{padding:12px;border:1px solid rgba(255,255,255,.19);background:rgba(255,255,255,.035)}.multi-city-leg-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:9px}.multi-city-leg-head b{color:var(--gold-2);font-size:.76rem;letter-spacing:.11em;text-transform:uppercase}.remove-flight{border:0;background:transparent;color:#d5dee4;font-size:.74rem;font-weight:700;cursor:pointer;padding:4px 0}.remove-flight:hover{color:var(--gold-2)}.remove-flight[hidden]{display:none}.multi-city-leg-grid{display:grid;grid-template-columns:1fr 1fr .82fr;gap:10px}.multi-city-leg .airport-menu{width:min(520px,calc(300% + 20px))}.multi-city-leg .airport-field:nth-child(2) .airport-menu{left:auto;right:0}.multi-city-leg .calendar-popover{left:auto;right:0}.add-flight{justify-self:start;min-height:42px;border:0;background:transparent;color:var(--gold-2);font-size:.84rem;font-weight:800;cursor:pointer;padding:3px 2px}.add-flight span{display:inline-grid;place-items:center;width:24px;height:24px;margin-right:7px;border:1px solid rgba(216,169,79,.65);border-radius:50%;font-size:1rem}.add-flight:hover{color:#fff}.add-flight[hidden]{display:none}
 .passenger-picker{position:relative}
 .passenger-trigger{width:100%;min-height:50px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.08);color:#fff;border-radius:2px;padding:11px 13px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.91rem;cursor:pointer;text-align:left}
 .passenger-trigger:hover,.passenger-trigger[aria-expanded="true"]{border-color:var(--gold)}
@@ -311,6 +312,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .hero-grid{padding-top:110px}.hero-copy .overline{letter-spacing:.22em}.hero h1{font-size:2.8rem}.hero-actions{display:grid}.hero-actions .btn{width:100%}
   .quote-card{padding:23px 16px}.trip-tabs{grid-template-columns:1fr 1fr}.trip-tab:last-child{grid-column:1/-1}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.airport-menu,.airport-field:nth-child(2) .airport-menu{left:0;right:auto;width:100%}
   .passenger-popover,.passenger-picker.align-right .passenger-popover{left:0;right:auto;width:100%;min-width:260px;padding:16px}.passenger-row{grid-template-columns:26px minmax(0,1fr) auto;gap:9px}.passenger-stepper{grid-template-columns:32px 23px 32px}.passenger-stepper button{width:32px;height:32px}
+  .multi-city-panel{padding:12px}.multi-city-leg-grid{grid-template-columns:1fr}.multi-city-leg .airport-menu,.multi-city-leg .airport-field:nth-child(2) .airport-menu{left:0;right:auto;width:100%}.multi-city-leg .calendar-popover{left:0;right:auto}.multi-city-head{align-items:flex-start}.multi-city-head span{text-align:right;max-width:14ch}
   .pillars,.flight-grid,.cruise-grid,.bottom-grid{grid-template-columns:1fr}
   .airline-logos{gap:20px;padding-right:20px}.airline-logos li{width:142px;height:56px}.airline-logos img{width:130px;height:44px}.airline-track{animation-duration:36s}
   .flight-card{min-height:290px}.cruise-card img{height:240px}
@@ -367,6 +369,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
           <div class="field airport-field" data-airport-picker data-route-field="to"><span class="hotel-bed-icon" aria-hidden="true"></span><input id="to" name="to" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="to-airports" aria-label="To airport" placeholder="To" required><div class="airport-menu" id="to-airports" role="listbox" aria-label="Destination airports" hidden></div></div>
           <div class="field date-picker" data-date-picker="depart"><label>Departure</label><button class="date-trigger" type="button" aria-label="Choose departure date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input id="depart" name="depart" type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose departure date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div>
           <div class="field date-picker return" data-date-picker="return"><label>Return</label><button class="date-trigger" type="button" aria-label="Choose return date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input id="return" name="return" type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose return date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div>
+          <div class="multi-city-panel hidden" data-multi-city><div class="multi-city-head"><b>Flight itinerary</b><span>Add up to five flight legs</span></div><div class="multi-city-legs" data-multi-city-legs></div><button class="add-flight" type="button" data-add-flight><span aria-hidden="true">+</span>Add another flight</button></div>
           <div class="field passenger-picker" data-passenger-picker><label data-passenger-label>Passengers</label><button class="passenger-trigger" type="button" aria-label="Choose passengers" aria-haspopup="dialog" aria-expanded="false"><span class="passenger-trigger-main"><span class="passenger-icon" aria-hidden="true"></span><span data-passenger-summary aria-live="polite">1 Passenger</span></span><span class="passenger-chevron" aria-hidden="true"></span></button><input id="travellers" name="travellers" type="hidden" value="1 Adult"><div class="passenger-popover" role="dialog" aria-label="Choose passenger quantities" hidden><h3>Total quantity</h3><div class="passenger-rows">
             <div class="passenger-row" data-passenger-row data-min="1" data-count="1" data-singular="Adult" data-plural="Adults"><span class="traveller-mark" aria-hidden="true"></span><span class="passenger-copy"><b>Adults</b><span>18 years and over</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove adult">−</button><output class="passenger-count">1</output><button type="button" data-passenger-plus aria-label="Add adult">+</button></span></div>
             <div class="passenger-row" data-passenger-row data-min="0" data-count="0" data-singular="Child" data-plural="Children"><span class="traveller-mark child" aria-hidden="true"></span><span class="passenger-copy"><b>Children</b><span>from 2 to 17 years old</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove child">−</button><output class="passenger-count">0</output><button type="button" data-passenger-plus aria-label="Add child">+</button></span></div>
@@ -382,6 +385,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
         <p class="form-fine">No charge until we find your best price and dates. Tickets and bookings are issued through Top Business Class and our accredited partner agencies.</p>
         <div class="success" role="status">Thank you—your travel enquiry has been received.</div>
       </form>
+      <template id="multi-city-leg-template"><div class="multi-city-leg"><div class="multi-city-leg-head"><b data-flight-title>Flight</b><button class="remove-flight" type="button" data-remove-flight>Remove</button></div><div class="multi-city-leg-grid"><div class="field airport-field" data-airport-picker data-search-type="airport"><input data-leg-from type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" placeholder="From" required><div class="airport-menu" role="listbox" aria-label="Departure airports" hidden></div></div><div class="field airport-field" data-airport-picker data-search-type="airport"><input data-leg-to type="text" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" placeholder="To" required><div class="airport-menu" role="listbox" aria-label="Destination airports" hidden></div></div><div class="field date-picker" data-date-picker="multi"><label>Departure</label><button class="date-trigger" type="button" aria-label="Choose departure date" aria-haspopup="dialog" aria-expanded="false"><span class="date-value placeholder">Select date</span><span class="date-icon" aria-hidden="true"></span></button><input data-leg-date type="hidden"><div class="calendar-popover" role="dialog" aria-label="Choose departure date" hidden><div class="calendar-head"><button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month">‹</button><div class="calendar-title" aria-live="polite"></div><button class="calendar-nav" type="button" data-calendar-next aria-label="Next month">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div></div></div></div></div></template>
     </div>
   </section>
 
@@ -661,7 +665,8 @@ const tomorrow=new Date();tomorrow.setHours(0,0,0,0);tomorrow.setDate(tomorrow.g
 const isoDate=date=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
 const parseDate=value=>{if(!value)return null;const [year,month,day]=value.split('-').map(Number);return new Date(year,month-1,day)};
 const formatDate=date=>`${String(date.getDate()).padStart(2,'0')} ${calendarMonths[date.getMonth()].slice(0,3)} ${date.getFullYear()}`;
-const datePickers=[...document.querySelectorAll('[data-date-picker]')];
+let datePickers=[...document.querySelectorAll('[data-date-picker]')];
+const primaryDatePickers=[...datePickers];
 const passengerPicker=document.querySelector('[data-passenger-picker]');
 const passengerTrigger=passengerPicker.querySelector('.passenger-trigger');
 const passengerPanel=passengerPicker.querySelector('.passenger-popover');
@@ -671,10 +676,19 @@ const phoneCodeTrigger=phonePicker.querySelector('.phone-code-trigger');
 const phoneCodeMenu=phonePicker.querySelector('.phone-code-menu');
 const phoneCodeOptions=[...phonePicker.querySelectorAll('[data-phone-code-option]')];
 const phoneNumberInput=document.getElementById('phone');
-const airportPickers=[...document.querySelectorAll('[data-airport-picker]')];
+let airportPickers=[...document.querySelectorAll('[data-airport-picker]')];
+const multiCityPanel=document.querySelector('[data-multi-city]');
+const multiCityLegs=document.querySelector('[data-multi-city-legs]');
+const addFlightButton=document.querySelector('[data-add-flight]');
+const multiCityLegTemplate=document.getElementById('multi-city-leg-template');
+const maxMultiCityLegs=5;
 
 function pickerMinimum(picker){
   if(picker.dataset.datePicker==='return')return parseDate(document.getElementById('depart').value)||tomorrow;
+  if(picker.dataset.datePicker==='multi'){
+    const previousLeg=picker.closest('.multi-city-leg')?.previousElementSibling;const previousDate=previousLeg?.querySelector('[data-leg-date]')?.value;
+    return parseDate(previousDate)||tomorrow;
+  }
   return tomorrow;
 }
 function closeCalendars(except=null){
@@ -759,10 +773,11 @@ function renderCalendar(picker){
   for(let day=1;day<=count;day++){
     const date=new Date(view.getFullYear(),view.getMonth(),day);const button=document.createElement('button');button.type='button';button.className='calendar-day';button.textContent=String(day);button.disabled=date<minimum;button.setAttribute('aria-label',`${day} ${calendarMonths[date.getMonth()]} ${date.getFullYear()}`);
     if(isoDate(date)===isoDate(now))button.classList.add('today');if(selected&&isoDate(date)===isoDate(selected)){button.classList.add('selected');button.setAttribute('aria-pressed','true')}
-    button.addEventListener('click',()=>{setPickerValue(picker,isoDate(date));if(picker.dataset.datePicker==='depart'){const returnPicker=datePickers.find(item=>item.dataset.datePicker==='return');const returnDate=parseDate(document.getElementById('return').value);if(returnDate&&returnDate<date)setPickerValue(returnPicker,'');returnPicker._view=new Date(date.getFullYear(),date.getMonth(),1)}closeCalendars()});days.append(button);
+    button.addEventListener('click',()=>{setPickerValue(picker,isoDate(date));if(picker.dataset.datePicker==='depart'){const returnPicker=primaryDatePickers.find(item=>item.dataset.datePicker==='return');const returnDate=parseDate(document.getElementById('return').value);if(returnDate&&returnDate<date)setPickerValue(returnPicker,'');returnPicker._view=new Date(date.getFullYear(),date.getMonth(),1)}if(picker.dataset.datePicker==='multi'){let minimum=date;let nextLeg=picker.closest('.multi-city-leg')?.nextElementSibling;while(nextLeg){const nextPicker=nextLeg.querySelector('[data-date-picker="multi"]');const nextDate=parseDate(nextLeg.querySelector('[data-leg-date]').value);if(nextDate&&nextDate<minimum)setPickerValue(nextPicker,'');else if(nextDate)minimum=nextDate;nextPicker._view=new Date(minimum.getFullYear(),minimum.getMonth(),1);nextLeg=nextLeg.nextElementSibling}}closeCalendars()});days.append(button);
   }
 }
-airportPickers.forEach(picker=>{
+function bindAirportPicker(picker){
+  if(picker.dataset.pickerBound)return;picker.dataset.pickerBound='true';
   const input=picker.querySelector('input');
   input.addEventListener('focus',()=>{closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers(picker);const selected=picker.dataset.searchType==='hotel'?input.dataset.hotelDestination:input.dataset.airportCode;if(input.value&&!selected)renderAirportOptions(picker)});
   input.addEventListener('input',()=>{delete input.dataset.airportCode;delete input.dataset.hotelDestination;closeCalendars();closePassengerPicker();closePhonePicker();renderAirportOptions(picker)});
@@ -774,13 +789,35 @@ airportPickers.forEach(picker=>{
     else if(event.key==='Tab')closeAirportPickers();
   });
   input.addEventListener('blur',()=>setTimeout(()=>{if(!picker.contains(document.activeElement))closeAirportPickers()},0));
-});
-datePickers.forEach(picker=>{
+}
+function bindDatePicker(picker){
+  if(picker.dataset.pickerBound)return;picker.dataset.pickerBound='true';
   const trigger=picker.querySelector('.date-trigger');const panel=picker.querySelector('.calendar-popover');
   trigger.addEventListener('click',()=>{const opening=panel.hidden;closeCalendars(picker);closePassengerPicker();closePhonePicker();closeAirportPickers();panel.hidden=!opening;trigger.setAttribute('aria-expanded',String(opening));if(opening){renderCalendar(picker);const focusTarget=panel.querySelector('.selected:not(:disabled),.calendar-day:not(:disabled)');focusTarget?.focus()}});
   picker.querySelector('[data-calendar-prev]').addEventListener('click',()=>{picker._view=new Date(picker._view.getFullYear(),picker._view.getMonth()-1,1);renderCalendar(picker)});
   picker.querySelector('[data-calendar-next]').addEventListener('click',()=>{picker._view=new Date(picker._view.getFullYear(),picker._view.getMonth()+1,1);renderCalendar(picker)});
-});
+}
+airportPickers.forEach(bindAirportPicker);
+datePickers.forEach(bindDatePicker);
+function updateMultiCityLegs(){
+  const legs=[...multiCityLegs.querySelectorAll('.multi-city-leg')];const active=!multiCityPanel.classList.contains('hidden');
+  legs.forEach((leg,index)=>{
+    const number=index+1;leg.dataset.legIndex=String(index);leg.querySelector('[data-flight-title]').textContent=`Flight ${number}`;const removeButton=leg.querySelector('[data-remove-flight]');removeButton.hidden=legs.length<=2;removeButton.setAttribute('aria-label',`Remove flight ${number}`);
+    const from=leg.querySelector('[data-leg-from]');const to=leg.querySelector('[data-leg-to]');const date=leg.querySelector('[data-leg-date]');const fromMenu=from.nextElementSibling;const toMenu=to.nextElementSibling;
+    from.name=`flights[${index}][from]`;to.name=`flights[${index}][to]`;date.name=`flights[${index}][date]`;from.id=`flight-${number}-from`;to.id=`flight-${number}-to`;date.id=`flight-${number}-date`;fromMenu.id=`flight-${number}-from-airports`;toMenu.id=`flight-${number}-to-airports`;from.setAttribute('aria-controls',fromMenu.id);to.setAttribute('aria-controls',toMenu.id);from.setAttribute('aria-label',`Flight ${number} from airport`);to.setAttribute('aria-label',`Flight ${number} to airport`);leg.querySelector('.date-trigger').setAttribute('aria-label',`Choose departure date for flight ${number}`);leg.querySelector('.calendar-popover').setAttribute('aria-label',`Choose departure date for flight ${number}`);
+    from.disabled=!active;to.disabled=!active;date.disabled=!active;from.required=active;to.required=active;leg.querySelector('.date-trigger').disabled=!active;
+  });
+  addFlightButton.hidden=legs.length>=maxMultiCityLegs;
+}
+function addMultiCityLeg(prefillFromPrevious=true){
+  if(multiCityLegs.children.length>=maxMultiCityLegs)return null;
+  const previousTo=multiCityLegs.lastElementChild?.querySelector('[data-leg-to]');const fragment=multiCityLegTemplate.content.cloneNode(true);const leg=fragment.querySelector('.multi-city-leg');multiCityLegs.append(fragment);
+  if(prefillFromPrevious&&previousTo?.value){const from=leg.querySelector('[data-leg-from]');from.value=previousTo.value;if(previousTo.dataset.airportCode)from.dataset.airportCode=previousTo.dataset.airportCode}
+  const newAirportPickers=[...leg.querySelectorAll('[data-airport-picker]')];const newDatePicker=leg.querySelector('[data-date-picker="multi"]');airportPickers.push(...newAirportPickers);datePickers.push(newDatePicker);newAirportPickers.forEach(bindAirportPicker);bindDatePicker(newDatePicker);
+  leg.querySelector('[data-remove-flight]').addEventListener('click',()=>{if(multiCityLegs.children.length<=2)return;leg.remove();airportPickers=airportPickers.filter(picker=>picker.isConnected);datePickers=datePickers.filter(picker=>picker.isConnected);updateMultiCityLegs()});updateMultiCityLegs();return leg;
+}
+function ensureMultiCityLegs(){while(multiCityLegs.children.length<2)addMultiCityLeg(false);updateMultiCityLegs()}
+addFlightButton.addEventListener('click',()=>{const leg=addMultiCityLeg(true);const from=leg?.querySelector('[data-leg-from]');const to=leg?.querySelector('[data-leg-to]');(from?.value?to:from)?.focus()});
 passengerTrigger.addEventListener('click',()=>{const opening=passengerPanel.hidden;closeCalendars();closePhonePicker();closeAirportPickers();if(opening)updatePassengerPopoverAlignment();passengerPanel.hidden=!opening;passengerTrigger.setAttribute('aria-expanded',String(opening))});
 passengerRows.forEach(row=>row.querySelectorAll('[data-passenger-minus],[data-passenger-plus]').forEach(button=>button.addEventListener('click',()=>{const minimum=Number(row.dataset.min);const current=Number(row.dataset.count);row.dataset.count=String(button.hasAttribute('data-passenger-plus')?current+1:Math.max(minimum,current-1));updatePassengers()})));
 updatePassengers();
@@ -799,13 +836,13 @@ function setCabinOptions(select,tripType){
   const options=tripType==='Hotel'?hotelRooms:tripType==='Cruise'?cruiseCabins:airCabins;select.replaceChildren(...options.map(value=>{const option=document.createElement('option');option.value=value;option.textContent=value;return option}));
 }
 function setTripMode(form,tripType){
-  const hotelMode=tripType==='Hotel';const previousTrip=form.dataset.activeTrip;const fromField=form.querySelector('[data-route-field="from"]');const toField=form.querySelector('[data-route-field="to"]');const fromInput=fromField.querySelector('input');const toInput=toField.querySelector('input');
+  const hotelMode=tripType==='Hotel';const multiCityMode=tripType==='Multi-city';const previousTrip=form.dataset.activeTrip;const fromField=form.querySelector('[data-route-field="from"]');const toField=form.querySelector('[data-route-field="to"]');const fromInput=fromField.querySelector('input');const toInput=toField.querySelector('input');
   if(previousTrip&&(previousTrip==='Hotel')!==hotelMode){toInput.value='';delete toInput.dataset.airportCode;delete toInput.dataset.hotelDestination}
-  form.dataset.activeTrip=tripType;form.elements.tripType.value=tripType;form.querySelector('[data-form-title]').textContent=hotelMode?'Tell me about your hotel stay':'Tell me where you would like to go';
-  fromField.classList.toggle('hidden',hotelMode);fromInput.required=!hotelMode;toField.classList.toggle('full',hotelMode);toField.classList.toggle('hotel-destination',hotelMode);toField.dataset.searchType=hotelMode?'hotel':'airport';toInput.name=hotelMode?'hotel_destination':'to';toInput.placeholder=hotelMode?'Enter destination':'To';toInput.setAttribute('aria-label',hotelMode?'Enter hotel destination city':'To airport');toField.querySelector('.airport-menu').setAttribute('aria-label',hotelMode?'Hotel city destinations':'Destination airports');
+  form.dataset.activeTrip=tripType;form.elements.tripType.value=tripType;form.querySelector('[data-form-title]').textContent=hotelMode?'Tell me about your hotel stay':multiCityMode?'Build your multi-city itinerary':'Tell me where you would like to go';
+  fromField.classList.toggle('hidden',hotelMode||multiCityMode);fromInput.required=!hotelMode&&!multiCityMode;fromInput.disabled=hotelMode||multiCityMode;toField.classList.toggle('hidden',multiCityMode);toField.classList.toggle('full',hotelMode);toField.classList.toggle('hotel-destination',hotelMode);toField.dataset.searchType=hotelMode?'hotel':'airport';toInput.name=hotelMode?'hotel_destination':'to';toInput.placeholder=hotelMode?'Enter destination':'To';toInput.setAttribute('aria-label',hotelMode?'Enter hotel destination city':'To airport');toInput.required=!multiCityMode;toInput.disabled=multiCityMode;toField.querySelector('.airport-menu').setAttribute('aria-label',hotelMode?'Hotel city destinations':'Destination airports');
   toInput.setAttribute('role','combobox');toInput.setAttribute('aria-autocomplete','list');toInput.setAttribute('aria-controls','to-airports');toInput.setAttribute('aria-expanded','false');
-  form.querySelector('.field.return').classList.toggle('hidden',tripType==='One way'||tripType==='Cruise');
-  datePickers.forEach(picker=>{const start=picker.dataset.datePicker==='depart';const label=hotelMode?(start?'Check-in':'Check-out'):(start?'Departure':'Return');picker.querySelector('label').textContent=label;picker.querySelector('.date-trigger').setAttribute('aria-label',`Choose ${label.toLowerCase()} date`);picker.querySelector('.calendar-popover').setAttribute('aria-label',`Choose ${label.toLowerCase()} date`);picker.querySelector('input[type="hidden"]').name=hotelMode?(start?'check_in':'check_out'):(start?'depart':'return')});
+  primaryDatePickers.forEach(picker=>{const start=picker.dataset.datePicker==='depart';const hidden=multiCityMode||(!start&&(tripType==='One way'||tripType==='Cruise'));const label=hotelMode?(start?'Check-in':'Check-out'):(start?'Departure':'Return');picker.classList.toggle('hidden',hidden);picker.querySelector('label').textContent=label;picker.querySelector('.date-trigger').disabled=hidden;picker.querySelector('.date-trigger').setAttribute('aria-label',`Choose ${label.toLowerCase()} date`);picker.querySelector('.calendar-popover').setAttribute('aria-label',`Choose ${label.toLowerCase()} date`);const input=picker.querySelector('input[type="hidden"]');input.disabled=hidden;input.name=hotelMode?(start?'check_in':'check_out'):(start?'depart':'return')});
+  multiCityPanel.classList.toggle('hidden',!multiCityMode);if(multiCityMode)ensureMultiCityLegs();updateMultiCityLegs();
   form.querySelector('[data-passenger-label]').textContent=hotelMode?'Guests':'Passengers';passengerTrigger.setAttribute('aria-label',hotelMode?'Choose guests':'Choose passengers');passengerPanel.setAttribute('aria-label',hotelMode?'Choose guest quantities':'Choose passenger quantities');document.getElementById('travellers').name=hotelMode?'guests':'travellers';const roomsField=form.querySelector('[data-hotel-only]');roomsField.classList.toggle('hidden',!hotelMode);roomsField.querySelector('select').disabled=!hotelMode;const cabinField=form.querySelector('[data-cabin-field]');cabinField.classList.toggle('full',hotelMode);form.querySelector('[data-cabin-label]').textContent=hotelMode?'Room preference':'Cabin / journey';form.elements.cabin.name=hotelMode?'room_preference':'cabin';
   setCabinOptions(form.elements.cabin,tripType);updatePassengers();closeCalendars();closePassengerPicker();closePhonePicker();closeAirportPickers();updatePassengerPopoverAlignment();
 }
@@ -817,7 +854,11 @@ setTripMode(document.getElementById('quote'),'Round trip');
 document.querySelectorAll('[data-demo-form]').forEach(form=>form.addEventListener('submit',event=>{
   event.preventDefault();
   if(form.id==='quote'){
-    const needsReturn=!form.querySelector('.field.return').classList.contains('hidden');const missingPicker=!form.elements.depart.value?datePickers[0]:(needsReturn&&!form.elements.return.value?datePickers[1]:null);
+    if(form.elements.tripType.value==='Multi-city'){
+      const legs=[...multiCityLegs.querySelectorAll('.multi-city-leg')];const missingDateLeg=legs.find(leg=>!leg.querySelector('[data-leg-date]').value);
+      if(missingDateLeg){const trigger=missingDateLeg.querySelector('.date-trigger');trigger.classList.add('error');trigger.focus();trigger.click();return}
+    }
+    const needsReturn=!primaryDatePickers[1].classList.contains('hidden');const missingPicker=form.elements.tripType.value==='Multi-city'?null:(!form.elements.depart.value?primaryDatePickers[0]:(needsReturn&&!form.elements.return.value?primaryDatePickers[1]:null));
     if(missingPicker){const trigger=missingPicker.querySelector('.date-trigger');trigger.classList.add('error');trigger.focus();trigger.click();return}
   }
   const success=form.querySelector('.success');success.classList.add('show');const button=form.querySelector('button[type="submit"]');button.textContent='Enquiry received';button.disabled=true;
