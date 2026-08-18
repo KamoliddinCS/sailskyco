@@ -55,8 +55,6 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 
-.demo-tag{position:fixed;right:16px;bottom:16px;z-index:90;background:rgba(5,27,47,.94);color:#fff;border:1px solid rgba(216,169,79,.55);padding:9px 14px;font-size:.8rem;font-weight:700;letter-spacing:.04em;backdrop-filter:blur(8px);box-shadow:0 8px 30px rgba(0,0,0,.18)}
-.demo-tag b{color:var(--gold-2)}
 .whatsapp-cta{position:fixed;left:18px;bottom:18px;z-index:91;display:flex;align-items:center;gap:11px;max-width:calc(100vw - 36px);padding:9px 16px 9px 10px;border:1px solid rgba(216,169,79,.78);border-radius:999px;background:var(--navy);color:#fff;box-shadow:0 12px 34px rgba(3,19,34,.32);transition:transform .2s,box-shadow .2s,background .2s,border-color .2s}.whatsapp-cta:hover{transform:translateY(-2px);background:var(--navy-3);border-color:var(--gold-2);box-shadow:0 16px 40px rgba(3,19,34,.4)}.whatsapp-mark{position:relative;width:35px;height:35px;flex:none;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--serif);font-size:1.28rem;font-style:italic;font-weight:500;line-height:1}.whatsapp-mark::after{content:"";position:absolute;width:18px;height:6px;border-bottom:1.5px solid var(--gold);border-radius:50%;right:-5px;bottom:3px;transform:rotate(-22deg)}.whatsapp-copy{display:grid;gap:1px;line-height:1.2}.whatsapp-copy b{font-size:.88rem;font-weight:800}.whatsapp-copy small{font-size:.74rem;font-weight:700;color:#ead7ad;font-variant-numeric:tabular-nums}
 
 .header{position:absolute;inset:0 0 auto;z-index:50;color:#fff;border-bottom:1px solid rgba(255,255,255,.16);transition:background .25s,transform .25s,box-shadow .25s}
@@ -71,7 +69,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
 .nav-links{display:flex;align-items:center;gap:26px;margin-left:auto}
 .nav-links a{font-size:.9rem;font-weight:500;color:#edf2f6;transition:color .15s}
 .nav-links a:hover{color:var(--gold-2)}
-.header-phone{display:inline-flex;align-items:center;gap:8px;min-width:max-content;padding-left:18px;border-left:1px solid rgba(216,169,79,.42);color:#fff;font-variant-numeric:tabular-nums;transition:color .2s}.header-phone span{color:var(--gold-2);font-size:.67rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}.header-phone b{font-size:.9rem;font-weight:700;letter-spacing:.015em}.header-phone:hover{color:var(--gold-2)}
+.header-phone{display:inline-flex;align-items:center;gap:8px;min-width:max-content;padding-left:18px;border-left:1px solid rgba(216,169,79,.42);color:#fff;font-variant-numeric:tabular-nums;transition:color .2s}.header-phone .phone-icon{color:var(--gold-2);font-family:Georgia,serif;font-size:1.05rem;line-height:1;transform:translateY(-1px)}.header-phone b{font-size:.9rem;font-weight:700;letter-spacing:.015em}.header-phone:hover{color:var(--gold-2)}
 .menu-btn{display:none;margin-left:auto;width:43px;height:43px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer;position:relative}
 .menu-btn span,.menu-btn::before,.menu-btn::after{content:"";position:absolute;width:19px;height:1.5px;background:currentColor;left:11px;transition:.2s}
 .menu-btn::before{top:13px}.menu-btn span{top:20px}.menu-btn::after{top:27px}
@@ -309,7 +307,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .footer-top{align-items:flex-start;flex-direction:column}.footer-locations{grid-template-columns:1fr;gap:25px}
 }
 @media(max-width:560px){
-  .wrap{width:min(100% - 28px,1200px)}.brand-mark{width:41px;height:41px}.brand-name{font-size:1.08rem}.nav{height:70px;gap:12px}.header-phone{display:inline-flex;margin-left:auto;padding-left:10px;gap:0}.header-phone span{display:none}.header-phone b{font-size:.78rem}.menu-btn{margin-left:0}.mobile-panel{inset:70px 0 auto}
+  .wrap{width:min(100% - 28px,1200px)}.brand-mark{width:41px;height:41px}.brand-name{font-size:1.08rem}.nav{height:70px;gap:12px}.header-phone{display:inline-flex;margin-left:auto;padding-left:10px;gap:6px}.header-phone .phone-icon{font-size:.92rem}.header-phone b{font-size:.78rem}.menu-btn{margin-left:0}.mobile-panel{inset:70px 0 auto}
   .hero-grid{padding-top:110px}.hero-copy .overline{letter-spacing:.22em}.hero h1{font-size:2.8rem}.hero-actions{display:grid}.hero-actions .btn{width:100%}
   .quote-card{padding:23px 16px}.trip-tabs{grid-template-columns:1fr 1fr}.trip-tab:last-child{grid-column:1/-1}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.airport-menu,.airport-field:nth-child(2) .airport-menu{left:0;right:auto;width:100%}
   .passenger-popover,.passenger-picker.align-right .passenger-popover{left:0;right:auto;width:100%;min-width:260px;padding:16px}.passenger-row{grid-template-columns:26px minmax(0,1fr) auto;gap:9px}.passenger-stepper{grid-template-columns:32px 23px 32px}.passenger-stepper button{width:32px;height:32px}
@@ -320,14 +318,13 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
   .about-stat{grid-template-columns:1fr;gap:5px;padding-right:12px}.about-stat+.about-stat{padding-left:16px}.about-stat strong{font-size:1.85rem}.about-stat span{font-size:.72rem}
   .fly-cruise{grid-template-columns:1fr;gap:10px}.fly-cruise .btn{grid-column:auto}.review-carousel-bar{align-items:flex-start}.review-carousel-bar>span{max-width:11ch;line-height:1.45}.review-controls{gap:6px}.review-control{width:38px;height:38px}.review-card{padding:17px}.review-card blockquote p{font-size:1rem}.review-form-grid{grid-template-columns:1fr}.review-field.full{grid-column:auto}.review-submit-row{display:grid}.review-submit-row .btn{width:100%}.rating-star{font-size:2rem}
   .bottom-col,.bottom-col:nth-child(2){border-right:0;border-bottom:1px solid var(--line)}.bottom-col:last-child{grid-column:auto;border-top:0;border-bottom:0}.contact-mini .row{grid-template-columns:1fr}
-  .footer-links{display:grid;grid-template-columns:1fr 1fr}.demo-tag{right:10px;bottom:10px}.whatsapp-cta{left:10px;bottom:58px;padding:8px 14px 8px 9px}.whatsapp-mark{width:33px;height:33px}
+  .footer-links{display:grid;grid-template-columns:1fr 1fr}.whatsapp-cta{left:10px;bottom:10px;padding:8px 14px 8px 9px}.whatsapp-mark{width:33px;height:33px}
 }
 @media(max-width:430px){.header .brand-name{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.flight-card img{transition:none}.btn,.flight-card,.cruise-card,.review-control{transition:none}}
 </style>
 </head>
 <body>
-<a class="demo-tag" href="../../#demos" title="Return to Bir Sayt portfolio">Concept website · <b>Bir Sayt</b></a>
 <a class="whatsapp-cta" href="https://wa.me/61272538651?text=Hello%20Patrick%2C%20I%20would%20like%20help%20planning%20a%20premium%20trip." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Patrick at country code 61, 2 7253 8651"><span class="whatsapp-mark" aria-hidden="true">S</span><span class="whatsapp-copy"><b>WhatsApp Patrick</b><small>(61) 2 7253 8651</small></span></a>
 
 <header class="header" id="header">
@@ -339,7 +336,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="#about">Meet Patrick</a><a href="#flights">Flights</a><a href="#hotels">Hotels</a><a href="#cruises">Cruises</a><a href="#reviews">Reviews</a><a href="#process">How it works</a><a href="#contact">Contact</a>
     </nav>
-    <a class="header-phone" href="tel:+61272538651" aria-label="Call Patrick Morgan at country code 61, 2 7253 8651"><span>Phone</span><b>(61) 2 7253 8651</b></a>
+    <a class="header-phone" href="tel:+61272538651" aria-label="Call Patrick Morgan at country code 61, 2 7253 8651"><span class="phone-icon" aria-hidden="true">☎</span><b>(61) 2 7253 8651</b></a>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
   <nav class="mobile-panel" id="mobilePanel" aria-label="Mobile navigation">
@@ -376,7 +373,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
             <div class="passenger-row" data-passenger-row data-min="0" data-count="0" data-singular="Infant" data-plural="Infants"><span class="traveller-mark infant" aria-hidden="true"></span><span class="passenger-copy"><b>Infants</b><span>under 2 years old</span></span><span class="passenger-stepper"><button type="button" data-passenger-minus aria-label="Remove infant">−</button><output class="passenger-count">0</output><button type="button" data-passenger-plus aria-label="Add infant">+</button></span></div>
           </div></div></div>
           <div class="field hidden" data-hotel-only><label for="rooms">Rooms</label><select id="rooms" name="rooms" disabled><option value="1">1 Room</option><option value="2">2 Rooms</option><option value="3">3 Rooms</option><option value="4">4 Rooms</option><option value="5">5 Rooms</option></select></div>
-          <div class="field" data-cabin-field><label for="cabin" data-cabin-label>Cabin / journey</label><select id="cabin" name="cabin"><option>First Class</option><option>Business Class</option><option>Premium-Economy Class</option></select></div>
+          <div class="field" data-cabin-field><label for="cabin" data-cabin-label>Cabin / journey</label><select id="cabin" name="cabin"><option>Business Class</option><option>First Class</option><option>Premium-Economy Class</option></select></div>
           <div class="field compact-field"><input id="name" name="name" autocomplete="name" aria-label="Your name" placeholder="Your name" required></div>
           <div class="field compact-field"><input id="email" name="email" type="email" autocomplete="email" aria-label="Email" placeholder="Email" required></div>
           <div class="field full"><div class="phone-input-group" data-phone-picker><div class="phone-code-picker"><button class="phone-code-trigger" type="button" aria-label="Select phone country code, Australia +61" aria-haspopup="listbox" aria-expanded="false" aria-controls="phone-code-menu"><span class="phone-code-flag" data-phone-code-flag aria-hidden="true">🇦🇺</span><span class="phone-code-value" data-phone-code-value>+61</span><span class="phone-code-chevron" aria-hidden="true"></span></button><div class="phone-code-menu" id="phone-code-menu" role="listbox" aria-label="Phone country code" hidden><button class="phone-code-option" type="button" role="option" aria-selected="true" data-phone-code-option data-code="+61" data-country="Australia" data-flag="🇦🇺"><span class="phone-option-flag" aria-hidden="true">🇦🇺</span><span>Australia</span><b>+61</b></button><button class="phone-code-option" type="button" role="option" aria-selected="false" data-phone-code-option data-code="+1" data-country="United States" data-flag="🇺🇸"><span class="phone-option-flag" aria-hidden="true">🇺🇸</span><span>United States</span><b>+1</b></button></div></div><input id="phone-code" name="phone_country_code" type="hidden" value="+61"><input id="phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" aria-label="Phone number" placeholder="Phone number" required></div></div>
@@ -409,7 +406,7 @@ button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
         <div class="about-copy reveal">
           <span class="eyebrow">Meet your travel concierge</span>
           <h2 class="h2">Patrick Morgan.</h2>
-          <div class="about-stats" aria-label="Patrick Morgan's experience"><div class="about-stat"><strong>5+</strong><span>Years of travel experience</span></div><div class="about-stat"><strong>200+</strong><span>Satisfied clients</span></div></div>
+          <div class="about-stats" aria-label="Patrick Morgan's experience"><div class="about-stat"><strong>5+</strong><span>Years of experience in the industry</span></div><div class="about-stat"><strong>250+</strong><span>Satisfied clients</span></div></div>
           <p class="lead">I plan business and first class flights, exceptional hotels, luxury cruises and complex itineraries for travellers who value clarity, comfort and a real person they can reach.</p>
           <p class="lead">From our first conversation to your return home, you deal directly with me. I listen first, compare the meaningful options, explain the details clearly and remain close to every booking when plans change.</p>
           <p class="about-sign">Consider it handled.<small>Personal Travel Concierge</small></p>
@@ -653,7 +650,7 @@ menuBtn.addEventListener('click',()=>{const open=!mobilePanel.classList.contains
 mobilePanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
 window.addEventListener('scroll',()=>header.classList.toggle('stuck',scrollY>50),{passive:true});
 
-const airCabins=['First Class','Business Class','Premium-Economy Class'];
+const airCabins=['Business Class','First Class','Premium-Economy Class'];
 const cruiseCabins=['Interior','Oceanview','Balcony','Suite'];
 const hotelRooms=['Standard','Deluxe','Suite','Family room'];
 const airports=(window.SAILSKY_AIRPORTS||[]).map(([code,city,name,country,tier,keywords])=>({code,city,name,country,tier,keywords}));
