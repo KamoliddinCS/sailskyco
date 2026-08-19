@@ -8,6 +8,11 @@ Social preview artwork
 - Generated for this project with OpenAI image generation using the final hero as its visual reference.
 - Exact copy: “SailSky & Co” and “Premium travel, personally handled.”
 
+Brand mark
+- Flattened and simplified for this project with OpenAI image generation from
+  the supplied SailSky emblem reference.
+- The final transparent mark preserves the S, orbital path and aircraft motifs.
+
 Supporting photography (Unsplash License)
 - Aircraft window at sunset — Thom Milkovic
   https://unsplash.com/photos/airplane-window-Kp3B7GnvFD0
